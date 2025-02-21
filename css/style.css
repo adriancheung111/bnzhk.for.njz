@@ -1059,4 +1059,41 @@ a:focus {
 .language-selector .language-title:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
+
+.product-title-link {
+  color: #1a488f;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin-bottom: 10px;
+  display: block;
+  line-height: 1.5;
+}
+
+.product-title-link:hover {
+  color: #0056b3;
+}
+
+.product-p {
+  color: #666;
+  font-size: 0.95rem;
+  margin-top: 12px;
+  padding: 8px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  line-height: 1.6;
+}
+
+.product-p span {
+  font-weight: 500;
+}
+
+.product-p span:first-child {
+  color: #1a488f;
+}
+
+.product-p span:last-child {
+  color: #28a745;
+}
 /*# sourceMappingURL=style.css.map */
