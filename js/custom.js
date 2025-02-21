@@ -12,8 +12,11 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-  // 使用 jQuery 的 load 方法來加載 footer.html 並將其插入到頁面
-  $("#nav-container").load("nav.html");
+  // 使用 jQuery 的 load 方法來加載 nav.html 並將其插入到頁面
+  $("#nav-container").load("nav.html", function() {
+    // nav 加載完成後執行翻譯更新
+    updateContent();
+  });
 });
 
 // overlay menu

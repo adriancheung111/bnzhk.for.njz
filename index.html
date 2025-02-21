@@ -23,6 +23,8 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+  <script src="js/translations.js"></script>
+  <script src="js/language.js"></script>
 </head>
 
 <body>
@@ -39,12 +41,12 @@
     <div class="container">
       <div class="col-md-9 col-lg-8">
         <div class="detail-box">
-          <h1 style="text-shadow: -1px 1px 0 #000, 1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000;">
+          <h1 style="text-shadow: -1px 1px 0 #000, 1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000;" class="translate" data-key="welcome_title">
             Bunnies <br />
             Forver With<br />
             NJZ
           </h1>
-          <p style="text-shadow: -1px 1px 0 #000, 1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000;">
+          <p style="text-shadow: -1px 1px 0 #000, 1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000;" class="translate" data-key="welcome_subtitle">
             一起為 NJZ 準備一個想像不到的驚喜，展示我們對 NJZ 的支持及愛吧 💙
           </p>
           <!-- <div>
@@ -61,7 +63,7 @@
   <section class="shop_section layout_padding">
     <div class="container">
       <div class="heading_container heading_center">
-        <h2>最新應援活動 - BNZ STATION</h2>
+        <h2 class="translate" data-key="nav_latest_event">最新應援活動 - BNZ STATION</h2>
       </div>
       <div class="row">
         <div class="col-sm-4 col-md-4 col-lg-4">
@@ -81,7 +83,7 @@
         </div>
       </div>
       <div class="btn-box">
-        <a href="latestEvent.html"> 查看詳情 </a>
+        <a href="latestEvent.html" class="translate" data-key="read_more">查看詳情</a>
       </div>
     </div>
   </section>
@@ -101,9 +103,9 @@
         <div class="col-md-6">
           <div class="detail-box">
             <div class="heading_container">
-              <h2>關於我們</h2>
+              <h2 class="translate" data-key="about_title">關於我們</h2>
             </div>
-            <p>
+            <p class="translate" data-key="about_description">
               BNZHK是香港一個由粉絲發起的團隊，全力應援 K-pop
               女子組合NJZ，包括成員Minji、Hanni、Danielle、Haerin和Hyein。我們的目標是為所有
               Bunnies
@@ -111,7 +113,7 @@
               NJZ 的演出，同時向NJZ表示最大的支持。
             </p>
             <div class="btn-box">
-              <a href="latestEvent.html"> 查看詳情 </a>
+              <a href="latestEvent.html" class="translate" data-key="read_more">查看詳情</a>
             </div>
           </div>
         </div>
@@ -325,6 +327,9 @@
   <script src="js/bootstrap.js"></script>
   <!-- custom js -->
   <script src="js/custom.js"></script>
+  <!-- 添加翻譯相關的 JavaScript -->
+  <script src="js/translations.js"></script>
+  <script src="js/language.js"></script>
 </body>
 
 </html>
