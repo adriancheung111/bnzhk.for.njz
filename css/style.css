@@ -295,6 +295,9 @@ a:focus {
   position: relative;
   background-color: #ffffff;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .slider_section .slider_bg_box {
@@ -319,17 +322,19 @@ a:focus {
 
 .slider_section .text-box {
   position: absolute;
-  bottom: 80px;
+  bottom: 0;
   left: 0;
   z-index: 3;
   width: 100%;
-  padding: 0 20px;
+  padding: 40px 20px 10px;
+  background: linear-gradient(to top, rgba(255,255,255,0.9), rgba(255,255,255,0));
 }
 
 .slider_section .detail-box {
   position: relative;
   z-index: 4;
   color: #000000;
+  margin-bottom: 0;
 }
 
 .slider_section .detail-box h1 {
@@ -337,11 +342,12 @@ a:focus {
   font-weight: bold;
   letter-spacing: 2px;
   line-height: 1.2;
+  margin-bottom: 5px;
 }
 
 .slider_section .detail-box p {
   font-size: 1.2em;
-  margin-top: 15px;
+  margin: 0;
 }
 
 .slider_section .detail-box .slider-link {
@@ -979,14 +985,12 @@ a:focus {
   /* 大螢幕 */
   .slider_section .detail-box h1 { font-size: 4em; }
   .slider_section .detail-box p { font-size: 1.4em; }
-  .slider_section .text-box { bottom: 80px; }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
   /* 小型筆電 */
   .slider_section .detail-box h1 { font-size: 3.5em; }
   .slider_section .detail-box p { font-size: 1.2em; }
-  .slider_section .text-box { bottom: 70px; }
 }
 
 @media (max-width: 991px) {
@@ -998,33 +1002,38 @@ a:focus {
   .slider_section .slider_bg_box img {
     content: url("../images/NJZ_Mobile.png");
   }
+  .slider_section .text-box {
+    padding: 30px 20px 5px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
   /* 平板 */
   .slider_section .detail-box h1 { font-size: 3em; }
   .slider_section .detail-box p { font-size: 1.1em; }
-  .slider_section .text-box { bottom: 60px; }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
   /* 大型手機 */
   .slider_section .detail-box h1 { font-size: 2.5em; }
   .slider_section .detail-box p { font-size: 1em; }
-  .slider_section .text-box { bottom: 50px; }
 }
 
 @media (min-width: 376px) and (max-width: 575px) {
   /* 中型手機 */
   .slider_section .detail-box h1 { font-size: 2.2em; }
   .slider_section .detail-box p { font-size: 0.95em; }
-  .slider_section .text-box { bottom: 40px; }
 }
 
 @media (max-width: 375px) {
   /* 小型手機 */
   .slider_section .detail-box h1 { font-size: 1.8em; }
   .slider_section .detail-box p { font-size: 0.85em; }
-  .slider_section .text-box { bottom: 30px; }
+}
+
+@media (max-width: 575px) {
+  .slider_section .text-box {
+    padding: 25px 15px 5px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
