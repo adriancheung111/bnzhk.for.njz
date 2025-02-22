@@ -2,7 +2,7 @@ const translations = {
   'zh': {
     'nav_language': '語言',
     'nav_home': '首頁',
-    'nav_latest_event': '最新應援活動',
+    'nav_latest_event': '最新應援活動 - BNZ STATION',
     'nav_latest_scheduler': '時間表',
     'nav_about': '關於我們',
     'nav_contact': 'linktr.ee',
@@ -76,7 +76,7 @@ const translations = {
   'en': {
     'nav_language': 'Language',
     'nav_home': 'Home',
-    'nav_latest_event': 'Latest Events',
+    'nav_latest_event': 'Latest Events - BNZ STATION',
     'nav_latest_scheduler': 'Scheduler',
     'nav_about': 'About Us',
     'nav_contact': 'linktr.ee',
@@ -149,7 +149,7 @@ const translations = {
   'ko': {
     'nav_language': '언어',
     'nav_home': '홈',
-    'nav_latest_event': '최신 응원 활동',
+    'nav_latest_event': '최신 응원 활동 - BNZ STATION',
     'nav_latest_scheduler': '시간표',
     'nav_about': '소개',
     'nav_contact': '연락처',
@@ -221,7 +221,7 @@ const translations = {
   'ja': {
     'nav_language': '言語',
     'nav_home': 'ホーム',
-    'nav_latest_event': '最新応援活動',
+    'nav_latest_event': '最新応援活動 - BNZ STATION',
     'nav_about': '私たちについて',
     'nav_contact': 'お問い合わせ',
     'nav_instagram': 'Instagram Feed',
