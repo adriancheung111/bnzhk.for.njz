@@ -57,8 +57,10 @@ function openModal(newsId) {
     modalContent.innerHTML = `
         <span class="close-modal" onclick="closeModal()">&times;</span>
         <div class="modal-date">${news.date}</div>
-        <div class="modal-title">${translations[currentLanguage || 'zh'][news.titleKey]}</div>
-        <div class="modal-body">${translations[currentLanguage || 'zh'][news.contentKey]}</div>
+        <div class="modal-title">${translations[currentLanguage][news.titleKey]}</div>
+        <div class="modal-body">
+            ${translations[currentLanguage][news.contentKey]}
+        </div>
     `;
     
     // 計算滾動條寬度

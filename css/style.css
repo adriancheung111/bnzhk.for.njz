@@ -1276,6 +1276,11 @@ a:focus {
     font-size: 16px;
     line-height: 1.6;
     color: #666;
+    white-space: pre-line;
+}
+
+.modal-body p {
+    margin-bottom: 1em;
 }
 
 /* 媒體 modal 特定樣式 */

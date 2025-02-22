@@ -46,13 +46,22 @@
     <!-- 已有的腳本 -->
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/news-content.js"></script>
     <script src="js/translations.js"></script>
     <script src="js/language.js"></script>
-    <script src="js/custom.js"></script>
     <script src="js/media-utils.js"></script>
+    <script src="js/custom.js"></script>
 
     <!-- Media 頁面特定腳本 -->
     <script>
+        $(document).ready(function() {
+            $("#nav-container").load("nav.html", function() {
+                translatePage();
+            });
+            $("#footer-container").load("footer.html");
+        });
+
+        // 渲染完整的媒體列表
         function renderAllMedia() {
             const container = document.getElementById('media-container');
             if (!container) return;
@@ -74,32 +83,12 @@
             }
         }
 
-        // 修改 openMediaModal 函數
-        function openMediaModal(mediaId) {
-            const media = mediaData.find(item => item.id === mediaId);
-            if (!media) return;
-
-            const modal = document.getElementById('mediaModal');
-            const modalContent = modal.querySelector('.modal-content');
-            
-            modalContent.innerHTML = `
-                <span class="close-modal" onclick="closeMediaModal()">&times;</span>
-                <div class="modal-date">${translations[currentLanguage][media.dateKey]}</div>
-                <div class="modal-title">${translations[currentLanguage][media.titleKey]}</div>
-                <img src="${media.image}" class="modal-image" alt="${translations[currentLanguage][media.titleKey]}">
-                <div class="modal-body">${translations[currentLanguage][media.contentKey]}</div>
-            `;
-            
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
+        // 監聽語言變化事件
+        document.addEventListener('languageChanged', renderAllMedia);
 
         // 頁面加載時初始化
         document.addEventListener('DOMContentLoaded', function() {
             renderAllMedia();
-            
-            // 添加語言變更監聽器
-            document.addEventListener('languageChanged', renderAllMedia);
             
             const modal = document.getElementById('mediaModal');
             if (modal) {

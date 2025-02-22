@@ -80,11 +80,13 @@ function openLiveModal(liveId) {
         <div class="modal-date">${translations[currentLanguage][live.dateKey]}</div>
         <div class="modal-title">${translations[currentLanguage][live.titleKey]}</div>
         <div class="modal-info">
-            <p><strong>${translations[currentLanguage].time_label}：</strong>${translations[currentLanguage][live.timeKey]}</p>
-            <p><strong>${translations[currentLanguage].venue_label}：</strong>${translations[currentLanguage][live.venueKey]}</p>
-            <p><strong>${translations[currentLanguage].ticket_label}：</strong>${translations[currentLanguage][live.ticketKey]}</p>
+            <p><strong class="translate" data-key="time_label">時間：</strong>${translations[currentLanguage][live.timeKey]}</p>
+            <p><strong class="translate" data-key="venue_label">地點：</strong>${translations[currentLanguage][live.venueKey]}</p>
+            <p><strong class="translate" data-key="ticket_label">票務：</strong>${translations[currentLanguage][live.ticketKey]}</p>
         </div>
-        <div class="modal-body">${translations[currentLanguage][live.contentKey]}</div>
+        <div class="modal-body">
+            ${translations[currentLanguage][live.contentKey]}
+        </div>
     `;
     
     modal.style.display = 'block';

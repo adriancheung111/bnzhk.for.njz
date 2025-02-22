@@ -73,10 +73,10 @@ function openMediaModal(mediaId) {
         <span class="close-modal" onclick="closeMediaModal()">&times;</span>
         <div class="modal-date">${translations[currentLanguage][media.dateKey]}</div>
         <div class="modal-title">${translations[currentLanguage][media.titleKey]}</div>
-        <img src="${media.image}" class="modal-image" alt="${translations[currentLanguage][media.titleKey]}">
         <div class="modal-body">${translations[currentLanguage][media.contentKey]}</div>
     `;
-    
+    //<img src="${media.image}" class="modal-image" alt="${translations[currentLanguage][media.titleKey]}">
+
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
 }

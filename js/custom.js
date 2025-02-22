@@ -7,15 +7,19 @@
 
 // getYear();
 $(document).ready(function () {
-  // 使用 jQuery 的 load 方法來加載 footer.html 並將其插入到頁面
-  $("#footer-container").load("footer.html");
-});
-
-$(document).ready(function () {
-  // 使用 jQuery 的 load 方法來加載 nav.html 並將其插入到頁面
-  $("#nav-container").load("nav.html", function() {
-    // nav 加載完成後執行翻譯更新
-    updateContent();
+  // 先加載必要的 JS 文件
+  $.when(
+    $.getScript("js/news-content.js"),
+    $.getScript("js/translations.js")
+  ).then(function() {
+    // 加載完成後再加載導航和頁腳
+    $("#nav-container").load("nav.html", function() {
+      // 導航加載完成後初始化語言
+      $.getScript("js/language.js").then(function() {
+        translatePage();
+      });
+    });
+    $("#footer-container").load("footer.html");
   });
 });
 
