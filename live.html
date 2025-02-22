@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>BNZHK - News</title>
+    <title>BNZHK - Live</title>
 
     <!-- 已有的樣式 -->
     <link rel="icon" href="images/favicon.png" type="image/gif" />
@@ -19,22 +19,22 @@
     <!-- 導航欄 -->
     <div id="nav-container"></div>
 
-    <!-- News Section -->
+    <!-- Live Section -->
     <section class="news_grid_section layout_padding">
         <div class="container">
             <div class="heading_container heading_center">
-                <h2 class="translate" data-key="news_title">NEWS</h2>
+                <h2>LIVE</h2>
             </div>
             <div class="news_column">
-                <div id="news-container">
-                    <!-- 新聞項目將通過JavaScript動態生成 -->
+                <div id="live-container">
+                    <!-- 演出項目將通過JavaScript動態生成 -->
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Modal -->
-    <div class="news-modal" id="newsModal">
+    <div class="news-modal" id="liveModal">
         <div class="modal-content">
             <!-- Modal 內容將通過 JavaScript 動態生成 -->
         </div>
@@ -49,38 +49,38 @@
     <script src="js/translations.js"></script>
     <script src="js/translate-utils.js"></script>
     <script src="js/custom.js"></script>
-    <script src="js/news-utils.js"></script>
+    <script src="js/live-utils.js"></script>
 
-    <!-- News 頁面特定腳本 -->
+    <!-- Live 頁面特定腳本 -->
     <script>
-        // 渲染完整的新聞列表
-        function renderAllNews() {
-            const container = document.getElementById('news-container');
+        // 渲染完整的演出列表
+        function renderAllLive() {
+            const container = document.getElementById('live-container');
             if (!container) return;
 
             try {
-                const newsItems = newsData.map(news => `
-                    <div class="news_item" onclick="openModal('${news.id}')">
-                        <div class="news_date">${news.date}</div>
-                        <div class="news_title">${translations[currentLanguage || 'zh'][news.titleKey]}</div>
+                const liveItems = liveData.map(live => `
+                    <div class="news_item" onclick="openLiveModal('${live.id}')">
+                        <div class="news_date">${live.date}</div>
+                        <div class="news_title">${live.title}</div>
                     </div>
                 `).join('');
 
-                container.innerHTML = newsItems;
+                container.innerHTML = liveItems;
             } catch (error) {
-                console.error('Error rendering news:', error);
+                console.error('Error rendering live events:', error);
             }
         }
 
         // 頁面加載時初始化
         document.addEventListener('DOMContentLoaded', function() {
-            renderAllNews();
+            renderAllLive();
             
-            const modal = document.getElementById('newsModal');
+            const modal = document.getElementById('liveModal');
             if (modal) {
                 modal.addEventListener('click', function(event) {
                     if (event.target === this) {
-                        closeModal();
+                        closeLiveModal();
                     }
                 });
             }

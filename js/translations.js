@@ -39,12 +39,12 @@ const translations = {
     'instagram_description': '關注我們的最新動態',
     'news_title': '最新消息',
     'news_more': '查看更多',
-    'news1_title': 'NJZ NEVER DIE',
-    'news1_content': 'NJZ NEVER DIE',
-    'news2_title': 'NJZ NEVER DIE',
-    'news2_content': 'NJZ NEVER DIE',
-    'news3_title': 'NJZ NEVER DIE',
-    'news3_content': 'NJZ NEVER DIE'
+    'news1_title': '新聞標題1',
+    'news1_content': '新聞內容1...',
+    'news2_title': '新聞標題2',
+    'news2_content': '新聞內容2...',
+    'news3_title': '新聞標題3',
+    'news3_content': '新聞內容3...'
   },
   'en': {
     'nav_language': 'Language',
@@ -84,14 +84,14 @@ const translations = {
     'njz_day_time': 'All Day',
     'instagram_title': 'Instagram Feed',
     'instagram_description': 'Follow our latest updates',
-    'news_title': 'NEWS',
+    'news_title': 'News',
     'news_more': 'MORE',
-    'news1_title': 'NJZ NEVER DIE',
-    'news1_content': 'NJZ NEVER DIE',
-    'news2_title': 'NJZ NEVER DIE',
-    'news2_content': 'NJZ NEVER DIE',
-    'news3_title': 'NJZ NEVER DIE',
-    'news3_content': 'NJZ NEVER DIE'
+    'news1_title': 'News Title 1',
+    'news1_content': 'News content 1...',
+    'news2_title': 'News Title 2',
+    'news2_content': 'News content 2...',
+    'news3_title': 'News Title 3',
+    'news3_content': 'News content 3...'
   },
   'ko': {
     'nav_language': '언어',

@@ -56,8 +56,112 @@
     </section>
     <!-- end slider section -->
 
-    <!-- shop section -->
+    <!-- news grid section -->
+    <section class="news_grid_section layout_padding">
+      <div class="container">
+        <div class="row">
+          <!-- NEWS Column -->
+          <div class="col-md-4">
+            <div class="news_column">
+              <h2 class="translate" data-key="news_title">NEWS</h2>
+              <div id="news-container">
+                <!-- 新聞項目將動態加載 -->
+              </div>
+              <a href="news.html" class="view_more translate" data-key="news_more">VIEW MORE</a>
+            </div>
+          </div>
+          
+          <!-- MEDIA Column -->
+          <div class="col-md-4">
+            <div class="news_column">
+              <h2>MEDIA</h2>
+              <div id="media-container">
+                <!-- 媒體項目將動態加載 -->
+              </div>
+              <a href="media.html" class="view_more">VIEW MORE</a>
+            </div>
+          </div>
+          
+          <!-- LIVE Column -->
+          <div class="col-md-4">
+            <div class="news_column">
+              <h2>LIVE</h2>
+              <div id="live-container">
+                <!-- 演出項目將動態加載 -->
+              </div>
+              <a href="live.html" class="view_more">VIEW MORE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- 添加相應的 CSS 樣式 -->
+    <style>
+      .news_grid_section {
+        padding: 90px 0;
+        background: #fff;
+      }
+
+      .news_column {
+        padding: 20px;
+      }
+
+      .news_column h2 {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        position: relative;
+      }
+
+      .news_column h2:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: #000;
+        margin-top: 10px;
+      }
+
+      .news_item {
+        margin-bottom: 25px;
+        cursor: pointer;
+      }
+
+      .news_date {
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+
+      .news_title {
+        font-size: 16px;
+        line-height: 1.4;
+      }
+
+      .view_more {
+        display: inline-block;
+        font-size: 14px;
+        color: #000;
+        text-decoration: none;
+        position: relative;
+        padding-right: 20px;
+      }
+
+      .view_more:after {
+        content: '—';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .view_more:hover {
+        color: #666;
+      }
+    </style>
+
+    <!-- shop section -->
     <section class="shop_section layout_padding">
       <div class="container">
         <div class="heading_container heading_center">
@@ -90,7 +194,7 @@
       </div>
     </section>
 
-    <!-- end shop section -->
+    <!-- end  section -->
 
     <!-- about section -->
 
@@ -142,5 +246,127 @@
     <!-- 添加翻譯相關的 JavaScript -->
     <script src="js/translations.js"></script>
     <script src="js/language.js"></script>
+    <script src="js/news-utils.js"></script>
+    <script src="js/media-utils.js"></script>
+    <script src="js/live-utils.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        initIndexNews();
+        initIndexMedia();
+        initIndexLive();
+      });
+    </script>
+
+    <!-- 在 body 結束標籤前添加 Modal 結構 -->
+    <div class="news-modal" id="newsModal">
+        <div class="modal-content">
+            <!-- Modal 內容將通過 JavaScript 動態生成 -->
+        </div>
+    </div>
+
+    <div class="news-modal" id="mediaModal">
+        <div class="modal-content">
+            <!-- Modal 內容將通過 JavaScript 動態生成 -->
+        </div>
+    </div>
+
+    <div class="news-modal" id="liveModal">
+        <div class="modal-content">
+            <!-- Modal 內容將通過 JavaScript 動態生成 -->
+        </div>
+    </div>
+
+    <!-- 添加 Modal 樣式 -->
+    <style>
+        .news-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            position: relative;
+            background: #fff;
+            margin: 50px auto;
+            padding: 30px;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: #1a488f;
+        }
+
+        .modal-date {
+            color: #1a488f;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .modal-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            padding-right: 40px;
+        }
+
+        .modal-body {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        /* 添加 media modal 特定樣式 */
+        .modal-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* 添加 live modal 特定樣式 */
+        .modal-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .modal-info p {
+            margin-bottom: 10px;
+        }
+
+        .modal-info strong {
+            color: #1a488f;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                margin: 20px;
+                width: auto;
+                padding: 20px;
+            }
+        }
+    </style>
   </body>
 </html>

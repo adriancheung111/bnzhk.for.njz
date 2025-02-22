@@ -1180,4 +1180,136 @@ a:focus {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
+.news_column {
+    padding: 20px;
+}
+
+.news_item {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.news_item:hover {
+    padding-left: 10px;
+}
+
+.news_date {
+    color: #1a488f;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.news_title {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.4;
+}
+
+.view_more {
+    display: inline-block;
+    margin-top: 20px;
+    color: #1a488f;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.view_more:hover {
+    color: #123366;
+}
+
+/* Modal 樣式 */
+.news-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal-content {
+    position: relative;
+    background: #fff;
+    margin: 50px auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #1a488f;
+}
+
+.modal-date {
+    color: #1a488f;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.modal-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    padding-right: 40px;
+}
+
+.modal-body {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* 媒體 modal 特定樣式 */
+.modal-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* 演出 modal 特定樣式 */
+.modal-info {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.modal-info p {
+    margin-bottom: 10px;
+}
+
+.modal-info strong {
+    color: #1a488f;
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 20px;
+        width: auto;
+        padding: 20px;
+    }
+}
+
 /*# sourceMappingURL=style.css.map */
