@@ -4,26 +4,45 @@ const mediaData = [
         id: 'media1',
         titleKey: 'media1_title',
         contentKey: 'media1_content',
-        date: translations[currentLanguage]['media1_date'],
+        dateKey: 'media1_date',
         image: 'images/media1.jpg'
     },
     {
         id: 'media2',
         titleKey: 'media2_title',
         contentKey: 'media2_content',
-        date: translations[currentLanguage]['media2_date'],
+        dateKey: 'media2_date',
         image: 'images/media2.jpg'
     },
     {
         id: 'media3',
         titleKey: 'media3_title',
         contentKey: 'media3_content',
-        date: translations[currentLanguage]['media3_date'],
+        dateKey: 'media3_date',
         image: 'images/media3.jpg'
     }
 ];
 
-// 渲染媒體列表（用於首頁）
+// 渲染完整的媒體列表（用於 media.html）
+function renderAllMedia() {
+    const container = document.getElementById('media-container');
+    if (!container) return;
+
+    try {
+        const mediaItems = mediaData.map(media => `
+            <div class="news_item" onclick="openMediaModal('${media.id}')">
+                <div class="news_date">${translations[currentLanguage][media.dateKey]}</div>
+                <div class="news_title">${translations[currentLanguage][media.titleKey]}</div>
+            </div>
+        `).join('');
+
+        container.innerHTML = mediaItems;
+    } catch (error) {
+        console.error('Error rendering media:', error);
+    }
+}
+
+// 渲染首頁的媒體列表（用於 index.html）
 function renderIndexMedia() {
     const container = document.getElementById('media-container');
     if (!container) return;
@@ -31,7 +50,7 @@ function renderIndexMedia() {
     try {
         const mediaItems = mediaData.slice(0, 3).map(media => `
             <div class="news_item" onclick="openMediaModal('${media.id}')">
-                <div class="news_date">${translations[currentLanguage][media.date]}</div>
+                <div class="news_date">${translations[currentLanguage][media.dateKey]}</div>
                 <div class="news_title">${translations[currentLanguage][media.titleKey]}</div>
             </div>
         `).join('');
@@ -52,10 +71,10 @@ function openMediaModal(mediaId) {
     
     modalContent.innerHTML = `
         <span class="close-modal" onclick="closeMediaModal()">&times;</span>
-        <div class="modal-date">${media.date}</div>
-        <div class="modal-title">${media.title}</div>
-        <img src="${media.image}" class="modal-image" alt="${media.title}">
-        <div class="modal-body">${media.content}</div>
+        <div class="modal-date">${translations[currentLanguage][media.dateKey]}</div>
+        <div class="modal-title">${translations[currentLanguage][media.titleKey]}</div>
+        <img src="${media.image}" class="modal-image" alt="${translations[currentLanguage][media.titleKey]}">
+        <div class="modal-body">${translations[currentLanguage][media.contentKey]}</div>
     `;
     
     modal.style.display = 'block';

@@ -60,7 +60,7 @@
             try {
                 const mediaItems = mediaData.map(media => `
                     <div class="news_item" onclick="openMediaModal('${media.id}')">
-                        <div class="news_date">${media.date}</div>
+                        <div class="news_date">${translations[currentLanguage][media.dateKey]}</div>
                         <div class="news_title translate" data-key="${media.titleKey}">
                             ${translations[currentLanguage][media.titleKey]}
                         </div>
@@ -68,7 +68,7 @@
                 `).join('');
 
                 container.innerHTML = mediaItems;
-                translatePage(); // 使用 language.js 中的翻譯函數
+                translatePage();
             } catch (error) {
                 console.error('Error rendering media:', error);
             }
@@ -84,7 +84,7 @@
             
             modalContent.innerHTML = `
                 <span class="close-modal" onclick="closeMediaModal()">&times;</span>
-                <div class="modal-date">${media.date}</div>
+                <div class="modal-date">${translations[currentLanguage][media.dateKey]}</div>
                 <div class="modal-title">${translations[currentLanguage][media.titleKey]}</div>
                 <img src="${media.image}" class="modal-image" alt="${translations[currentLanguage][media.titleKey]}">
                 <div class="modal-body">${translations[currentLanguage][media.contentKey]}</div>
@@ -94,12 +94,12 @@
             document.body.style.overflow = 'hidden';
         }
 
-        // 監聽語言變化事件
-        document.addEventListener('languageChanged', renderAllMedia);
-
         // 頁面加載時初始化
         document.addEventListener('DOMContentLoaded', function() {
             renderAllMedia();
+            
+            // 添加語言變更監聽器
+            document.addEventListener('languageChanged', renderAllMedia);
             
             const modal = document.getElementById('mediaModal');
             if (modal) {

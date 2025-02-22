@@ -4,43 +4,59 @@ const liveData = [
         id: 'live1',
         titleKey: 'live1_title',
         contentKey: 'live1_content',
-        date: translations[currentLanguage]['live1_date'],
-        time: translations[currentLanguage]['live1_time'],
+        dateKey: 'live1_date',
+        timeKey: 'live1_time',
         venueKey: 'live1_venue',
         ticketKey: 'live1_ticket'
     },
     {
         id: 'live2',
-        date: '2025.04.13',
-        title: 'AIMYON TOUR 2025 "Dolphin Apartment"',
-        content: '演出詳情...',
-        venue: '場地信息',
-        time: '19:00',
-        ticketInfo: '票務信息'
+        titleKey: 'live1_title',
+        contentKey: 'live1_content',
+        dateKey: 'live1_date',
+        timeKey: 'live1_time',
+        venueKey: 'live1_venue',
+        ticketKey: 'live1_ticket'
     },
     {
         id: 'live3',
-        date: '2025.04.19',
-        title: 'AIMYON TOUR 2025 "Dolphin Apartment"',
-        content: '演出詳情...',
-        venue: '場地信息',
-        time: '19:00',
-        ticketInfo: '票務信息'
+        titleKey: 'live1_title',
+        contentKey: 'live1_content',
+        dateKey: 'live1_date',
+        timeKey: 'live1_time',
+        venueKey: 'live1_venue',
+        ticketKey: 'live1_ticket'
     }
 ];
 
-// 渲染演出列表（用於首頁）
+// 渲染完整的演出列表（用於 live.html）
+function renderAllLive() {
+    const container = document.getElementById('live-container');
+    if (!container) return;
+
+    try {
+        const liveItems = liveData.map(live => `
+            <div class="news_item" onclick="openLiveModal('${live.id}')">
+                <div class="news_date">${translations[currentLanguage][live.dateKey]}</div>
+                <div class="news_title">${translations[currentLanguage][live.titleKey]}</div>
+            </div>
+        `).join('');
+
+        container.innerHTML = liveItems;
+    } catch (error) {
+        console.error('Error rendering live events:', error);
+    }
+}
+
+// 渲染首頁的演出列表（用於 index.html）
 function renderIndexLive() {
     const container = document.getElementById('live-container');
-    if (!container) {
-        console.error('Live container not found');
-        return;
-    }
+    if (!container) return;
 
     try {
         const liveItems = liveData.slice(0, 3).map(live => `
             <div class="news_item" onclick="openLiveModal('${live.id}')">
-                <div class="news_date">${translations[currentLanguage][live.date]}</div>
+                <div class="news_date">${translations[currentLanguage][live.dateKey]}</div>
                 <div class="news_title">${translations[currentLanguage][live.titleKey]}</div>
             </div>
         `).join('');
@@ -61,10 +77,10 @@ function openLiveModal(liveId) {
     
     modalContent.innerHTML = `
         <span class="close-modal" onclick="closeLiveModal()">&times;</span>
-        <div class="modal-date">${translations[currentLanguage][live.date]}</div>
+        <div class="modal-date">${translations[currentLanguage][live.dateKey]}</div>
         <div class="modal-title">${translations[currentLanguage][live.titleKey]}</div>
         <div class="modal-info">
-            <p><strong>${translations[currentLanguage].time_label}：</strong>${translations[currentLanguage][live.time]}</p>
+            <p><strong>${translations[currentLanguage].time_label}：</strong>${translations[currentLanguage][live.timeKey]}</p>
             <p><strong>${translations[currentLanguage].venue_label}：</strong>${translations[currentLanguage][live.venueKey]}</p>
             <p><strong>${translations[currentLanguage].ticket_label}：</strong>${translations[currentLanguage][live.ticketKey]}</p>
         </div>
