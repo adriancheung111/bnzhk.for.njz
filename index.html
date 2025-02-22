@@ -44,8 +44,7 @@
         <div class="col-md-9 col-lg-8 text-box">
           <div class="detail-box">
             <h1 class="translate" data-key="welcome_title">
-              BUNNIES FOREVER
-              WITH NJZ
+              BUNNIES FOREVER WITH NJZ
             </h1>
             <p class="translate" data-key="welcome_subtitle">
               Hong Kong Community for NJZ Fans
@@ -55,6 +54,41 @@
       </div>
     </section>
     <!-- end slider section -->
+
+    <!-- section -->
+    <section class="shop_section layout_padding">
+      <div class="container">
+        <div class="heading_container heading_center">
+          <h2 class="translate" data-key="nav_latest_event">
+            最新應援活動 - BNZ STATION
+          </h2>
+        </div>
+        <div class="row">
+          <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="img-box-test">
+              <img src="images/index1_cn.jpg" alt="Product 1" class="img-fluid" onclick="openImageModal(this)" />
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="img-box-test">
+              <img src="images/index2_cn.jpg" alt="Product 2" class="img-fluid" onclick="openImageModal(this)" />
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="img-box-test">
+              <img src="images/index3_cn.jpg" alt="Product 3" class="img-fluid" onclick="openImageModal(this)" />
+            </div>
+          </div>
+        </div>
+        <div class="btn-box">
+          <a href="latestEvent.html" class="translate" data-key="read_more"
+            >查看詳情</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- end  section -->
 
     <!-- news grid section -->
     <section class="news_grid_section layout_padding">
@@ -67,10 +101,15 @@
               <div id="news-container">
                 <!-- 新聞項目將動態加載 -->
               </div>
-              <a href="news.html" class="view_more translate" data-key="news_more">VIEW MORE</a>
+              <a
+                href="news.html"
+                class="view_more translate"
+                data-key="news_more"
+                >VIEW MORE</a
+              >
             </div>
           </div>
-          
+
           <!-- MEDIA Column -->
           <div class="col-md-4">
             <div class="news_column">
@@ -78,10 +117,15 @@
               <div id="media-container">
                 <!-- 媒體項目將動態加載 -->
               </div>
-              <a href="media.html" class="view_more translate" data-key="news_more">VIEW MORE</a>
+              <a
+                href="media.html"
+                class="view_more translate"
+                data-key="news_more"
+                >VIEW MORE</a
+              >
             </div>
           </div>
-          
+
           <!-- LIVE Column -->
           <div class="col-md-4">
             <div class="news_column">
@@ -89,7 +133,12 @@
               <div id="live-container">
                 <!-- 演出項目將動態加載 -->
               </div>
-              <a href="live.html" class="view_more translate" data-key="news_more">VIEW MORE</a>
+              <a
+                href="live.html"
+                class="view_more translate"
+                data-key="news_more"
+                >VIEW MORE</a
+              >
             </div>
           </div>
         </div>
@@ -115,7 +164,7 @@
       }
 
       .news_column h2:after {
-        content: '';
+        content: "";
         display: block;
         width: 100%;
         height: 1px;
@@ -149,7 +198,7 @@
       }
 
       .view_more:after {
-        content: '—';
+        content: "—";
         position: absolute;
         right: 0;
         top: 50%;
@@ -161,41 +210,6 @@
       }
     </style>
 
-    <!-- shop section -->
-    <section class="shop_section layout_padding">
-      <div class="container">
-        <div class="heading_container heading_center">
-          <h2 class="translate" data-key="nav_latest_event">
-            最新應援活動 - BNZ STATION
-          </h2>
-        </div>
-        <div class="row">
-          <div class="col-sm-4 col-md-4 col-lg-4">
-            <div class="img-box-test">
-              <img src="images/1.jpg" alt="Product 1" class="img-fluid" />
-            </div>
-          </div>
-          <div class="col-sm-4 col-md-4 col-lg-4">
-            <div class="img-box-test">
-              <img src="images/favicon.png" alt="Product 1" class="img-fluid" />
-            </div>
-          </div>
-          <div class="col-sm-4 col-md-4 col-lg-4">
-            <div class="img-box-test">
-              <img src="images/3.jpg" alt="Product 1" class="img-fluid" />
-            </div>
-          </div>
-        </div>
-        <div class="btn-box">
-          <a href="latestEvent.html" class="translate" data-key="read_more"
-            >查看詳情</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- end  section -->
-
     <!-- about section -->
 
     <section class="about_section layout_padding">
@@ -203,7 +217,10 @@
         <div class="row">
           <div class="col-md-6">
             <div class="img-box">
-              <img src="images/BUNNIES_BLUEOUTLINE_WHITE COLOURED@4x.png" alt="" />
+              <img
+                src="images/BUNNIES_BLUEOUTLINE_WHITE COLOURED@4x.png"
+                alt=""
+              />
             </div>
           </div>
           <div class="col-md-6">
@@ -250,7 +267,7 @@
     <script src="js/media-utils.js"></script>
     <script src="js/live-utils.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener("DOMContentLoaded", function () {
         initIndexNews();
         initIndexMedia();
         initIndexLive();
@@ -259,114 +276,120 @@
 
     <!-- 在 body 結束標籤前添加 Modal 結構 -->
     <div class="news-modal" id="newsModal">
-        <div class="modal-content">
-            <!-- Modal 內容將通過 JavaScript 動態生成 -->
-        </div>
+      <div class="modal-content">
+        <!-- Modal 內容將通過 JavaScript 動態生成 -->
+      </div>
     </div>
 
     <div class="news-modal" id="mediaModal">
-        <div class="modal-content">
-            <!-- Modal 內容將通過 JavaScript 動態生成 -->
-        </div>
+      <div class="modal-content">
+        <!-- Modal 內容將通過 JavaScript 動態生成 -->
+      </div>
     </div>
 
     <div class="news-modal" id="liveModal">
-        <div class="modal-content">
-            <!-- Modal 內容將通過 JavaScript 動態生成 -->
-        </div>
+      <div class="modal-content">
+        <!-- Modal 內容將通過 JavaScript 動態生成 -->
+      </div>
     </div>
 
     <!-- 添加 Modal 樣式 -->
     <style>
-        .news-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
-            z-index: 1000;
-            overflow-y: auto;
-        }
+      .news-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+        overflow-y: auto;
+      }
 
+      .modal-content {
+        position: relative;
+        background: #fff;
+        margin: 50px auto;
+        padding: 30px;
+        width: 90%;
+        max-width: 800px;
+        border-radius: 12px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      .close-modal {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        font-size: 28px;
+        cursor: pointer;
+        color: #666;
+        transition: color 0.3s ease;
+      }
+
+      .close-modal:hover {
+        color: #1a488f;
+      }
+
+      .modal-date {
+        color: #1a488f;
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+
+      .modal-title {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 20px;
+        padding-right: 40px;
+      }
+
+      .modal-body {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #666;
+      }
+
+      /* 添加 media modal 特定樣式 */
+      .modal-image {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+
+      /* 添加 live modal 特定樣式 */
+      .modal-info {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+
+      .modal-info p {
+        margin-bottom: 10px;
+      }
+
+      .modal-info strong {
+        color: #1a488f;
+        margin-right: 10px;
+      }
+
+      @media (max-width: 768px) {
         .modal-content {
-            position: relative;
-            background: #fff;
-            margin: 50px auto;
-            padding: 30px;
-            width: 90%;
-            max-width: 800px;
-            border-radius: 12px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+          margin: 20px;
+          width: auto;
+          padding: 20px;
         }
-
-        .close-modal {
-            position: absolute;
-            right: 20px;
-            top: 15px;
-            font-size: 28px;
-            cursor: pointer;
-            color: #666;
-            transition: color 0.3s ease;
-        }
-
-        .close-modal:hover {
-            color: #1a488f;
-        }
-
-        .modal-date {
-            color: #1a488f;
-            font-size: 16px;
-            margin-bottom: 15px;
-        }
-
-        .modal-title {
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 20px;
-            padding-right: 40px;
-        }
-
-        .modal-body {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #666;
-        }
-
-        /* 添加 media modal 特定樣式 */
-        .modal-image {
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        /* 添加 live modal 特定樣式 */
-        .modal-info {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        .modal-info p {
-            margin-bottom: 10px;
-        }
-
-        .modal-info strong {
-            color: #1a488f;
-            margin-right: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .modal-content {
-                margin: 20px;
-                width: auto;
-                padding: 20px;
-            }
-        }
+      }
     </style>
+
+    <!-- 添加圖片 Modal -->
+    <div id="imageModal" class="image-modal">
+      <span class="close-image-modal" onclick="closeImageModal()">&times;</span>
+      <img class="image-modal-content" id="modalImage">
+    </div>
   </body>
 </html>

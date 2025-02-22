@@ -1367,3 +1367,52 @@ a:focus {
 .nav-dropdown.active .nav-dropdown-content {
     display: block;
 }
+
+/* 圖片 Modal 樣式 */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: auto;
+}
+
+.image-modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.close-image-modal {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-image-modal:hover,
+.close-image-modal:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 添加圖片懸停效果 */
+.img-box-test img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.img-box-test img:hover {
+    transform: scale(1.05);
+}
