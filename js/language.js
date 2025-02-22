@@ -14,10 +14,17 @@ function toggleLanguageOptions(event) {
     event.stopPropagation();
     const languageSelector = event.currentTarget.parentElement;
     const languageOptions = languageSelector.querySelector('.language-options');
+    const arrow = event.currentTarget.querySelector('.arrow');
     
-    // 切換 active 類
-    languageSelector.classList.toggle('active');
-    languageOptions.classList.toggle('show');
+    if (languageOptions.classList.contains('show')) {
+        languageOptions.classList.remove('show');
+        languageSelector.classList.remove('active');
+        arrow.style.transform = 'rotate(0deg)';
+    } else {
+        languageOptions.classList.add('show');
+        languageSelector.classList.add('active');
+        arrow.style.transform = 'rotate(180deg)';
+    }
 }
 
 // 修改切換語言函數
@@ -56,16 +63,13 @@ document.addEventListener('DOMContentLoaded', () => {
     updateContent();
 });
 
-// 更新點擊外部關閉選單的邏輯
+// 點擊其他地方關閉語言選單
 document.addEventListener('click', function(event) {
-    // 如果點擊的是導航按鈕或其子元素，不執行關閉操作
-    if (event.target.closest('.custom_menu-btn') || event.target.closest('#myNav')) {
-        return;
-    }
-    
     const languageSelector = document.querySelector('.language-selector');
+    const languageOptions = document.querySelector('.language-options');
+    
     if (languageSelector && !languageSelector.contains(event.target)) {
+        languageOptions.classList.remove('show');
         languageSelector.classList.remove('active');
-        languageSelector.querySelector('.language-options').classList.remove('show');
     }
 }); 

@@ -42,6 +42,7 @@ function updateCalendar() {
       } else {
         // 當月的日期
         const isComplexConDay = dayCount === 23 && currentDate.getMonth() === 2 && currentDate.getFullYear() === 2025;
+        const isComplexConDay2 = dayCount === 23 && currentDate.getMonth() === 2 && currentDate.getFullYear() === 2025;
         const isNJZDay = dayCount === 7 && currentDate.getMonth() === 1 && currentDate.getFullYear() === 2025;
         const todayClass = isComplexConDay ? 'today' : '';
         
@@ -49,10 +50,18 @@ function updateCalendar() {
           <td class="${todayClass}">
             <div class="date-number">${dayCount}</div>
             ${isComplexConDay ? `
-              <div class="event translate" data-key="complexcon_event">ComplexCon Hong Kong 2025</div>
+              <div class="event translate" data-key="complexcon_event" 
+                   onclick="showEventDetails('ComplexCon Hong Kong 2025', '2025-03-23', 'complexcon_event', 
+                   'ComplexCon Hong Kong 2025 是一個集合潮流、藝術、音樂的大型活動。')">
+                ComplexCon Hong Kong 2025
+              </div>
             ` : ''}
             ${isNJZDay ? `
-              <div class="event translate" data-key="njz_day_event">NJZ Day</div>
+              <div class="event translate" data-key="njz_day_event"
+                   onclick="showEventDetails('NJZ Day', '2025-07-22', 'njz_day_event',
+                   'NJZ Day 是粉絲為 NJZ 準備的特別活動日。')">
+                NJZ Day
+              </div>
             ` : ''}
           </td>`;
         dayCount++;
@@ -105,4 +114,22 @@ $(document).ready(function() {
   $('#nav-container').on('load', function() {
     updateCalendar();
   });
-}); 
+});
+
+// 添加彈出視窗相關函數
+function showEventDetails(title, date, translationKey, description) {
+  document.getElementById('popupTitle').textContent = translations[currentLanguage][translationKey] || title;
+  document.getElementById('popupDate').textContent = new Date(date).toLocaleDateString();
+  document.getElementById('popupDescription').textContent = description;
+  
+  document.getElementById('overlay').style.display = 'block';
+  document.getElementById('eventPopup').style.display = 'block';
+}
+
+function closePopup() {
+  document.getElementById('overlay').style.display = 'none';
+  document.getElementById('eventPopup').style.display = 'none';
+}
+
+// 點擊背景關閉彈出視窗
+document.getElementById('overlay').addEventListener('click', closePopup); 
