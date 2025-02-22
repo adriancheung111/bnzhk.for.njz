@@ -71,6 +71,7 @@ const translations = {
     'item_9': '團體貼紙',
     'item_10': 'HK Themed Items 香港主題內容（小巴牌+點心鎖匙扣）',
     'item_11': 'ComplexCon NJZ Poster (Remake Ver.)',
+    'nav_donate': '立即捐款',
   },
   'en': {
     'nav_language': 'Language',
@@ -143,6 +144,7 @@ const translations = {
     'item_9': 'Group Sticker',
     'item_10': 'HK Themed Items (Minibus Sign + Dim Sum Keychain)',
     'item_11': 'ComplexCon NJZ Poster (Remake Ver.)',
+    'nav_donate': 'Donate Now',
   },
   'ko': {
     'nav_language': '언어',
@@ -214,6 +216,7 @@ const translations = {
     'item_9': '그룹 스티커',
     'item_10': '홍콩 테마 아이템 (미니버스 사인 + 딤섬 키링)',
     'item_11': 'ComplexCon NJZ 포스터 (Remake Ver.)',
+    'nav_donate': '지금 후원하기',
   },
   'ja': {
     'nav_language': '言語',
@@ -285,5 +288,6 @@ const translations = {
     'item_9': 'グループステッカー',
     'item_10': '香港テーマアイテム（ミニバスサイン + 飲茶キーホルダー）',
     'item_11': 'ComplexCon NJZ ポスター (Remake Ver.)',
+    'nav_donate': '今すぐ応援',
   }
 }; 
