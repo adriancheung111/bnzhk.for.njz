@@ -6,6 +6,7 @@ const translations = {
     'nav_latest_scheduler': '時間表',
     'nav_about': '關於我們',
     'nav_contact': '聯絡我們',
+    'nav_instagram': 'Instagram 動態',
     'title_main': 'SUPPORTING NJZ AT COMPLEXCON HONG KONG 2025',
     'title_sub': '國際合作應援陣容包括',
     'view_all': '查看所有應援陣容詳情',
@@ -33,7 +34,17 @@ const translations = {
     'pickup_event': '應援物品領取',
     'complexcon_event': 'ComplexCon Hong Kong 2025',
     'njz_day_event': 'NJZ Day',
-    'njz_day_time': '全天'
+    'njz_day_time': '全天',
+    'instagram_title': 'Instagram 動態',
+    'instagram_description': '關注我們的最新動態',
+    'news_title': '最新消息',
+    'news_more': '查看更多',
+    'news1_title': 'NJZ NEVER DIE',
+    'news1_content': 'NJZ NEVER DIE',
+    'news2_title': 'NJZ NEVER DIE',
+    'news2_content': 'NJZ NEVER DIE',
+    'news3_title': 'NJZ NEVER DIE',
+    'news3_content': 'NJZ NEVER DIE'
   },
   'en': {
     'nav_language': 'Language',
@@ -42,6 +53,7 @@ const translations = {
     'nav_latest_scheduler': 'Scheduler',
     'nav_about': 'About Us',
     'nav_contact': 'Contact Us',
+    'nav_instagram': 'Instagram Feed',
     'title_main': 'SUPPORTING NJZ AT COMPLEXCON HONG KONG 2025',
     'title_sub': 'International Support Team Include',
     'view_all': 'View All Support Team Details',
@@ -69,7 +81,17 @@ const translations = {
     'pickup_event': 'Support Items Pickup',
     'complexcon_event': 'ComplexCon Hong Kong 2025',
     'njz_day_event': 'NJZ Day',
-    'njz_day_time': 'All Day'
+    'njz_day_time': 'All Day',
+    'instagram_title': 'Instagram Feed',
+    'instagram_description': 'Follow our latest updates',
+    'news_title': 'NEWS',
+    'news_more': 'MORE',
+    'news1_title': 'NJZ NEVER DIE',
+    'news1_content': 'NJZ NEVER DIE',
+    'news2_title': 'NJZ NEVER DIE',
+    'news2_content': 'NJZ NEVER DIE',
+    'news3_title': 'NJZ NEVER DIE',
+    'news3_content': 'NJZ NEVER DIE'
   },
   'ko': {
     'nav_language': '언어',
@@ -78,6 +100,7 @@ const translations = {
     'nav_latest_scheduler': '시간표',
     'nav_about': '소개',
     'nav_contact': '연락처',
+    'nav_instagram': 'Instagram Feed',
     'title_main': 'COMPLEXCON 홍콩 2025 NJZ 응원',
     'title_sub': '국제협력 지원 라인업은 다음과 같습니다',
     'view_all': '모든 응원단 정보 보기',
@@ -106,7 +129,15 @@ const translations = {
     'pickup_event': '응원 물품 수령',
     'complexcon_event': 'ComplexCon Hong Kong 2025',
     'njz_day_event': 'NJZ Day',
-    'njz_day_time': '하루 종일'
+    'njz_day_time': '하루 종일',
+    'news_title': '뉴스',
+    'news_more': '더 보기',
+    'news1_title': 'NJZ NEVER DIE',
+    'news1_content': 'NJZ NEVER DIE',
+    'news2_title': 'NJZ NEVER DIE',
+    'news2_content': 'NJZ NEVER DIE',
+    'news3_title': 'NJZ NEVER DIE',
+    'news3_content': 'NJZ NEVER DIE'
   },
   'ja': {
     'nav_language': '言語',
@@ -114,6 +145,7 @@ const translations = {
     'nav_latest_event': '最新応援活動',
     'nav_about': '私たちについて',
     'nav_contact': 'お問い合わせ',
+    'nav_instagram': 'Instagram Feed',
     'title_main': 'COMPLEXCON 香港 2025 NJZ 応援',
     'title_sub': '国際協力支援のラインナップは、',
     'nav_latest_scheduler': '時間表',
@@ -143,6 +175,14 @@ const translations = {
     'pickup_event': '応援グッズ受け取り',
     'complexcon_event': 'ComplexCon Hong Kong 2025',
     'njz_day_event': 'NJZ Day',
-    'njz_day_time': '終日'
+    'njz_day_time': '終日',
+    'news_title': 'ニュース',
+    'news_more': 'もっと見る',
+    'news1_title': 'NJZ NEVER DIE',
+    'news1_content': 'NJZ NEVER DIE',
+    'news2_title': 'NJZ NEVER DIE',
+    'news2_content': 'NJZ NEVER DIE',
+    'news3_title': 'NJZ NEVER DIE',
+    'news3_content': 'NJZ NEVER DIE'
   }
 }; 
