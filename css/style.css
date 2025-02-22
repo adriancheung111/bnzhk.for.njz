@@ -1539,3 +1539,63 @@ a:focus {
         font-size: 13px;
     }
 }
+
+/* Countdown Section */
+.countdown_section {
+    background: linear-gradient(135deg, #1a488f 0%, #2196F3 100%);
+    padding: 30px 0;
+    color: white;
+}
+
+.countdown_container {
+    text-align: center;
+}
+
+.countdown_title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.countdown_timer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.countdown_item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 20px;
+    border-radius: 10px;
+    min-width: 100px;
+}
+
+.countdown_number {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.countdown_label {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .countdown_timer {
+        gap: 10px;
+    }
+
+    .countdown_item {
+        padding: 10px;
+        min-width: 70px;
+    }
+
+    .countdown_number {
+        font-size: 24px;
+    }
+
+    .countdown_label {
+        font-size: 12px;
+    }
+}
