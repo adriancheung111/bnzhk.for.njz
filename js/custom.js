@@ -46,3 +46,9 @@ $(document).on("click", '[data-toggle="lightbox"]', function (event) {
   event.preventDefault();
   $(this).ekkoLightbox();
 });
+
+function toggleNewsDropdown(event) {
+    event.preventDefault();
+    const dropdown = event.target.closest('.nav-dropdown');
+    dropdown.classList.toggle('active');
+}

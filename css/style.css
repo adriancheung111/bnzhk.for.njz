@@ -1313,3 +1313,57 @@ a:focus {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+/* 修改下拉菜單樣式 */
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-dropdown-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    color: #ffffff !important;
+    text-decoration: none;
+}
+
+.nav-dropdown-title:hover,
+.nav-dropdown-title:focus,
+.nav-dropdown-title:active {
+    color: #ffffff !important;
+    opacity: 0.8;
+}
+
+.nav-dropdown-title .arrow {
+    display: inline-block;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.nav-dropdown.active .nav-dropdown-title .arrow {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown-content {
+    display: none;
+    position: relative;
+    min-width: 160px;
+    padding: 8px 0;
+}
+
+.nav-dropdown-content a {
+    color: #ffffff;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.nav-dropdown-content a:hover {
+    opacity: 0.8;
+}
+
+.nav-dropdown.active .nav-dropdown-content {
+    display: block;
+}

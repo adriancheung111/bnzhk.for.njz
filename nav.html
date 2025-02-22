@@ -19,9 +19,20 @@
               <a href="index.html"><span class="translate" data-key="nav_home">首頁</span></a>
               <a href="latestEvent.html"><span class="translate" data-key="nav_latest_event">最新應援活動</span></a>
               <a href="instagram.html"><span class="translate" data-key="nav_instagram">Instagram動態</span></a>
-              <a href="news.html"><span class="translate" data-key="news_title">NEWS</span></a>
-              <a href="media.html"><span class="translate" data-key="media_title">MEDIA</span></a>
-              <a href="live.html"><span class="translate" data-key="live_title">LIVE</span></a>
+              
+              <!-- 新的下拉菜單 -->
+              <div class="nav-dropdown">
+                <a href="#" class="nav-dropdown-title" onclick="toggleNewsDropdown(event)">
+                  <span class="translate" data-key="news_section">最新消息</span>
+                  <span class="arrow">▼</span>
+                </a>
+                <div class="nav-dropdown-content">
+                  <a href="news.html"><span class="translate" data-key="news_title">NEWS</span></a>
+                  <a href="media.html"><span class="translate" data-key="media_title">MEDIA</span></a>
+                  <a href="live.html"><span class="translate" data-key="live_title">LIVE</span></a>
+                </div>
+              </div>
+
               <a href="scheduler.html">
                 <span class="translate" data-key="nav_latest_scheduler">時間表</span>
               </a>
@@ -29,7 +40,7 @@
                     <a href="shop.html">Shop</a>
                     <a href="blog.html">Blog</a> -->
               <a href="about.html"><span class="translate" data-key="nav_about">關於我們</span></a>
-              <a href="https://www.instagram.com/bnzhk.for.njz/"><span class="translate" data-key="nav_contact">聯絡我們</span></a>
+              <a href="https://linktr.ee/bnzhk"><span class="translate" data-key="nav_contact">linktr.ee</span></a>
               <div class="language-selector">
                 <a href="#" class="language-title" onclick="toggleLanguageOptions(event)" style="z-index: 10001;">
                   <i class="fa fa-globe" style="margin-right: 5px;"></i>
