@@ -2,23 +2,23 @@
 const mediaData = [
     {
         id: 'media1',
-        date: '2025.01.27 — 2025.02.26',
-        title: 'MG NO.27 (1月27日發售)',
-        content: '詳細內容...',
+        titleKey: 'media1_title',
+        contentKey: 'media1_content',
+        date: translations[currentLanguage]['media1_date'],
         image: 'images/media1.jpg'
     },
     {
         id: 'media2',
-        date: '2025.02.19 — 2025.03.18',
-        title: 'CUT3月號 (2月19日發售)',
-        content: '詳細內容...',
+        titleKey: 'media2_title',
+        contentKey: 'media2_content',
+        date: translations[currentLanguage]['media2_date'],
         image: 'images/media2.jpg'
     },
     {
         id: 'media3',
-        date: '2025.02.21 — 2025.04.20',
-        title: 'SCREEN 2025年4月號 (2月21日發售)',
-        content: '詳細內容...',
+        titleKey: 'media3_title',
+        contentKey: 'media3_content',
+        date: translations[currentLanguage]['media3_date'],
         image: 'images/media3.jpg'
     }
 ];
@@ -26,16 +26,13 @@ const mediaData = [
 // 渲染媒體列表（用於首頁）
 function renderIndexMedia() {
     const container = document.getElementById('media-container');
-    if (!container) {
-        console.error('Media container not found');
-        return;
-    }
+    if (!container) return;
 
     try {
         const mediaItems = mediaData.slice(0, 3).map(media => `
             <div class="news_item" onclick="openMediaModal('${media.id}')">
-                <div class="news_date">${media.date}</div>
-                <div class="news_title">${media.title}</div>
+                <div class="news_date">${translations[currentLanguage][media.date]}</div>
+                <div class="news_title">${translations[currentLanguage][media.titleKey]}</div>
             </div>
         `).join('');
 
@@ -76,6 +73,8 @@ function closeMediaModal() {
 function initIndexMedia() {
     if (document.readyState === 'complete') {
         renderIndexMedia();
+        // 添加語言變更監聽器
+        document.addEventListener('languageChanged', renderIndexMedia);
         
         const modal = document.getElementById('mediaModal');
         if (modal) {

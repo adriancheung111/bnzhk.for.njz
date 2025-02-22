@@ -47,7 +47,7 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/translations.js"></script>
-    <script src="js/translate-utils.js"></script>
+    <script src="js/language.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/news-utils.js"></script>
 
@@ -62,15 +62,21 @@
                 const newsItems = newsData.map(news => `
                     <div class="news_item" onclick="openModal('${news.id}')">
                         <div class="news_date">${news.date}</div>
-                        <div class="news_title">${translations[currentLanguage || 'zh'][news.titleKey]}</div>
+                        <div class="news_title translate" data-key="${news.titleKey}">
+                            ${translations[currentLanguage][news.titleKey]}
+                        </div>
                     </div>
                 `).join('');
 
                 container.innerHTML = newsItems;
+                translatePage(); // 使用 language.js 中的翻譯函數
             } catch (error) {
                 console.error('Error rendering news:', error);
             }
         }
+
+        // 監聽語言變化事件
+        document.addEventListener('languageChanged', renderAllNews);
 
         // 頁面加載時初始化
         document.addEventListener('DOMContentLoaded', function() {

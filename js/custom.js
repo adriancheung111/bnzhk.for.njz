@@ -21,8 +21,14 @@ $(document).ready(function () {
 
 // overlay menu
 function openNav() {
-  document.getElementById("myNav").classList.toggle("menu_width");
-  document.querySelector(".custom_menu-btn").classList.toggle("menu_btn-style");
+    document.getElementById("myNav").classList.toggle("menu_width");
+    document.querySelector(".custom_menu-btn").classList.toggle("menu_btn-style");
+}
+
+// 關閉導航菜單
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+  document.querySelector('.custom_menu-btn').classList.remove('menu_btn-style');
 }
 
 /** google_map js **/

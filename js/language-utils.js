@@ -1,28 +1,5 @@
-// 獲取用戶瀏覽器語言設置
-function getBrowserLanguage() {
-    const lang = navigator.language || navigator.userLanguage;
-    const shortLang = lang.split('-')[0];
-    return translations[shortLang] ? shortLang : 'zh';
-}
-
 // 初始化當前語言（從 localStorage 獲取，如果沒有則默認為中文）
 let currentLanguage = localStorage.getItem('selectedLanguage') || 'zh';
-
-// 更新所有需要翻譯的內容
-function translatePage() {
-    const elements = document.querySelectorAll('.translate');
-    elements.forEach(element => {
-        const key = element.getAttribute('data-key');
-        if (key && translations[currentLanguage] && translations[currentLanguage][key]) {
-            // 如果內容包含 HTML 標籤，使用 innerHTML
-            if (translations[currentLanguage][key].includes('<br')) {
-                element.innerHTML = translations[currentLanguage][key];
-            } else {
-                element.textContent = translations[currentLanguage][key];
-            }
-        }
-    });
-}
 
 // 切換語言選項的顯示
 function toggleLanguageOptions(event) {
@@ -37,7 +14,8 @@ function toggleLanguageOptions(event) {
 
 // 切換語言
 function changeLanguage(lang) {
-    currentLanguage = lang;
+    // 更新全局語言設置
+    window.currentLanguage = lang;
     // 保存到 localStorage
     localStorage.setItem('selectedLanguage', lang);
     // 執行翻譯
@@ -59,6 +37,15 @@ function changeLanguage(lang) {
     }
 }
 
+// 在頁面加載時同步語言設置
+document.addEventListener('DOMContentLoaded', function() {
+    const savedLanguage = localStorage.getItem('selectedLanguage');
+    if (savedLanguage) {
+        currentLanguage = savedLanguage;
+        translatePage();
+    }
+});
+
 // 點擊外部關閉語言選單
 document.addEventListener('click', function(event) {
     if (!event.target.closest('.language-selector')) {
@@ -71,15 +58,43 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// 當 DOM 加載完成時自動翻譯
-document.addEventListener('DOMContentLoaded', function() {
-    translatePage();
-});
-
-// 當導航加載完成時也執行翻譯
-function updateContent() {
-    translatePage();
+// 打開導航菜單
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+    document.querySelector('.custom_menu-btn').classList.add('menu_btn-style');
 }
 
-// 導出當前語言變量，讓其他文件可以訪問
-window.currentLanguage = currentLanguage; 
+// 關閉導航菜單
+function closeNav() {
+    const myNav = document.getElementById("myNav");
+    if (myNav) {
+        myNav.style.width = "0%";
+        document.querySelector('.custom_menu-btn').classList.remove('menu_btn-style');
+        
+        // 確保內容在動畫完成後仍然存在
+        myNav.addEventListener('transitionend', function() {
+            if (myNav.style.width === "0%") {
+                // 重新加載導航內容
+                const navContainer = document.getElementById('nav-container');
+                if (navContainer) {
+                    fetch('nav.html')
+                        .then(response => response.text())
+                        .then(data => {
+                            navContainer.innerHTML = data;
+                            translatePage(); // 重新翻譯
+                        });
+                }
+            }
+        }, { once: true }); // 只執行一次
+    }
+}
+
+// 切換導航菜單
+function toggleNav() {
+    const myNav = document.getElementById("myNav");
+    if (myNav.style.width === "100%") {
+        closeNav();
+    } else {
+        openNav();
+    }
+} 

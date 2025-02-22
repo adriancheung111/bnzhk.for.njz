@@ -2,12 +2,12 @@
 const liveData = [
     {
         id: 'live1',
-        date: '2025.04.12',
-        title: 'AIMYON TOUR 2025 "Dolphin Apartment"',
-        content: '演出詳情...',
-        venue: '場地信息',
-        time: '19:00',
-        ticketInfo: '票務信息'
+        titleKey: 'live1_title',
+        contentKey: 'live1_content',
+        date: translations[currentLanguage]['live1_date'],
+        time: translations[currentLanguage]['live1_time'],
+        venueKey: 'live1_venue',
+        ticketKey: 'live1_ticket'
     },
     {
         id: 'live2',
@@ -40,8 +40,8 @@ function renderIndexLive() {
     try {
         const liveItems = liveData.slice(0, 3).map(live => `
             <div class="news_item" onclick="openLiveModal('${live.id}')">
-                <div class="news_date">${live.date}</div>
-                <div class="news_title">${live.title}</div>
+                <div class="news_date">${translations[currentLanguage][live.date]}</div>
+                <div class="news_title">${translations[currentLanguage][live.titleKey]}</div>
             </div>
         `).join('');
 
@@ -61,14 +61,14 @@ function openLiveModal(liveId) {
     
     modalContent.innerHTML = `
         <span class="close-modal" onclick="closeLiveModal()">&times;</span>
-        <div class="modal-date">${live.date}</div>
-        <div class="modal-title">${live.title}</div>
+        <div class="modal-date">${translations[currentLanguage][live.date]}</div>
+        <div class="modal-title">${translations[currentLanguage][live.titleKey]}</div>
         <div class="modal-info">
-            <p><strong>時間：</strong>${live.time}</p>
-            <p><strong>場地：</strong>${live.venue}</p>
-            <p><strong>票務：</strong>${live.ticketInfo}</p>
+            <p><strong>${translations[currentLanguage].time_label}：</strong>${translations[currentLanguage][live.time]}</p>
+            <p><strong>${translations[currentLanguage].venue_label}：</strong>${translations[currentLanguage][live.venueKey]}</p>
+            <p><strong>${translations[currentLanguage].ticket_label}：</strong>${translations[currentLanguage][live.ticketKey]}</p>
         </div>
-        <div class="modal-body">${live.content}</div>
+        <div class="modal-body">${translations[currentLanguage][live.contentKey]}</div>
     `;
     
     modal.style.display = 'block';
@@ -86,6 +86,9 @@ function closeLiveModal() {
 function initIndexLive() {
     if (document.readyState === 'complete') {
         renderIndexLive();
+        
+        // 添加語言變更監聽器
+        document.addEventListener('languageChanged', renderIndexLive);
         
         const modal = document.getElementById('liveModal');
         if (modal) {
