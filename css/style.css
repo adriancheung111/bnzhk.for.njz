@@ -1416,3 +1416,76 @@ a:focus {
 .img-box-test img:hover {
     transform: scale(1.05);
 }
+
+/* 支援按鈕樣式 */
+.support-btn {
+    position: relative;
+    overflow: hidden;
+    font-weight: bold !important;
+    letter-spacing: 1px;
+    border-radius: 30px !important;
+}
+
+.support-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.support-btn:hover::after {
+    opacity: 1;
+}
+
+/* 添加動畫效果 */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 15px rgba(255, 75, 75, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(255, 75, 75, 0.5);
+    }
+    100% {
+        box-shadow: 0 4px 15px rgba(255, 75, 75, 0.3);
+    }
+}
+
+.support-btn {
+    animation: pulse 2s infinite;
+}
+
+/* 應援物品資訊樣式 */
+.product-p {
+    margin-top: 15px;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #666;
+}
+
+.product-p span {
+    display: inline-block;
+}
+
+.product-p .info-label {
+    font-weight: 600;
+    color: #333;
+    width: 80px;
+    margin-right: 10px;
+}
+
+.product-p .info-value {
+    color: #ff4b4b;
+    font-weight: 500;
+}
+
+.product-p .info-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
