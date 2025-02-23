@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Site Metas -->
+    <link rel="icon" href="images/favicon.png" type="image/gif" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>BNZHK</title>
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <!-- font awesome style -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+
+    <link href="css/carousel.css" rel="stylesheet" />
+    <style>
+      .form-container {
+        max-width: 768px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      }
+      
+      .form-header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      
+      .content-section {
+        margin-bottom: 2.5rem;
+      }
+      
+      .reward-item {
+        background: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+      }
+      
+      .reward-item img {
+        max-width: 100%;
+        border-radius: 4px;
+        margin: 1rem 0;
+      }
+      
+      .contact-info {
+        background: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-top: 2rem;
+      }
+      
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+      
+      .social-links a {
+        color: #0056b3;
+        text-decoration: none;
+      }
+      
+      .social-links a:hover {
+        color: #666;
+      }
+      
+      .reward-summary {
+        margin: 2rem 0;
+        text-align: center;
+      }
+      
+      .reward-summary img {
+        max-width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+      }
+      
+      .reward-summary img:hover {
+        transform: scale(1.02);
+        cursor: pointer;
+      }
+      
+      /* 簡化模態框樣式 */
+      .modal-xl {
+        max-width: 90vw;
+      }
+      
+      .modal-content {
+        background: transparent;
+        border: none;
+      }
+      
+      .modal-header {
+        border: none;
+        padding: 0.5rem;
+        position: absolute;
+        right: 0;
+        z-index: 1;
+      }
+      
+      .btn-close {
+        background-color: white;
+        opacity: 0.8;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      }
+      
+      .modal-body {
+        padding: 0;
+      }
+      
+      .modal-body img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+      
+      @media (max-width: 768px) {
+        .reward-summary {
+          margin: 1rem 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- header section strats -->
+    <div id="nav-container"></div>
+    <!-- end header section -->
+
+    <div class="container">
+      <div class="form-container">
+        <div class="form-header">
+          <img src="images/banner.png" alt="BNZHK Logo" class="img-fluid">
+        </div>
+
+        <div class="content-section">          
+          <p>大家好！我們是 BNZHK，我們正在籌備一場盛大的應援活動，慶祝 NJZ 於 2025 年 3 月 23 日 ComplexCon 香港 的出道演出。</p>
+          
+          <p>為了讓這次的活動更加精彩，我們需要大家的支持與幫助！這次的集資計畫主要用於製作應援物資、活動場地佈置、以及準備精美的禮物，希望能為大家帶來難忘的體驗與回憶。無論是應援手幅、燈牌，還是特別設計的周邊禮物，每一份物資都承載著我們的心意與熱情。</p>
+          
+          <p>您的每一份支持，都將成為我們前進的動力，讓我們一起創造一個充滿感動與歡笑的時刻！感謝大家的參與與鼓勵，讓我們一起實現這個美好的計畫吧！</p>
+        </div>
+
+        <div class="content-section">          
+          <div class="row">
+            <!-- 第一張圖片 -->
+            <div class="col-12 col-md-6">
+              <div class="reward-summary">
+                <img 
+                  src="images/index1_cn.jpg" 
+                  alt="募款回禮一覽" 
+                  class="img-fluid"
+                  onclick="openImageModal(this)"
+                >
+              </div>
+            </div>
+            
+            <!-- 第二張圖片，在手機版隱藏 -->
+            <div class="col-12 col-md-6 d-none d-md-block">
+              <div class="reward-summary">
+                <img 
+                  src="images/index3_cn.jpg" 
+                  alt="募款回禮詳情" 
+                  class="img-fluid"
+                  onclick="openImageModal(this)"
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <p class="text-muted">回禮送出時間未確定，不過我們會盡可能安排於演出日或之前送出，運費將會由參與者承擔。</p>
+        </div>
+
+        <div class="contact-info">
+          <h4 class="text-center">聯絡方式</h4>
+          <p class="text-center">如有任何問題，歡迎在Instagram上聯絡：</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/bnzhk.for.njz/" target="_blank">
+              <i class="fa fa-instagram"></i> @bnzhk.for.njz
+            </a>
+            <a href="https://www.instagram.com/factcheck.tokki/" target="_blank">
+              <i class="fa fa-instagram"></i> @factcheck.tokki
+            </a>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <small class="text-muted">*如有任何爭議，本團隊保留最終決定權。</small>
+        </div>
+
+        <!-- 添加表單按鈕 -->
+        <div class="row justify-content-center mt-5 g-3">
+          <div class="col-12 col-md-6">
+            <a href="https://forms.gle/xWfV9i2MT1UznEaj9" 
+               target="_blank" 
+               class="btn btn-primary w-100"
+               style="background-color: #0056b3; border: none; padding: 15px; font-size: 1.1rem;">
+              BNZ STATION 集資計劃 - 募款表格<br>
+              <small>（中文版｜香港、台灣、澳門專用）</small>
+            </a>
+          </div>
+          <div class="col-12 col-md-6">
+            <a href="https://forms.gle/xxJYH9xTXQ1nNqKU7" 
+               target="_blank" 
+               class="btn btn-primary w-100"
+               style="background-color: #0056b3; border: none; padding: 15px; font-size: 1.1rem;">
+              BNZ STATION Fundraising Form<br>
+              <small>(English | For Foreigners)</small>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQery -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <!-- bootstrap js -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- custom js -->
+
+    <script src="js/custom.js"></script>
+    <!-- 添加翻譯相關的 JavaScript -->
+    <script src="js/news-content.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/language.js"></script>
+    <script src="js/modal.js"></script>
+    <script>
+      // Form validation
+      (() => {
+        'use strict'
+        const forms = document.querySelectorAll('.needs-validation')
+        Array.from(forms).forEach(form => {
+          form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+          }, false)
+        })
+      })()
+    </script>
+  </body>
+</html>

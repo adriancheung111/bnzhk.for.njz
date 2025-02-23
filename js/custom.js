@@ -62,7 +62,8 @@ function updateImages() {
     const currentLanguage = localStorage.getItem('selectedLanguage') || 'zh';
 
     imgBoxes.forEach((img, index) => {
-        const imgNumber = index + 1;
+      const imgNumber = 3;
+      imgNumber = index + 1;
         img.src = `images/index${imgNumber}_${currentLanguage === 'zh' ? 'cn' : 'en'}.jpg`;
     });
 }
