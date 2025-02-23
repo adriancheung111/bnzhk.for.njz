@@ -284,13 +284,14 @@
     <!-- bootstrap js -->
     <script src="js/bootstrap.js"></script>
     <!-- custom js -->
+    <script src="js/news-content.js"></script>
     <script src="js/news-utils.js"></script>
     <script src="js/media-utils.js"></script>
     <script src="js/live-utils.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/countdown.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
+      $(document).ready(function() {
         initIndexNews();
         initIndexMedia();
         initIndexLive();

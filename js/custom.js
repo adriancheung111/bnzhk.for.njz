@@ -9,7 +9,6 @@
 $(document).ready(function () {
   // 先加載必要的 JS 文件
   $.when(
-    $.getScript("js/news-content.js"),
     $.getScript("js/translations.js")
   ).then(function() {
     // 加載完成後再加載導航和頁腳
