@@ -54,7 +54,7 @@ const scheduleData = {
             'ko': 'NJZ 공식 합류! ComplexCon 홍콩 2025 Complex Live! 콘서트 게스트 라인업 공개!',
             'ja': 'NJZ正式参加！ComplexCon香港2025 Complex Live! コンサートゲストラインナップ発表！'
         },
-        time: '22:00'
+        time: '12:00'
     }]
 };
 // const scheduleData = {
@@ -148,7 +148,23 @@ function generateCalendar(year, month) {
 function generateScheduleList(year, month, filterType = 'ALL') {
     const listContainer = document.getElementById('schedule-list');
     if (!listContainer) return;
-    const lang = window.currentLanguage || 'zh'; // 獲取當前語言
+    const lang = window.currentLanguage || 'zh';
+
+    // 多語言文字對照表
+    const translations = {
+        noEvents: {
+            'zh': '本月暫無',
+            'en': 'No',
+            'ko': '이번 달은',
+            'ja': '今月は'
+        },
+        activities: {
+            'zh': '活動',
+            'en': 'activities this month',
+            'ko': '일정이 없습니다',
+            'ja': '予定がありません'
+        }
+    };
 
     const days = [];
     const lastDay = new Date(year, month, 0).getDate();
@@ -191,7 +207,10 @@ function generateScheduleList(year, month, filterType = 'ALL') {
         </div>
     `).join('');
 
-    listContainer.innerHTML = html || `<div class="no-events">本月暫無${filterType === 'ALL' ? '' : filterType + ' '}活動</div>`;
+    // 修改無事件時的顯示文字
+    listContainer.innerHTML = html || `<div class="no-events">
+        ${translations.noEvents[lang]}${filterType === 'ALL' ? '' : filterType + ' '}${translations.activities[lang]}
+    </div>`;
 }
 
 // 切換月份
@@ -228,10 +247,11 @@ function filterEvents(type) {
 function openEventModal(date, event) {
     const modal = document.getElementById('eventModal');
     const eventDate = new Date(date);
-    const lang = window.currentLanguage || 'zh'; // 獲取當前語言
+    const lang = window.currentLanguage || 'zh';
     
+    // 修改日期格式為 YYYY-MM-DD
     modal.querySelector('.event-date').textContent = 
-        `${eventDate.getFullYear()}年${eventDate.getMonth() + 1}月${eventDate.getDate()}日 ${event.time}`;
+        `${date} ${event.time}`;
     
     modal.querySelector('.event-type').textContent = event.type;
     modal.querySelector('.event-type').className = `event-type event-${event.type}`;
