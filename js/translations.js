@@ -19,7 +19,11 @@ const translations = {
     'welcome_subtitle': 'The Hong Kong Fan Community of NJZ',
     'read_more': '了解更多',
     'about_title': '關於我們',
-    'about_description': '我們是一群充滿熱情的NJZ粉絲...',
+    'about_description': `BNZHK是香港一個由粉絲發起的團隊，全力應援 K-pop
+                女子組合NJZ，包括成員Minji、Hanni、Danielle、Haerin和Hyein。我們的目標是為所有
+                Bunnies
+                創造最好的環境和氛圍，無論您來自哪裡也能與在活動期間認識的新朋友一起享受
+                NJZ 的演出，同時向NJZ表示最大的支持。`,
     'our_mission': '我們的使命',
     'our_vision': '我們的願景',
     'support_item_10': '感謝 笠仔 & NewJeans美學雑誌 & Hanni版主 & 貓貓頂Nice帽 & Osca 應援物 - HK Themed Items 香港主題內容（小巴牌+點心鎖匙扣）',
