@@ -4,26 +4,65 @@ let currentMonth = 2; // 2月
 
 // 日程表數據
 const scheduleData = {
-    '2025-02-02': [{
-        type: 'TV',
-        title: 'MBS/TBS系「星期日的初耳學」金言&未公開特別節目',
-        description: '金言&未公開特別節目將於本週日播出，敬請期待！',
-        time: '21:00'
+    '2025-02-07': [{
+        type: 'OTHER',
+        title: 'NewJeans 正式宣佈更名為全新團體「NJZ」',
+        description: `NewJeans 在去年發佈記者會正式宣布與娛樂公司 HYBE 旗下子品牌 ADOR 解除合約後，NewJeans 
+        五位成員也很快展開下一步行動，首先創立了全新 Instagram 帳號與原先的帳號切割，而今回則是再有更明確的動作。
+        帳號名從原先的 @jeanzforfree 更改為 @njz_official，確認團體以「NJZ」的名字重新出發，Minji、Hanni、Danielle、
+        Haerin 與 Hyein 等 5 位成員依舊留在團體內，並且也率先釋出了一系列形象照，宣告即將展開新團體的演藝活動。
+        在經過多番波折後，幾人總算重回正軌，Bunnies 可以暫時放下懸著的心了。`,
+        time: ''
     }],
-    '2025-02-03': [{
-        type: 'RADIO',
-        title: 'JFN「SCHOOL OF LOCK!」太太LOCKS!',
-        description: '成員們將在電台節目中分享近況和有趣的故事。',
+    '2025-03-23': [{
+        type: 'LIVE',
+        title: 'ComplexCon 香港 2025 Complex Live',
+        description: 'NJZ 正式加入！ComplexCon 香港 2025 Complex Live! 音樂會演出嘉賓來襲！',
         time: '22:00'
     }],
-    '2025-02-07': [{
-        type: 'TV',
-        title: '朝日電視台「M:ZINE」(Hiloto Wakai)',
-        description: 'M:ZINE特別企劃，將為大家帶來精彩的表演。',
-        time: '20:00'
-    }],
-    // ... 添加更多數據
 };
+// const scheduleData = {
+//     '2025-02-03': [{
+//         type: 'RADIO',
+//         title: 'JFN「SCHOOL OF LOCK!」太太LOCKS!',
+//         description: '成員們將在電台節目中分享近況和有趣的故事。',
+//         time: '22:00'
+//     }],
+//     '2025-02-07': [
+//         {
+//             type: 'TV',
+//             title: '朝日電視台「M:ZINE」(Hiloto Wakai)',
+//             description: 'M:ZINE特別企劃，將為大家帶來精彩的表演。',
+//             time: '20:00'
+//         },
+//         {
+//             type: 'RADIO',
+//             title: 'JFN「SCHOOL OF LOCK!」太太LOCKS!',
+//             description: '成員們將在電台節目中分享近況和有趣的故事。',
+//             time: '22:00'
+//         }
+//     ],
+//     '2025-02-08': [
+//         {
+//             type: 'TV',
+//             title: '朝日電視台「M:ZINE」(Hiloto Wakai)',
+//             description: 'M:ZINE特別企劃，將為大家帶來精彩的表演。',
+//             time: '20:00'
+//         },
+//         {
+//             type: 'RADIO',
+//             title: 'JFN「SCHOOL OF LOCK!」太太LOCKS!',
+//             description: '成員們將在電台節目中分享近況和有趣的故事。',
+//             time: '22:00'
+//         }
+//     ],    
+//     '2025-02-02': [{
+//         type: 'RADIO',
+//         title: 'JFN「SCHOOL OF LOCK!」太太LOCKS!',
+//         description: '成員們將在電台節目中分享近況和有趣的故事。',
+//         time: '22:00'
+//     }],
+// };
 
 // 生成月曆
 function generateCalendar(year, month) {

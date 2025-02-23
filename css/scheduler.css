@@ -54,7 +54,7 @@
     color: white;
 }
 
-.type-btn[data-type="ALL"] { background: #f0f0f0; }
+.type-btn[data-type="ALL"] { background: #f0f0f0; color: black; }
 .type-btn[data-type="LIVE"] { background: #00796b; color: white; }
 .type-btn[data-type="RELEASE"] { background: #8bc34a; color: white; }
 .type-btn[data-type="TV"] { background: #ff5722; color: white; }
