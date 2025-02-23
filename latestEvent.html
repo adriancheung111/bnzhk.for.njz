@@ -1,83 +1,166 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- Basic -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- Mobile Metas -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <!-- Site Metas -->
-    <link rel="icon" href="images/favicon.png" type="image/gif" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
 
-    <title>BNZHK</title>
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="images/favicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
 
-    <!-- bootstrap core css -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-    <!-- font awesome style -->
-    <link href="css/font-awesome.min.css" rel="stylesheet" />
-    <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet" />
-    <!-- responsive style -->
-    <link href="css/responsive.css" rel="stylesheet" />
+  <title>BNZHK</title>
 
-    <link href="css/carousel.css" rel="stylesheet" />
-    <link href="css/tooplate-little-fashion.css" rel="stylesheet" />
-    <style>
-      .img-box-test {
-        max-width: 800px;  /* 限制最大寬度 */
-        margin: 0 auto;    /* 水平居中 */
-      }
-      
-      .img-box-test img {
-        width: 100%;
-        height: auto;
-        max-height: 600px;  /* 限制最大高度 */
-        object-fit: contain;
-      }
-    </style>
-  </head>
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
 
-  <body>
-    <!-- header section strats -->
-    <div id="nav-container"></div>
-    <!-- end header section -->
+  <link href="css/carousel.css" rel="stylesheet" />
+  <link href="css/tooplate-little-fashion.css" rel="stylesheet" />
+  <style>
+    /* 目錄樣式 */
+    .table-of-contents {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      text-align: left;
+    }
 
-    <div class="container">
-      <div class="heading_container heading_center">
-        <h1 class="translate" data-key="title_main">
-          SUPPORTING NJZ AT COMPLEXCON HONG KONG 2025
-        </h1>
-      </div>
-      <br />
+    .table-of-contents h4 {
+      text-align: left;
+    }
 
-      <div class="heading_container heading_center">
-        <h2 class="translate" data-key="title_sub_moeny">應援集資</h2>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="img-box-test">
-              <a href="crowdfunding.html">
-                <img
-                  src="images/index2_cn.jpg"
-                  alt="Product 1"
-                  class="img-fluid reward-image"
-                  data-cn-src="images/index2_cn.jpg"
-                  data-en-src="images/index2_en.jpg"
-                  style="cursor: pointer;"
-                />
-              </a>
-            </div>
+    .table-of-contents ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 0;
+      text-align: left;
+    }
+
+    .table-of-contents li {
+      margin-bottom: 10px;
+    }
+
+    .table-of-contents a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .table-of-contents a:hover {
+      color: #0056b3;
+    }
+
+    /* 回到頂部按鈕 */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #0056b3;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 1000;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+    }
+
+    .back-to-top:hover {
+      background: #003d82;
+      color: white;
+    }
+
+    /* 回到目錄按鈕 */
+    .back-to-toc {
+      position: fixed;
+      bottom: 80px;
+      /* 位置在回到頂部按鈕上方 */
+      right: 20px;
+      background: #0056b3;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 1000;
+    }
+
+    .back-to-toc.visible {
+      opacity: 1;
+    }
+
+    .back-to-toc:hover {
+      background: #003d82;
+      color: white;
+    }
+
+    .img-box-test {
+      max-width: 800px;
+      /* 限制最大寬度 */
+      margin: 0 auto;
+      /* 水平居中 */
+    }
+
+    .img-box-test img {
+      width: 100%;
+      height: auto;
+      max-height: 600px;
+      /* 限制最大高度 */
+      object-fit: contain;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- header section strats -->
+  <div id="nav-container"></div>
+  <!-- end header section -->
+
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h1 class="translate" data-key="title_main">
+        SUPPORTING NJZ AT COMPLEXCON HONG KONG 2025
+      </h1>
+    </div>
+    <br />
+
+    <div id="crowdfunding" class="heading_container heading_center">
+      <h2 class="translate" data-key="title_sub_moeny">應援集資</h2>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="img-box-test">
+            <a href="crowdfunding.html">
+              <img src="images/index2_cn.jpg" alt="Product 1" class="img-fluid reward-image"
+                data-cn-src="images/index2_cn.jpg" data-en-src="images/index2_en.jpg" style="cursor: pointer;" />
+            </a>
           </div>
         </div>
       </div>
-      <div
-        class="btn-box"
-        style="
+    </div>
+    <div class="btn-box" style="
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
@@ -85,117 +168,106 @@
           -ms-flex-pack: center;
           justify-content: center;
           margin-top: 45px;
-        "
-      >
-        <a
-          href="crowdfunding.html"
-          class="btn btn-primary btn-lg translate support-btn"
-          data-key="support_form_btn"
-          style="
+        ">
+      <a href="crowdfunding.html" class="btn btn-primary btn-lg translate support-btn" data-key="support_form_btn"
+        style="
             font-size: 1.5rem;
             padding: 15px 40px;
             background-color: #0056b3;
             border: none;
             box-shadow: 0 4px 15px rgba(255, 75, 75, 0.3);
             transition: all 0.3s ease;
-          "
-          onmouseover="this.style.transform='scale(1.05)';this.style.backgroundColor='#ff3131';"
-          onmouseout="this.style.transform='scale(1)';this.style.backgroundColor='#ff4b4b';"
-        >
-          前往集資表格
-        </a>
-      </div>
+          " onmouseover="this.style.transform='scale(1.05)';this.style.backgroundColor='#ff3131';"
+        onmouseout="this.style.transform='scale(1)';this.style.backgroundColor='#ff4b4b';">
+        前往集資表格
+      </a>
+    </div>
 
-      <br />
+    <br />
 
-      <br />
-      <div class="heading_container heading_center">
-        <h2 class="translate" data-key="title_sub">國際合作應援陣容</h2>
-      </div>
-      <br />
+    <br />
+    <div class="heading_container heading_center">
+      <h2 class="translate" data-key="title_sub">國際合作應援陣容</h2>
+    </div>
+    <br />
 
-      <div class="card-carousel">
-        <div
-          class="card"
-          id="1"
-          style="
+    <div class="card-carousel">
+      <div class="card" id="1" style="
             background-image: url('images/event1.jpg');
             background-position: center;
             background-size: cover;
-          "
-        ></div>
-        <div
-          class="card"
-          id="2"
-          style="
+          "></div>
+      <div class="card" id="2" style="
             background-image: url('images/event2.jpg');
             background-position: center;
             background-size: cover;
-          "
-        ></div>
-        <div
-          class="card"
-          id="3"
-          style="
+          "></div>
+      <div class="card" id="3" style="
             background-image: url('images/event3.jpg');
             background-position: center;
             background-size: cover;
-          "
-        ></div>
-        <div
-          class="card"
-          id="4"
-          style="
+          "></div>
+      <div class="card" id="4" style="
             background-image: url('images/event5.jpg');
             background-position: center;
             background-size: cover;
-          "
-        ></div>
-        <div
-          class="card"
-          id="5"
-          style="
+          "></div>
+      <div class="card" id="5" style="
             background-image: url('images/event6.jpg');
             background-position: center;
             background-size: cover;
-          "
-        ></div>
-      </div>
+          "></div>
+    </div>
 
-      <br />
-      <div class="col-12 text-center">
-        <a href="https://www.instagram.com/bnzhk.for.njz" class="view-all">
-          <span class="translate" data-key="view_all"
-            >查看所有應援陣容詳情</span
-          >
-        </a>
-      </div>
-      <br />
-      <br />
+    <br />
+    <div class="col-12 text-center">
+      <a href="https://www.instagram.com/bnzhk.for.njz" class="view-all">
+        <span class="translate" data-key="view_all">查看所有應援陣容詳情</span>
+      </a>
+    </div>
+    <br />
+    <br />
 
-      <section class="featured-product section-padding">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 heading_container heading_center">
-              <h2 class="mb-5">
-                <span class="translate" data-key="support_list_title"
-                  >當日應援物List</span
-                >
-                <p class="card-text">
-                  <small class="text-muted translate">
-                    Last updated 21/2, 如有更新可以tg:@Vitamin_Danielle
-                  </small>
-                </p>
-              </h2>
+    <section class="featured-product section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 heading_container heading_center">
+            <h2 class="mb-5">
+              <span class="translate" data-key="support_list_title">當日應援物List</span>
+              <p class="card-text">
+                <small class="text-muted translate">
+                  Last updated 21/2, 如有更新可以tg:@Vitamin_Danielle
+                </small>
+              </p>
+            </h2>
+            <!-- 目錄 -->
+            <div id="toc" class="table-of-contents">
+              <h4 class="translate" data-key="table_of_contents">目錄</h4>
+              <ul>
+                <li><a href="#item-1" class="translate" data-key="item_1">決策幣</a></li>
+                <li><a href="#item-2" class="translate" data-key="item_2">ComplexCon NJZ Poster</a></li>
+                <li><a href="#item-3" class="translate" data-key="item_3">單面應援毛巾</a></li>
+                <li><a href="#item-4" class="translate" data-key="item_4">PVC Sticker</a></li>
+                <li><a href="#item-5" class="translate" data-key="item_5">惠仁透明扇</a></li>
+                <li><a href="#item-6" class="translate" data-key="item_6">Bbangsaz小卡+結婚證</a></li>
+                <li><a href="#item-7" class="translate" data-key="item_7">團體ditto光柵卡</a></li>
+                <li><a href="#item-8" class="translate" data-key="item_8">惠仁單人明信片</a></li>
+                <li><a href="#item-9" class="translate" data-key="item_9">團體貼紙</a></li>
+                <li><a href="#item-10" class="translate" data-key="item_10">香港主題內容</a></li>
+                <li><a href="#item-11" class="translate" data-key="item_11">ComplexCon NJZ Poster (Remake Ver.)</a></li>
+                <li><a href="#item-12" class="translate" data-key="item_12">SBS 歌謠大戰 2024 4R相片 6款</a></li>
+                <li><a href="#item-13" class="translate" data-key="item_13">手牌</a></li>
+                <li><a href="#item-14" class="translate" data-key="item_14">NJZ單人大頭襟章（個人 x5）</a></li>
+                <li><a href="#item-15" class="translate" data-key="item_15">NJZ單人大頭磁石貼（個人 x5）</a></li>
+                <li><a href="#item-16" class="translate" data-key="item_16">NJZ單人大頭燈牌冰箱貼 - 可亮燈（個人 x5 + 團體）</a></li>
+              </ul>
             </div>
+          </div>
 
-            <div class="col-lg-4 col-12 mb-3">
-              <div class="product-thumb">
-                <img
-                  src="images/火腿芝士三Minji℃ - 決策幣.WEBP"
-                  class="img-fluid product-image"
-                  alt=""
-                />
+          <div class="row">
+            <div id="item-1" class="col-6 col-md-6 col-lg-4 mb-3">
+              <div class="product-thumb" data-category="poster">
+                <img src="images/火腿芝士三Minji℃ - 決策幣.WEBP" class="img-fluid product-image" alt="" />
                 <div class="product-top d-flex">
                   <!-- <span class="product-alert me-auto">New Arrival</span> -->
                 </div>
@@ -205,19 +277,19 @@
                       <div class="product-title-link">
                         <span class="translate" data-key="thanks_text">感謝</span>
                         <span>火腿芝士三Minji℃</span>
-                        <span class="translate" data-key="support_item_text">應援物</span> - 
+                        <span class="translate" data-key="support_item_text">應援物</span> -
                         <span class="translate" data-key="item_1">Decision Coin</span>
                       </div>
                     </h5>
                     <p class="product-p">
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="pickup_time">領取時間</span>
-                        <span class="info-value translate" data-key="tbd">待定</span>
-                      </div>
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="quantity">數量</span>
-                        <span class="info-value">45</span>
-                      </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="pickup_time">領取時間</span>
+                      <span class="info-value translate" data-key="tbd">待定</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="quantity">數量</span>
+                      <span class="info-value">45</span>
+                    </div>
                     </p>
                   </div>
                   <!-- <small class="product-price text-muted ms-auto mt-auto mb-5">$25</small> -->
@@ -225,13 +297,9 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-12 mb-3">
-              <div class="product-thumb">
-                <img
-                  src="images/image.png"
-                  class="img-fluid product-image"
-                  alt=""
-                />
+            <div id="item-2" class="col-6 col-md-6 col-lg-4 mb-3">
+              <div class="product-thumb" data-category="card">
+                <img src="images/image.png" class="img-fluid product-image" alt="" />
                 <div class="product-top d-flex">
                   <!-- <span class="product-alert me-auto">New Arrival</span> -->
                 </div>
@@ -241,19 +309,19 @@
                       <div class="product-title-link">
                         <span class="translate" data-key="thanks_text">感謝</span>
                         <span>NB & nice~</span>
-                        <span class="translate" data-key="support_item_text">應援物</span> - 
+                        <span class="translate" data-key="support_item_text">應援物</span> -
                         <span class="translate" data-key="item_2">ComplexCon NJZ Poster</span>
                       </div>
                     </h5>
                     <p class="product-p">
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="pickup_time">領取時間</span>
-                        <span class="info-value translate" data-key="tbd">待定</span>
-                      </div>
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="quantity">數量</span>
-                        <span class="info-value">50</span>
-                      </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="pickup_time">領取時間</span>
+                      <span class="info-value translate" data-key="tbd">待定</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="quantity">數量</span>
+                      <span class="info-value">50</span>
+                    </div>
                     </p>
                   </div>
                   <!-- <small class="product-price text-muted ms-auto mt-auto mb-5">$25</small> -->
@@ -261,13 +329,9 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-12 mb-3">
-              <div class="product-thumb">
-                <img
-                  src="images/NJZ Macau - 單面應援毛巾.jpg"
-                  class="img-fluid product-image"
-                  alt=""
-                />
+            <div id="item-3" class="col-6 col-md-6 col-lg-4 mb-3">
+              <div class="product-thumb" data-category="towel">
+                <img src="images/favicon.png" class="img-fluid product-image" alt="" />
                 <div class="product-top d-flex">
                   <!-- <span class="product-alert me-auto">New Arrival</span> -->
                 </div>
@@ -277,19 +341,19 @@
                       <div class="product-title-link">
                         <span class="translate" data-key="thanks_text">感謝</span>
                         <span>NJZ Macau</span>
-                        <span class="translate" data-key="support_item_text">應援物</span> - 
+                        <span class="translate" data-key="support_item_text">應援物</span> -
                         <span class="translate" data-key="item_3">Single-sided Support Towel</span>
                       </div>
                     </h5>
                     <p class="product-p">
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="pickup_time">領取時間</span>
-                        <span class="info-value translate" data-key="tbd">待定</span>
-                      </div>
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="quantity">數量</span>
-                        <span class="info-value">200</span>
-                      </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="pickup_time">領取時間</span>
+                      <span class="info-value translate" data-key="tbd">待定</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="quantity">數量</span>
+                      <span class="info-value">200</span>
+                    </div>
                     </p>
                   </div>
                   <!-- <small class="product-price text-muted ms-auto mt-auto mb-5">$25</small> -->
@@ -297,13 +361,9 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-12 mb-3">
-              <div class="product-thumb">
-                <img
-                  src="images/20250220_103104.png"
-                  class="img-fluid product-image"
-                  alt=""
-                />
+            <div id="item-4" class="col-6 col-md-6 col-lg-4 mb-3">
+              <div class="product-thumb" data-category="sticker">
+                <img src="images/20250220_103104.png" class="img-fluid product-image" alt="" />
                 <div class="product-top d-flex">
                   <!-- <span class="product-alert me-auto">New Arrival</span> -->
                 </div>
@@ -313,19 +373,19 @@
                       <div class="product-title-link">
                         <span class="translate" data-key="thanks_text">感謝</span>
                         <span>NewJeans Thailand</span>
-                        <span class="translate" data-key="support_item_text">應援物</span> - 
+                        <span class="translate" data-key="support_item_text">應援物</span> -
                         <span class="translate" data-key="item_4">PVC Sticker (What's your ETA)</span>
                       </div>
                     </h5>
                     <p class="product-p">
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="pickup_time">領取時間</span>
-                        <span class="info-value translate" data-key="tbd">待定</span>
-                      </div>
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="quantity">數量</span>
-                        <span class="info-value">300</span>
-                      </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="pickup_time">領取時間</span>
+                      <span class="info-value translate" data-key="tbd">待定</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="quantity">數量</span>
+                      <span class="info-value">300</span>
+                    </div>
                     </p>
                   </div>
                   <!-- <small class="product-price text-muted ms-auto mt-auto mb-5">$25</small> -->
@@ -333,13 +393,9 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-12 mb-3">
-              <div class="product-thumb">
-                <img
-                  src="images/惠仁媽咪-惠仁透明手扇 Hyein hand fan.jpg"
-                  class="img-fluid product-image"
-                  alt=""
-                />
+            <div id="item-5" class="col-6 col-md-6 col-lg-4 mb-3">
+              <div class="product-thumb" data-category="hand-fan">
+                <img src="images/惠仁媽咪-惠仁透明手扇 Hyein hand fan.jpg" class="img-fluid product-image" alt="" />
                 <div class="product-top d-flex">
                   <!-- <span class="product-alert me-auto">New Arrival</span> -->
                 </div>
@@ -349,19 +405,19 @@
                       <div class="product-title-link">
                         <span class="translate" data-key="thanks_text">感謝</span>
                         <span>惠仁媽咪</span>
-                        <span class="translate" data-key="support_item_text">應援物</span> - 
+                        <span class="translate" data-key="support_item_text">應援物</span> -
                         <span class="translate" data-key="item_5">Hyein Transparent Hand Fan</span>
                       </div>
                     </h5>
                     <p class="product-p">
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="pickup_time">領取時間</span>
-                        <span class="info-value translate" data-key="tbd">待定</span>
-                      </div>
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="quantity">數量</span>
-                        <span class="info-value">100</span>
-                      </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="pickup_time">領取時間</span>
+                      <span class="info-value translate" data-key="tbd">待定</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="quantity">數量</span>
+                      <span class="info-value">100</span>
+                    </div>
                     </p>
                   </div>
                   <!-- <small class="product-price text-muted ms-auto mt-auto mb-5">$25</small> -->
@@ -369,13 +425,9 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-12 mb-3">
-              <div class="product-thumb">
-                <img
-                  src="images/麵包乾 - Bbangsaz小卡+結婚證.jpeg"
-                  class="img-fluid product-image"
-                  alt=""
-                />
+            <div id="item-6" class="col-6 col-md-6 col-lg-4 mb-3">
+              <div class="product-thumb" data-category="photocard">
+                <img src="images/麵包乾 - Bbangsaz小卡+結婚證.jpeg" class="img-fluid product-image" alt="" />
                 <div class="product-top d-flex">
                   <!-- <span class="product-alert me-auto">New Arrival</span> -->
                 </div>
@@ -385,32 +437,28 @@
                       <div class="product-title-link">
                         <span class="translate" data-key="thanks_text">感謝</span>
                         <span>面包千</span>
-                        <span class="translate" data-key="support_item_text">應援物</span> - 
+                        <span class="translate" data-key="support_item_text">應援物</span> -
                         <span class="translate" data-key="item_6">Bbangsaz Photocard + Marriage Certificate</span>
                       </div>
                     </h5>
                     <p class="product-p">
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="pickup_time">領取時間</span>
-                        <span class="info-value translate" data-key="tbd">待定</span>
-                      </div>
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="quantity">數量</span>
-                        <span class="info-value">100</span>
-                      </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="pickup_time">領取時間</span>
+                      <span class="info-value translate" data-key="tbd">待定</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="quantity">數量</span>
+                      <span class="info-value">100</span>
+                    </div>
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4 col-12 mb-3">
-              <div class="product-thumb">
-                <img
-                  src="images/favicon.png"
-                  class="img-fluid product-image"
-                  alt=""
-                />
+            <div id="item-7" class="col-6 col-md-6 col-lg-4 mb-3">
+              <div class="product-thumb" data-category="ditto-card">
+                <img src="images/favicon.png" class="img-fluid product-image" alt="" />
                 <div class="product-top d-flex">
                   <!-- <span class="product-alert me-auto">New Arrival</span> -->
                 </div>
@@ -420,32 +468,28 @@
                       <div class="product-title-link">
                         <span class="translate" data-key="thanks_text">感謝</span>
                         <span>十一點入睡</span>
-                        <span class="translate" data-key="support_item_text">應援物</span> - 
+                        <span class="translate" data-key="support_item_text">應援物</span> -
                         <span class="translate" data-key="item_7">團體ditto光柵卡</span>
                       </div>
                     </h5>
                     <p class="product-p">
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="pickup_time">領取時間</span>
-                        <span class="info-value translate" data-key="tbd">待定</span>
-                      </div>
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="quantity">數量</span>
-                        <span class="info-value">200</span>
-                      </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="pickup_time">領取時間</span>
+                      <span class="info-value translate" data-key="tbd">待定</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="quantity">數量</span>
+                      <span class="info-value">200</span>
+                    </div>
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4 col-12 mb-3">
-              <div class="product-thumb">
-                <img
-                  src="images/favicon.png"
-                  class="img-fluid product-image"
-                  alt=""
-                />
+            <div id="item-8" class="col-6 col-md-6 col-lg-4 mb-3">
+              <div class="product-thumb" data-category="postcard">
+                <img src="images/favicon.png" class="img-fluid product-image" alt="" />
                 <div class="product-top d-flex">
                   <!-- <span class="product-alert me-auto">New Arrival</span> -->
                 </div>
@@ -455,32 +499,28 @@
                       <div class="product-title-link">
                         <span class="translate" data-key="thanks_text">感謝</span>
                         <span>十一點入睡</span>
-                        <span class="translate" data-key="support_item_text">應援物</span> - 
+                        <span class="translate" data-key="support_item_text">應援物</span> -
                         <span class="translate" data-key="item_8">惠仁單人明信片</span>
                       </div>
                     </h5>
                     <p class="product-p">
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="pickup_time">領取時間</span>
-                        <span class="info-value translate" data-key="tbd">待定</span>
-                      </div>
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="quantity">數量</span>
-                        <span class="info-value">50</span>
-                      </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="pickup_time">領取時間</span>
+                      <span class="info-value translate" data-key="tbd">待定</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="quantity">數量</span>
+                      <span class="info-value">50</span>
+                    </div>
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4 col-12 mb-3">
-              <div class="product-thumb">
-                <img
-                  src="images/favicon.png"
-                  class="img-fluid product-image"
-                  alt=""
-                />
+            <div id="item-9" class="col-6 col-md-6 col-lg-4 mb-3">
+              <div class="product-thumb" data-category="sticker">
+                <img src="images/favicon.png" class="img-fluid product-image" alt="" />
                 <div class="product-top d-flex">
                   <!-- <span class="product-alert me-auto">New Arrival</span> -->
                 </div>
@@ -490,69 +530,58 @@
                       <div class="product-title-link">
                         <span class="translate" data-key="thanks_text">感謝</span>
                         <span>十一點入睡</span>
-                        <span class="translate" data-key="support_item_text">應援物</span> - 
+                        <span class="translate" data-key="support_item_text">應援物</span> -
                         <span class="translate" data-key="item_9">團體貼紙</span>
                       </div>
                     </h5>
                     <p class="product-p">
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="pickup_time">領取時間</span>
-                        <span class="info-value translate" data-key="tbd">待定</span>
-                      </div>
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="quantity">數量</span>
-                        <span class="info-value">50</span>
-                      </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="pickup_time">領取時間</span>
+                      <span class="info-value translate" data-key="tbd">待定</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="quantity">數量</span>
+                      <span class="info-value">50</span>
+                    </div>
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4 col-12 mb-3">
-              <div class="product-thumb">
-                <img
-                  src="images/favicon.png"
-                  class="img-fluid product-image"
-                  alt=""
-                />
+            <div id="item-10" class="col-6 col-md-6 col-lg-4 mb-3">
+              <div class="product-thumb" data-category="hk-themed-items">
+                <img src="images/favicon.png" class="img-fluid product-image" alt="" />
                 <div class="product-top d-flex">
                   <!-- <span class="product-alert me-auto">New Arrival</span> -->
                 </div>
                 <div class="product-info d-flex">
                   <div>
                     <h5 class="product-title mb-0">
-                      <div
-                        class="product-title-link translate"
-                        data-key="support_item_10"
-                      >
+                      <div class="product-title-link translate" data-key="support_item_10">
                         感謝 笠仔 & NewJeans美學雑誌 & Hanni版主 & 貓貓頂Nice帽
                         & Osca 應援物 - HK Themed Items
                         香港主題內容（小巴牌+點心鎖匙扣）
                       </div>
                     </h5>
                     <p class="product-p">
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="pickup_time">領取時間</span>
-                        <span class="info-value translate" data-key="tbd">待定</span>
-                      </div>
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="quantity">數量</span>
-                        <span class="info-value">400</span>
-                      </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="pickup_time">領取時間</span>
+                      <span class="info-value translate" data-key="tbd">待定</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="quantity">數量</span>
+                      <span class="info-value">400</span>
+                    </div>
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4 col-12 mb-3">
-              <div class="product-thumb">
-                <img
-                  src="images/favicon.png"
-                  class="img-fluid product-image"
-                  alt=""
-                />
+            <div id="item-11" class="col-6 col-md-6 col-lg-4 mb-3">
+              <div class="product-thumb" data-category="poster">
+                <img src="images/favicon.png" class="img-fluid product-image" alt="" />
                 <div class="product-top d-flex">
                   <!-- <span class="product-alert me-auto">New Arrival</span> -->
                 </div>
@@ -562,32 +591,28 @@
                       <div class="product-title-link">
                         <span class="translate" data-key="thanks_text">感謝</span>
                         <span>PurpleTokki</span>
-                        <span class="translate" data-key="support_item_text">應援物</span> - 
+                        <span class="translate" data-key="support_item_text">應援物</span> -
                         <span class="translate" data-key="item_11">ComplexCon NJZ Poster (Remake Ver.)</span>
                       </div>
                     </h5>
                     <p class="product-p">
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="pickup_time">領取時間</span>
-                        <span class="info-value translate" data-key="tbd">待定</span>
-                      </div>
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="quantity">數量</span>
-                        <span class="info-value">90</span>
-                      </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="pickup_time">領取時間</span>
+                      <span class="info-value translate" data-key="tbd">待定</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="quantity">數量</span>
+                      <span class="info-value">90</span>
+                    </div>
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4 col-12 mb-3">
-              <div class="product-thumb">
-                <img
-                  src="images/PurpleTokki.png"
-                  class="img-fluid product-image"
-                  alt=""
-                />
+            <div id="item-12" class="col-6 col-md-6 col-lg-4 mb-3">
+              <div class="product-thumb" data-category="photocard">
+                <img src="images/PurpleTokki.png" class="img-fluid product-image" alt="" />
                 <div class="product-top d-flex">
                   <!-- <span class="product-alert me-auto">New Arrival</span> -->
                 </div>
@@ -597,33 +622,28 @@
                       <div class="product-title-link">
                         <span class="translate" data-key="thanks_text">感謝</span>
                         <span>PurpleTokki</span>
-                        <span class="translate" data-key="support_item_text">應援物</span> - 
+                        <span class="translate" data-key="support_item_text">應援物</span> -
                         <span class="translate" data-key="item_12">SBS 歌謠大戰 2024 4R相片 6款</span>
                       </div>
                     </h5>
                     <p class="product-p">
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="pickup_time">領取時間</span>
-                        <span class="info-value translate" data-key="tbd">待定</span>
-                      </div>
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="quantity">數量</span>
-                        <span class="info-value">180</span>
-                      </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="pickup_time">領取時間</span>
+                      <span class="info-value translate" data-key="tbd">待定</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="quantity">數量</span>
+                      <span class="info-value">180</span>
+                    </div>
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-
-            <div class="col-lg-4 col-12 mb-3">
-              <div class="product-thumb">
-                <img
-                  src="images/웃으면2.jpg"
-                  class="img-fluid product-image"
-                  alt=""
-                />
+            <div id="item-13" class="col-6 col-md-6 col-lg-4 mb-3">
+              <div class="product-thumb" data-category="hand-card">
+                <img src="images/웃으면2.jpg" class="img-fluid product-image" alt="" />
                 <div class="product-top d-flex">
                   <!-- <span class="product-alert me-auto">New Arrival</span> -->
                 </div>
@@ -633,32 +653,28 @@
                       <div class="product-title-link">
                         <span class="translate" data-key="thanks_text">感謝</span>
                         <span>PurpleTokki</span>
-                        <span class="translate" data-key="support_item_text">應援物</span> - 
+                        <span class="translate" data-key="support_item_text">應援物</span> -
                         <span class="translate" data-key="item_13">手牌</span>
                       </div>
                     </h5>
                     <p class="product-p">
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="pickup_time">領取時間</span>
-                        <span class="info-value translate" data-key="tbd">待定</span>
-                      </div>
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="quantity">數量</span>
-                        <span class="info-value">30</span>
-                      </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="pickup_time">領取時間</span>
+                      <span class="info-value translate" data-key="tbd">待定</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="quantity">數量</span>
+                      <span class="info-value">30</span>
+                    </div>
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4 col-12 mb-3">
-              <div class="product-thumb">
-                <img
-                  src="images/favicon.png"
-                  class="img-fluid product-image"
-                  alt=""
-                />
+            <div id="item-14" class="col-6 col-md-6 col-lg-4 mb-3">
+              <div class="product-thumb" data-category="photocard">
+                <img src="images/favicon.png" class="img-fluid product-image" alt="" />
                 <div class="product-top d-flex">
                   <!-- <span class="product-alert me-auto">New Arrival</span> -->
                 </div>
@@ -668,32 +684,28 @@
                       <div class="product-title-link">
                         <span class="translate" data-key="thanks_text">感謝</span>
                         <span>NJZ 小卡博物館</span>
-                        <span class="translate" data-key="support_item_text">應援物</span> - 
+                        <span class="translate" data-key="support_item_text">應援物</span> -
                         <span class="translate" data-key="item_14">"NJZ單人大頭襟章（個人 x5）"</span>
                       </div>
                     </h5>
                     <p class="product-p">
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="pickup_time">領取時間</span>
-                        <span class="info-value translate" data-key="tbd">待定</span>
-                      </div>
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="quantity">數量</span>
-                        <span class="info-value">100</span>
-                      </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="pickup_time">領取時間</span>
+                      <span class="info-value translate" data-key="tbd">待定</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="quantity">數量</span>
+                      <span class="info-value">100</span>
+                    </div>
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4 col-12 mb-3">
-              <div class="product-thumb">
-                <img
-                  src="images/favicon.png"
-                  class="img-fluid product-image"
-                  alt=""
-                />
+            <div id="item-15" class="col-6 col-md-6 col-lg-4 mb-3">
+              <div class="product-thumb" data-category="photocard">
+                <img src="images/favicon.png" class="img-fluid product-image" alt="" />
                 <div class="product-top d-flex">
                   <!-- <span class="product-alert me-auto">New Arrival</span> -->
                 </div>
@@ -703,32 +715,28 @@
                       <div class="product-title-link">
                         <span class="translate" data-key="thanks_text">感謝</span>
                         <span>NJZ 小卡博物館</span>
-                        <span class="translate" data-key="support_item_text">應援物</span> - 
+                        <span class="translate" data-key="support_item_text">應援物</span> -
                         <span class="translate" data-key="item_15">"NJZ單人大頭磁石貼（個人 x5）"</span>
                       </div>
                     </h5>
                     <p class="product-p">
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="pickup_time">領取時間</span>
-                        <span class="info-value translate" data-key="tbd">待定</span>
-                      </div>
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="quantity">數量</span>
-                        <span class="info-value">100</span>
-                      </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="pickup_time">領取時間</span>
+                      <span class="info-value translate" data-key="tbd">待定</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="quantity">數量</span>
+                      <span class="info-value">100</span>
+                    </div>
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4 col-12 mb-3">
-              <div class="product-thumb">
-                <img
-                  src="images/favicon.png"
-                  class="img-fluid product-image"
-                  alt=""
-                />
+            <div id="item-16" class="col-6 col-md-6 col-lg-4 mb-3">
+              <div class="product-thumb" data-category="photocard">
+                <img src="images/favicon.png" class="img-fluid product-image" alt="" />
                 <div class="product-top d-flex">
                   <!-- <span class="product-alert me-auto">New Arrival</span> -->
                 </div>
@@ -738,66 +746,118 @@
                       <div class="product-title-link">
                         <span class="translate" data-key="thanks_text">感謝</span>
                         <span>NJZ 小卡博物館</span>
-                        <span class="translate" data-key="support_item_text">應援物</span> - 
+                        <span class="translate" data-key="support_item_text">應援物</span> -
                         <span class="translate" data-key="item_16">"NJZ單人大頭燈牌冰箱貼 - 可亮燈（個人 x5 + 團體）"</span>
                       </div>
                     </h5>
                     <p class="product-p">
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="pickup_time">領取時間</span>
-                        <span class="info-value translate" data-key="tbd">待定</span>
-                      </div>
-                      <div class="info-row">
-                        <span class="info-label translate" data-key="quantity">數量</span>
-                        <span class="info-value">60</span>
-                      </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="pickup_time">領取時間</span>
+                      <span class="info-value translate" data-key="tbd">待定</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label translate" data-key="quantity">數量</span>
+                      <span class="info-value">60</span>
+                    </div>
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-
-
-
-
-
-
-
           </div>
         </div>
-      </section>
-      <br />
-      <!-- 添加按鈕 -->
-    </div>
-    <!-- jQery -->
-    <script src="js/jquery-3.4.1.min.js"></script>
+      </div>
+    </section>
+    <br />
+    <!-- 回到目錄按鈕 -->
+    <a href="#toc" class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </a>
+  </div>
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
 
-    <script src="js/carousel.js"></script>
+  <script src="js/carousel.js"></script>
 
-    <!-- bootstrap js -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+  <!-- bootstrap js -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- custom js -->
-    <script src="js/custom.js"></script>
-    <script src="js/news-content.js"></script>
-    <script src="js/translations.js"></script>
-    <script src="js/language.js"></script>
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+  <script src="js/news-content.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/language.js"></script>
 
-    <!-- footer section -->
-    <div id="footer-container"></div>
-    <!-- footer section -->
+  <!-- footer section -->
+  <div id="footer-container"></div>
+  <!-- footer section -->
 
-    <script>
-      // 在頁面加載時初始化
-      document.addEventListener("DOMContentLoaded", function () {
-        updateImages();
+  <script>
+    // 在頁面加載時初始化
+    document.addEventListener("DOMContentLoaded", function () {
+      updateImages();
+
+      // 回到頂部和回到目錄按鈕顯示/隱藏
+      const backToTop = document.querySelector('.back-to-top');
+      const backToToc = document.querySelector('.back-to-toc');
+
+      if (backToTop) {
+        window.addEventListener('scroll', () => {
+          if (window.pageYOffset > 100) {
+            backToTop.classList.add('visible');
+            if (backToToc) {
+              backToToc.classList.add('visible');
+            }
+          } else {
+            backToTop.classList.remove('visible');
+            if (backToToc) {
+              backToToc.classList.remove('visible');
+            }
+          }
+        });
+
+        // 回到頂部的點擊事件
+        backToTop.addEventListener('click', function (e) {
+          e.preventDefault();
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      }
+
+      // 平滑滾動（用於目錄導航）
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        if (anchor.getAttribute('href') !== '#top') {  // 排除回到頂部按鈕
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+              target.scrollIntoView({
+                behavior: 'smooth'
+              });
+            }
+          });
+        }
       });
-    </script>
-  </body>
+
+      // 回到目錄的點擊事件
+      if (backToToc) {
+        backToToc.addEventListener('click', function (e) {
+          e.preventDefault();
+          const toc = document.querySelector('#toc');
+          if (toc) {
+            toc.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        });
+      }
+    });
+  </script>
+</body>
+
 </html>
