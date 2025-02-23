@@ -6,7 +6,7 @@ function getBrowserLanguage() {
 }
 
 // 初始化當前語言（從 localStorage 獲取，如果沒有則默認為中文）
-let currentLanguage = localStorage.getItem('selectedLanguage') || 'zh';
+let currentLanguage = localStorage.getItem('selectedLanguage') || getBrowserLanguage();
 
 // 更新所有需要翻譯的內容
 function translatePage() {
@@ -74,6 +74,11 @@ document.addEventListener('click', function(event) {
 
 // 當 DOM 加載完成時自動翻譯
 document.addEventListener('DOMContentLoaded', function() {
+    // 先設置語言
+    currentLanguage = localStorage.getItem('selectedLanguage') || getBrowserLanguage();
+    // 保存到 localStorage
+    localStorage.setItem('selectedLanguage', currentLanguage);
+    // 執行翻譯和更新圖片
     translatePage();
     updateImages();
 });
