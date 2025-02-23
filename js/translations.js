@@ -113,7 +113,14 @@ const translations = {
     'schedule_event_date': '日期',
     'schedule_event_type': '類型',
     'schedule_event_title': '標題',
-    'schedule_event_description': '描述'
+    'schedule_event_description': '描述',
+    'crowdFunding_intro1': '大家好！我們是 BNZHK，我們正在籌備一場盛大的應援活動，慶祝 NJZ 於 2025 年 3 月 23 日 ComplexCon 香港 的出道演出。',
+    'crowdFunding_intro2': '為了讓這次的活動更加精彩，我們需要大家的支持與幫助！這次的集資計畫主要用於製作應援物資、活動場地佈置、以及準備精美的禮物，希望能為大家帶來難忘的體驗與回憶。無論是應援手幅、燈牌，還是特別設計的周邊禮物，每一份物資都承載著我們的心意與熱情。',
+    'crowdFunding_intro3': '您的每一份支持，都將成為我們前進的動力，讓我們一起創造一個充滿感動與歡笑的時刻！感謝大家的參與與鼓勵，讓我們一起實現這個美好的計畫吧！',
+    'crowdFunding_shipping_note': '回禮送出時間未確定，不過我們會盡可能安排於演出日或之前送出，運費將會由參與者承擔。',
+    'crowdFunding_contact_title': '聯絡方式',
+    'crowdFunding_contact_instagram': '如有任何問題，歡迎在Instagram上聯絡：',
+    'crowdFunding_disclaimer': '*如有任何爭議，本團隊保留最終決定權。',
   },
   'en': {
     'nav_language': 'Language',
@@ -225,7 +232,20 @@ const translations = {
     'schedule_event_date': 'Date',
     'schedule_event_type': 'Type',
     'schedule_event_title': 'Title',
-    'schedule_event_description': 'Description'
+    'schedule_event_description': 'Description',
+    'crowdFunding_intro1': 'Hello! We are BNZHK, and we are preparing for a grand support event to celebrate NJZ\'s debut performance at ComplexCon Hong Kong on March 23, 2025.',
+    'crowdFunding_intro2': 'To make this event more spectacular, we need your support and help! This fundraising project is mainly for producing support materials, venue decoration, and preparing special gifts, hoping to bring everyone an unforgettable experience and memories. Whether it\'s support banners, light sticks, or specially designed merchandise, each item carries our sincerity and passion.',
+    'crowdFunding_intro3': 'Your support will become our driving force, let\'s create a moment full of touching moments and laughter together! Thank you for your participation and encouragement, let\'s make this beautiful plan come true together!',
+    'crowdFunding_shipping_note': 'The shipping time for rewards is not yet determined, but we will try to arrange delivery on or before the performance day. Shipping costs will be borne by participants.',
+    'contact_title': 'Contact Information',
+    'contact_instagram': 'For any inquiries, please contact us on Instagram:',
+    'crowdFunding_contact_title': 'Contact Information',
+    'crowdFunding_contact_instagram': 'For any inquiries, please contact us on Instagram:',
+    'crowdFunding_disclaimer': '*In case of any dispute, our team reserves the right of final decision.',
+    'form_title_cn': 'BNZ STATION Fundraising Form',
+    'form_subtitle_cn': '(Chinese Version | For HK, TW, and Macau)',
+    'form_title_en': 'BNZ STATION Fundraising Form',
+    'form_subtitle_en': '(English | For Foreigners)'
   },
   'ko': {
     'nav_language': '언어',
@@ -322,7 +342,14 @@ const translations = {
     'schedule_event_date': '날짜',
     'schedule_event_type': '유형',
     'schedule_event_title': '제목',
-    'schedule_event_description': '설명'
+    'schedule_event_description': '설명',
+    'crowdFunding_intro1': '안녕하세요! 저희는 BNZHK이며, 2025년 3월 23일 ComplexCon 홍콩에서 NJZ의 데뷔 공연을 축하하기 위한 대규모 응원 이벤트를 준비하고 있습니다.',
+    'crowdFunding_intro2': '이 이벤트를 더욱 특별하게 만들기 위해 여러분의 지원과 도움이 필요합니다! 이 모금 프로젝트는 주로 응원 물품 제작, 공연장 장식, 특별 선물 준비 등에 사용될 예정이며, 모든 분들에게 잊지 못할 경험과 추억을 선사하고자 합니다.',
+    'crowdFunding_intro3': '여러분의 지원이 저희의 원동력이 될 것입니다. 함께 감동적이고 즐거운 순간을 만들어가요! 참여와 격려에 감사드리며, 이 아름다운 계획을 함께 실현해봅시다!',
+    'crowdFunding_shipping_note': '리워드 배송 시기는 아직 미정이나, 공연 당일 또는 그 이전에 배송될 수 있도록 하겠습니다. 배송비는 참가자 부담입니다.',
+    'crowdFunding_contact_title': '연락처',
+    'crowdFunding_contact_instagram': '문의사항이 있으시면 Instagram으로 연락해주세요:',
+    'crowdFunding_disclaimer': '*분쟁이 있을 경우 저희 팀이 최종 결정권을 가집니다.'
   },
   'ja': {
     'nav_language': '言語',
@@ -419,6 +446,17 @@ const translations = {
     'schedule_event_date': '日付',
     'schedule_event_type': '種類',
     'schedule_event_title': 'タイトル',
-    'schedule_event_description': '説明'
+    'schedule_event_description': '説明',
+    'crowdFunding_intro1': 'こんにちは！私たちBNZHKは、2025年3月23日のComplexCon香港でのNJZのデビューパフォーマンスを祝うための盛大な応援イベントを準備しています。',
+    'crowdFunding_intro2': 'このイベントをより素晴らしいものにするために、皆様のご支援とご協力が必要です！この募金プロジェクトは、応援グッズの制作、会場装飾、特別なギフトの準備など、皆様に忘れられない体験と思い出を提供することを目的としています。',
+    'crowdFunding_intro3': '皆様のご支援が私たちの原動力となります。感動と笑顔の瞬間を一緒に作りましょう！ご参加とご声援に感謝申し上げます。この素晴らしい計画を一緒に実現させましょう！',
+    'crowdFunding_shipping_note': 'リワードの発送時期は未定ですが、公演日当日または前に発送できるよう調整いたします。配送料は参加者負担となります。',
+    'crowdFunding_contact_title': 'お問い合わせ',
+    'crowdFunding_contact_instagram': 'ご質問等ございましたら、Instagramでご連絡ください：',
+    'crowdFunding_disclaimer': '*争議が生じた場合、当チームが最終決定権を有します。',
+    'form_title_cn': 'BNZ STATION Fundraising Form',
+    'form_subtitle_cn': '(Chinese Version | For HK, TW, and Macau)',
+    'form_title_en': 'BNZ STATION Fundraising Form',
+    'form_subtitle_en': '(English | For Foreigners)'
   }
 };

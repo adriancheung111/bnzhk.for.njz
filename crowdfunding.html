@@ -153,11 +153,11 @@
         </div>
 
         <div class="content-section">          
-          <p>大家好！我們是 BNZHK，我們正在籌備一場盛大的應援活動，慶祝 NJZ 於 2025 年 3 月 23 日 ComplexCon 香港 的出道演出。</p>
+          <p class="translate" data-key="crowdFunding_intro1">大家好！我們是 BNZHK，我們正在籌備一場盛大的應援活動，慶祝 NJZ 於 2025 年 3 月 23 日 ComplexCon 香港 的出道演出。</p>
           
-          <p>為了讓這次的活動更加精彩，我們需要大家的支持與幫助！這次的集資計畫主要用於製作應援物資、活動場地佈置、以及準備精美的禮物，希望能為大家帶來難忘的體驗與回憶。無論是應援手幅、燈牌，還是特別設計的周邊禮物，每一份物資都承載著我們的心意與熱情。</p>
+          <p class="translate" data-key="crowdFunding_intro2">為了讓這次的活動更加精彩，我們需要大家的支持與幫助！這次的集資計畫主要用於製作應援物資、活動場地佈置、以及準備精美的禮物，希望能為大家帶來難忘的體驗與回憶。無論是應援手幅、燈牌，還是特別設計的周邊禮物，每一份物資都承載著我們的心意與熱情。</p>
           
-          <p>您的每一份支持，都將成為我們前進的動力，讓我們一起創造一個充滿感動與歡笑的時刻！感謝大家的參與與鼓勵，讓我們一起實現這個美好的計畫吧！</p>
+          <p class="translate" data-key="crowdFunding_intro3">您的每一份支持，都將成為我們前進的動力，讓我們一起創造一個充滿感動與歡笑的時刻！感謝大家的參與與鼓勵，讓我們一起實現這個美好的計畫吧！</p>
         </div>
 
         <div class="content-section">          
@@ -165,36 +165,44 @@
             <!-- 第一張圖片 -->
             <div class="col-12 col-md-6">
               <div class="reward-summary">
-                <img 
-                  src="images/index1_cn.jpg" 
-                  alt="募款回禮一覽" 
-                  class="img-fluid"
-                  onclick="openImageModal(this)"
-                >
+                <a href="images/index1_cn.jpg" target="_blank" class="reward-image-link">
+                  <img 
+                    src="images/index1_cn.jpg" 
+                    alt="募款回禮一覽" 
+                    class="img-fluid reward-image"
+                    data-cn-src="images/index1_cn.jpg"
+                    data-en-src="images/index1_en.jpg"
+                    style="cursor: pointer;"
+                  >
+                </a>
               </div>
             </div>
             
-            <!-- 第二張圖片，在手機版隱藏 -->
-            <div class="col-12 col-md-6 d-none d-md-block">
+            <!-- 第二張圖片 -->
+            <div class="col-12 col-md-6">
               <div class="reward-summary">
-                <img 
-                  src="images/index3_cn.jpg" 
-                  alt="募款回禮詳情" 
-                  class="img-fluid"
-                  onclick="openImageModal(this)"
-                >
+                <a href="images/index3_cn.jpg" target="_blank" class="reward-image-link">
+                  <img 
+                    src="images/index3_cn.jpg" 
+                    alt="募款回禮詳情" 
+                    class="img-fluid reward-image"
+                    data-cn-src="images/index3_cn.jpg"
+                    data-en-src="images/index3_en.jpg"
+                    style="cursor: pointer;"
+                  >
+                </a>
               </div>
             </div>
           </div>
         </div>
 
         <div class="content-section">
-          <p class="text-muted">回禮送出時間未確定，不過我們會盡可能安排於演出日或之前送出，運費將會由參與者承擔。</p>
+          <p class="text-muted translate" data-key="crowdFunding_shipping_note">回禮送出時間未確定，不過我們會盡可能安排於演出日或之前送出，運費將會由參與者承擔。</p>
         </div>
 
         <div class="contact-info">
-          <h4 class="text-center">聯絡方式</h4>
-          <p class="text-center">如有任何問題，歡迎在Instagram上聯絡：</p>
+          <h4 class="text-center translate" data-key="crowdFunding_contact_title">聯絡方式</h4>
+          <p class="text-center translate" data-key="crowdFunding_contact_instagram">如有任何問題，歡迎在Instagram上聯絡：</p>
           <div class="social-links">
             <a href="https://www.instagram.com/bnzhk.for.njz/" target="_blank">
               <i class="fa fa-instagram"></i> @bnzhk.for.njz
@@ -206,7 +214,7 @@
         </div>
 
         <div class="text-center mt-4">
-          <small class="text-muted">*如有任何爭議，本團隊保留最終決定權。</small>
+          <small class="text-muted translate" data-key="crowdFunding_disclaimer">*如有任何爭議，本團隊保留最終決定權。</small>
         </div>
 
         <!-- 添加表單按鈕 -->
@@ -216,8 +224,8 @@
                target="_blank" 
                class="btn btn-primary w-100"
                style="background-color: #0056b3; border: none; padding: 15px; font-size: 1.1rem;">
-              BNZ STATION 集資計劃 - 募款表格<br>
-              <small>（中文版｜香港、台灣、澳門專用）</small>
+              <span class="translate" >BNZ STATION 集資計劃 - 募款表格</span><br>
+              <small class="translate">（中文版｜香港、台灣、澳門專用）</small>
             </a>
           </div>
           <div class="col-12 col-md-6">
@@ -225,8 +233,8 @@
                target="_blank" 
                class="btn btn-primary w-100"
                style="background-color: #0056b3; border: none; padding: 15px; font-size: 1.1rem;">
-              BNZ STATION Fundraising Form<br>
-              <small>(English | For Foreigners)</small>
+              <span class="translate">BNZ STATION Fundraising Form</span><br>
+              <small class="translate">(English | For Foreigners)</small>
             </a>
           </div>
         </div>

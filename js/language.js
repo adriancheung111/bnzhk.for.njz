@@ -57,6 +57,7 @@ function changeLanguage(lang) {
         myNav.classList.remove("menu_width");
         document.querySelector(".custom_menu-btn").classList.remove("menu_btn-style");
     }
+    updateImages();
 }
 
 // 點擊外部關閉語言選單
@@ -74,6 +75,7 @@ document.addEventListener('click', function(event) {
 // 當 DOM 加載完成時自動翻譯
 document.addEventListener('DOMContentLoaded', function() {
     translatePage();
+    updateImages();
 });
 
 // 當導航加載完成時也執行翻譯
@@ -82,4 +84,19 @@ function updateContent() {
 }
 
 // 導出當前語言變量，讓其他文件可以訪問
-window.currentLanguage = currentLanguage; 
+window.currentLanguage = currentLanguage;
+
+// 在現有的語言切換函數中添加圖片更新邏輯
+function updateImages() {
+    const currentLang = currentLanguage;
+    const images = document.querySelectorAll('.reward-image');
+    const links = document.querySelectorAll('.reward-image-link');
+    
+    images.forEach((img, index) => {
+        const newSrc = currentLang === 'zh' ? img.dataset.cnSrc : img.dataset.enSrc;
+        img.src = newSrc;
+        if (links[index]) {
+            links[index].href = newSrc;
+        }
+    });
+} 
