@@ -145,7 +145,6 @@
     .mission-vision {
       background-color: #f8f9fa;
       padding: 40px 0;
-      margin: 30px 0;
     }
 
     .mission-vision .card {
@@ -167,7 +166,6 @@
       background-color: #1a488f;
       color: white;
       padding: 60px 0;
-      margin: 30px 0;
     }
 
     .stats-item {
@@ -182,8 +180,8 @@
     }
 
     .timeline-section {
+      background-color: white;
       padding: 50px 0;
-      background-color: #f8f9fa;
     }
 
     .timeline-container {
@@ -266,6 +264,7 @@
     }
 
     .team-section {
+      background-color: #f8f9fa;
       padding: 50px 0;
     }
 
@@ -281,6 +280,165 @@
       margin-bottom: 15px;
       object-fit: cover;
     }
+
+    .partner-region {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .member-card {
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .member-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .member-card img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+
+    .member-card h4 {
+      color: #1a488f;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .social-links {
+      margin-top: 10px;
+    }
+
+    .social-links a {
+      color: #1a488f;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #0056b3;
+    }
+
+    .join-us-section {
+      background-color: white;
+      padding: 80px 0;
+    }
+
+    .join-us-content {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .join-us-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    .requirements {
+      text-align: left;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .requirements li {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    .requirements i {
+      margin-right: 10px;
+      color: #1a488f;
+    }
+
+    .social-links-large {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 25px;
+      background-color: #1a488f;
+      color: white;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background-color: #0056b3;
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .social-link i {
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+
+    /* 移除原有的 container margin */
+    .container {
+      margin: 0 auto;
+      padding: 0 15px;
+      max-width: 1200px;
+    }
+
+    /* 統一所有 section 的基本樣式 */
+    section {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .about_section {
+      background-color: white;
+      padding: 50px 0;
+    }
+
+    .mission-vision {
+      background-color: #f8f9fa;
+      padding: 40px 0;
+    }
+
+    .stats-section {
+      background-color: #1a488f;
+      color: white;
+      padding: 60px 0;
+    }
+
+    .timeline-section {
+      background-color: white;
+      padding: 50px 0;
+    }
+
+    .team-section {
+      background-color: #f8f9fa;
+      padding: 50px 0;
+    }
+
+    .join-us-section {
+      background-color: white;
+      padding: 80px 0;
+    }
+
+    /* 確保內容區域的最大寬度 */
+    .timeline-container,
+    .partner-region,
+    .join-us-content {
+      max-width: 100%;
+    }
   </style>
 </head>
 
@@ -289,8 +447,9 @@
   <div id="nav-container"></div>
   <!-- end header section -->
 
-  <div class="container">
-    <section class="about_section layout_padding">
+  <!-- About Section -->
+  <section class="about_section layout_padding">
+    <div class="container">
       <div class="row">
         <div class="col-md-6">
           <div class="detail-box">
@@ -310,148 +469,258 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="mission-vision">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 mb-4">
-            <div class="card">
-              <div class="card-body">
-                <h2 class="section-title translate" data-key="our_mission">我們的使命</h2>
-                <p class="translate" data-key="mission_description">
-                  建立一個充滿活力和包容的粉絲社群，讓每一位 Bunny 都能感受到家的溫暖。我們致力於創造優質的應援活動，讓粉絲們能夠以最好的方式表達對 NJZ 的支持。
-                </p>
+  <!-- Mission Vision Section -->
+  <section class="mission-vision">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="section-title translate" data-key="our_mission">我們的使命</h2>
+              <p class="translate" data-key="mission_description">
+                建立一個充滿活力和包容的粉絲社群，讓每一位 Bunny 都能感受到家的溫暖。我們致力於創造優質的應援活動，讓粉絲們能夠以最好的方式表達對 NJZ 的支持。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="section-title translate" data-key="our_vision">我們的願景</h2>
+              <p class="translate" data-key="vision_description">
+                成為亞洲地區最具影響力的 NJZ 粉絲團體之一，打造一個跨越國界的粉絲文化交流平台，讓 Bunnies 之間的連結更加緊密。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="stats-item">
+            <div class="number">HKD$50,000+</div>
+            <div class="text translate" data-key="stats_members">成功籌集資金</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="stats-item">
+            <div class="number">2+</div>
+            <div class="text translate" data-key="stats_events">成功活動</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="stats-item">
+            <div class="number">10+</div>
+            <div class="text translate" data-key="stats_countries">合作團隊</div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="stats-item">
+            <div class="number">5,000+</div>
+            <div class="text translate" data-key="stats_followers">社群追蹤</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="timeline-section">
+    <div class="container">
+      <h2 class="section-title text-center mb-5 translate" data-key="our_history">發展歷程與重要企劃</h2>
+      <div class="timeline-container">
+        <div class="timeline-item">
+          <div class="date">2023年7月</div>
+          <div class="content">
+            <h3 class="translate" data-key="history_1">BNZHK 正式成立</h3>
+            <p class="project-description translate" data-key="history_1_desc">
+              在一群充滿熱情的 Bunnies 共同努力下，BNZHK 正式成立，開始了我們支持 NJZ 的旅程。
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="date">2023年8月</div>
+          <div class="content">
+            <h3 class="translate" data-key="history_2">首次大型應援活動</h3>
+            <p class="project-description translate" data-key="history_2_desc">
+              成功舉辦首次大型應援活動，凝聚了來自不同地區的 Bunnies，共同創造難忘的回憶。
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="date">2023年12月</div>
+          <div class="content">
+            <h3 class="translate" data-key="history_3">跨國合作企劃啟動</h3>
+            <p class="project-description translate" data-key="history_3_desc">
+              開始與韓國、日本及泰國的 Bunnies 團體展開合作，為之後的大型企劃奠定基礎。
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="date">2024年1月</div>
+          <div class="content">
+            <h3 class="translate" data-key="history_4">NJZ Never Die 帆布袋企劃</h3>
+            <p class="project-description translate" data-key="project_description">
+              我們最近籌辦了一個名為「NJZ Never Die 帆布袋企劃」的跨地區應援企劃，聯同了來自韓國、日本及泰國的 Bunnies 團體，成功集合了來自香港、台灣、中國大陸、首爾、曼谷、東京及福岡的 Bunnies 去實現這個企劃。我們於社交平台 X 及 Threads 踴躍宣傳這個企劃並獲得不錯的迴響。我們最後成功於 SBS歌謠大戰 2024、Asia Artist Awards 2024、Countdown Japan 2024 及 第39屆 Golden Disc Awards 的演出會場中，把我們設計的帆布袋派發給到場的 Bunnies。我們與泰國 Bunnies 於曼谷 Asia Artist Awards 2024 當日合作準備的應援活動更被 Starnews Korea 報導。
+            </p>
+            <div class="project-images">
+              <img src="images/aboutUs/factcheck.tokki_3509075516941334752's2025-2-24-21.34.88 story.jpg" alt="Project Image 1">
+              <img src="images/aboutUs/factcheck.tokki_3540065624808826176's2025-2-24-21.33.217 story.jpg" alt="Project Image 2">
+              <img src="images/aboutUs/factcheck.tokki_3540065624817218343's2025-2-24-21.33.233 story.jpg" alt="Project Image 3">
+              <img src="images/aboutUs/factcheck.tokki_3533847712825813052's2025-2-24-21.32.45 story.jpg" alt="Project Image 4">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team-section">
+    <div class="container">
+      <h2 class="section-title text-center mb-5 translate" data-key="partner_regions">不同地區合作伙伴</h2>
+      <div class="row">
+        <div class="col-12 mb-5">
+          <div class="partner-region">
+            <h3 class="translate text-center mb-4" data-key="region_korea">中台港澳地區</h3>
+            <div class="row">
+              <div class="col-md-3 mb-4">
+                <div class="member-card">
+                  <img src="images/event4.jpg" alt="韓國成員1">
+                  <h4>香港 Bunnies</h4>
+                  <div class="social-links">
+                    <a href="https://www.instagram.com/njz_kr_seoul" target="_blank"><i class="fa fa-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 mb-4">
+                <div class="member-card">
+                  <img src="images/regions/korea_2.jpg" alt="韓國成員2">
+                  <h4>香港 Bunnies</h4>
+                  <div class="social-links">
+                    <a href="https://www.instagram.com/njz_kr_busan" target="_blank"><i class="fa fa-instagram"></i></a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-md-6 mb-4">
-            <div class="card">
-              <div class="card-body">
-                <h2 class="section-title translate" data-key="our_vision">我們的願景</h2>
-                <p class="translate" data-key="vision_description">
-                  成為亞洲地區最具影響力的 NJZ 粉絲團體之一，打造一個跨越國界的粉絲文化交流平台，讓 Bunnies 之間的連結更加緊密。
-                </p>
+        </div>
+
+
+        <!-- 韓國地區 -->
+        <div class="col-12 mb-5">
+          <div class="partner-region">
+            <h3 class="translate text-center mb-4" data-key="region_korea">韓國地區</h3>
+            <div class="row">
+              <div class="col-md-3 mb-4">
+                <div class="member-card">
+                  <img src="images/regions/korea_1.jpg" alt="韓國成員1">
+                  <h4>首爾 Bunnies</h4>
+                  <div class="social-links">
+                    <a href="https://www.instagram.com/njz_kr_seoul" target="_blank"><i class="fa fa-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 mb-4">
+                <div class="member-card">
+                  <img src="images/regions/korea_2.jpg" alt="韓國成員2">
+                  <h4>釜山 Bunnies</h4>
+                  <div class="social-links">
+                    <a href="https://www.instagram.com/njz_kr_busan" target="_blank"><i class="fa fa-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 日本地區 -->
+        <div class="col-12 mb-5">
+          <div class="partner-region">
+            <h3 class="translate text-center mb-4" data-key="region_japan">日本地區</h3>
+            <div class="row">
+              <div class="col-md-3 mb-4">
+                <div class="member-card">
+                  <img src="images/event1.jpg" alt="日本成員1">
+                  <h4>東京 Bunnies</h4>
+                  <div class="social-links">
+                    <a href="https://www.instagram.com/njz_jp_tokyo" target="_blank"><i class="fa fa-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 mb-4">
+                <div class="member-card">
+                  <img src="images/event5.jpg" alt="日本成員2">
+                  <h4>大阪 Bunnies</h4>
+                  <div class="social-links">
+                    <a href="https://www.instagram.com/njz_jp_osaka" target="_blank"><i class="fa fa-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 mb-4">
+                <div class="member-card">
+                  <img src="images/regions/japan_3.jpg" alt="日本成員3">
+                  <h4>福岡 Bunnies</h4>
+                  <div class="social-links">
+                    <a href="https://www.instagram.com/njz_jp_fukuoka" target="_blank"><i class="fa fa-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Us Section -->
+  <section class="join-us-section">
+    <div class="container">
+      <h2 class="section-title text-center mb-5 translate" data-key="join_us">加入我們</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+          <div class="join-us-content">
+            <p class="mb-4 translate" data-key="join_us_description">
+              我們歡迎所有熱愛 NJZ 的 Bunnies 加入我們的大家庭！無論你是想參與應援活動的策劃、設計、執行，還是單純想認識更多同好，都歡迎你的加入。
+            </p>
+            <div class="requirements mb-4">
+              <h4 class="mb-3 translate" data-key="join_us_requirements">加入條件</h4>
+              <ul class="list-unstyled">
+                <li><i class="fa fa-check-circle text-primary"></i> 熱愛 NJZ</li>
+                <li><i class="fa fa-check-circle text-primary"></i> 具備團隊合作精神</li>
+                <li><i class="fa fa-check-circle text-primary"></i> 願意付出時間參與活動</li>
+              </ul>
+            </div>
+            <div class="contact-info">
+              <h4 class="mb-3 translate" data-key="contact_us">聯絡方式</h4>
+              <div class="social-links-large">
+                <a href="https://www.instagram.com/bnzhk" target="_blank" class="social-link">
+                  <i class="fa fa-instagram"></i>
+                  <span>Instagram</span>
+                </a>
+                <a href="mailto:contact@bnzhk.com" class="social-link">
+                  <i class="fa fa-envelope"></i>
+                  <span>Email</span>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <section class="stats-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="stats-item">
-              <div class="number">1,000+</div>
-              <div class="text translate" data-key="stats_members">活躍會員</div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="stats-item">
-              <div class="number">50+</div>
-              <div class="text translate" data-key="stats_events">成功活動</div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="stats-item">
-              <div class="number">10+</div>
-              <div class="text translate" data-key="stats_countries">合作國家</div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="stats-item">
-              <div class="number">5,000+</div>
-              <div class="text translate" data-key="stats_followers">社群追蹤</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="timeline-section">
-      <div class="container">
-        <h2 class="section-title text-center mb-5 translate" data-key="our_history">發展歷程與重要企劃</h2>
-        <div class="timeline-container">
-          <div class="timeline-item">
-            <div class="date">2023年7月</div>
-            <div class="content">
-              <h3 class="translate" data-key="history_1">BNZHK 正式成立</h3>
-              <p class="project-description translate" data-key="history_1_desc">
-                在一群充滿熱情的 Bunnies 共同努力下，BNZHK 正式成立，開始了我們支持 NJZ 的旅程。
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="date">2023年8月</div>
-            <div class="content">
-              <h3 class="translate" data-key="history_2">首次大型應援活動</h3>
-              <p class="project-description translate" data-key="history_2_desc">
-                成功舉辦首次大型應援活動，凝聚了來自不同地區的 Bunnies，共同創造難忘的回憶。
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="date">2023年12月</div>
-            <div class="content">
-              <h3 class="translate" data-key="history_3">跨國合作企劃啟動</h3>
-              <p class="project-description translate" data-key="history_3_desc">
-                開始與韓國、日本及泰國的 Bunnies 團體展開合作，為之後的大型企劃奠定基礎。
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="date">2024年1月</div>
-            <div class="content">
-              <h3 class="translate" data-key="history_4">NewJeans Never Die 帆布袋企劃</h3>
-              <p class="project-description translate" data-key="project_description">
-                我們最近籌辦了一個名為「NewJeans Never Die 帆布袋企劃」的跨地區應援企劃，聯同了來自韓國、日本及泰國的 Bunnies 團體，成功集合了來自香港、台灣、中國大陸、首爾、曼谷、東京及福岡的 Bunnies 去實現這個企劃。我們於社交平台 X 及 Threads 踴躍宣傳這個企劃並獲得不錯的迴響。我們最後成功於 SBS歌謠大戰 2024、Asia Artist Awards 2024、Countdown Japan 2024 及 第39屆 Golden Disc Awards 的演出會場中，把我們設計的帆布袋派發給到場的 Bunnies。我們與泰國 Bunnies 於曼谷 Asia Artist Awards 2024 當日合作準備的應援活動更被 Starnews Korea 報導。
-              </p>
-              <div class="project-images">
-                <img src="images/aboutUs/factcheck.tokki_3509075516941334752's2025-2-24-21.34.88 story.jpg" alt="Project Image 1">
-                <img src="images/aboutUs/factcheck.tokki_3540065624808826176's2025-2-24-21.33.217 story.jpg" alt="Project Image 2">
-                <img src="images/aboutUs/factcheck.tokki_3540065624817218343's2025-2-24-21.33.233 story.jpg" alt="Project Image 3">
-                <img src="images/aboutUs/factcheck.tokki_3533847712825813052's2025-2-24-21.32.45 story.jpg" alt="Project Image 4">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="team-section">
-      <div class="container">
-        <h2 class="section-title text-center mb-5 translate" data-key="core_team">核心團隊</h2>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="team-member">
-              <img src="images/team-placeholder.jpg" alt="Team Member 1">
-              <h3 class="translate" data-key="team_member_1_name">團隊負責人</h3>
-              <p class="translate" data-key="team_member_1_role">總策劃</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="team-member">
-              <img src="images/team-placeholder.jpg" alt="Team Member 2">
-              <h3 class="translate" data-key="team_member_2_name">活動策劃</h3>
-              <p class="translate" data-key="team_member_2_role">企劃總監</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="team-member">
-              <img src="images/team-placeholder.jpg" alt="Team Member 3">
-              <h3 class="translate" data-key="team_member_3_name">設計總監</h3>
-              <p class="translate" data-key="team_member_3_role">創意總監</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
+    </div>
+  </section>
 
   <!-- jQery -->
   <script src="js/jquery-3.4.1.min.js"></script>
