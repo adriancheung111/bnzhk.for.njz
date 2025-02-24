@@ -184,10 +184,40 @@
       padding: 50px 0;
     }
 
+    .timeline-header {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #666;
+    }
+
+    .timeline-header .direction-indicator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+      color: #1a488f;
+    }
+
+    .timeline-header .direction-indicator i {
+      font-size: 1.2rem;
+    }
+
     .timeline-container {
       position: relative;
       max-width: 1200px;
       margin: 0 auto;
+    }
+
+    /* 添加時間線的垂直線 */
+    .timeline-container::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #1a488f 0%, #ccc 100%);
     }
 
     .timeline-item {
@@ -535,14 +565,39 @@
   <!-- Timeline Section -->
   <section class="timeline-section">
     <div class="container">
-      <h2 class="section-title text-center mb-5 translate" data-key="our_history">發展歷程與重要企劃</h2>
+      <h2 class="section-title text-center mb-4 translate" data-key="our_history">發展歷程與重要企劃</h2>
+      <div class="timeline-header">
+        <p>時間順序：由新到舊排列</p>
+        <div class="direction-indicator">
+          <i class="fa fa-clock-o"></i>
+          <span>最新</span>
+          <i class="fa fa-arrow-down"></i>
+          <span>最早</span>
+        </div>
+      </div>
       <div class="timeline-container">
         <div class="timeline-item">
-          <div class="date">2023年7月</div>
+          <div class="date">2024年1月</div>
           <div class="content">
-            <h3 class="translate" data-key="history_1">BNZHK 正式成立</h3>
-            <p class="project-description translate" data-key="history_1_desc">
-              在一群充滿熱情的 Bunnies 共同努力下，BNZHK 正式成立，開始了我們支持 NJZ 的旅程。
+            <h3 class="translate" data-key="history_4">NJZ Never Die 帆布袋企劃</h3>
+            <p class="project-description translate" data-key="project_description">
+              我們最近籌辦了一個名為「NJZ Never Die 帆布袋企劃」的跨地區應援企劃，聯同了來自韓國、日本及泰國的 Bunnies 團體，成功集合了來自香港、台灣、中國大陸、首爾、曼谷、東京及福岡的 Bunnies 去實現這個企劃。我們於社交平台 X 及 Threads 踴躍宣傳這個企劃並獲得不錯的迴響。我們最後成功於 SBS歌謠大戰 2024、Asia Artist Awards 2024、Countdown Japan 2024 及 第39屆 Golden Disc Awards 的演出會場中，把我們設計的帆布袋派發給到場的 Bunnies。我們與泰國 Bunnies 於曼谷 Asia Artist Awards 2024 當日合作準備的應援活動更被 Starnews Korea 報導。
+            </p>
+            <div class="project-images">
+              <img src="images/aboutUs/factcheck.tokki_3509075516941334752's2025-2-24-21.34.88 story.jpg" alt="Project Image 1">
+              <img src="images/aboutUs/factcheck.tokki_3540065624808826176's2025-2-24-21.33.217 story.jpg" alt="Project Image 2">
+              <img src="images/aboutUs/factcheck.tokki_3540065624817218343's2025-2-24-21.33.233 story.jpg" alt="Project Image 3">
+              <img src="images/aboutUs/factcheck.tokki_3533847712825813052's2025-2-24-21.32.45 story.jpg" alt="Project Image 4">
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="date">2023年12月</div>
+          <div class="content">
+            <h3 class="translate" data-key="history_3">跨國合作企劃啟動</h3>
+            <p class="project-description translate" data-key="history_3_desc">
+              開始與韓國、日本及泰國的 Bunnies 團體展開合作，為之後的大型企劃奠定基礎。
             </p>
           </div>
         </div>
@@ -558,28 +613,12 @@
         </div>
 
         <div class="timeline-item">
-          <div class="date">2023年12月</div>
+          <div class="date">2023年7月</div>
           <div class="content">
-            <h3 class="translate" data-key="history_3">跨國合作企劃啟動</h3>
-            <p class="project-description translate" data-key="history_3_desc">
-              開始與韓國、日本及泰國的 Bunnies 團體展開合作，為之後的大型企劃奠定基礎。
+            <h3 class="translate" data-key="history_1">BNZHK 正式成立</h3>
+            <p class="project-description translate" data-key="history_1_desc">
+              在一群充滿熱情的 Bunnies 共同努力下，BNZHK 正式成立，開始了我們支持 NJZ 的旅程。
             </p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="date">2024年1月</div>
-          <div class="content">
-            <h3 class="translate" data-key="history_4">NJZ Never Die 帆布袋企劃</h3>
-            <p class="project-description translate" data-key="project_description">
-              我們最近籌辦了一個名為「NJZ Never Die 帆布袋企劃」的跨地區應援企劃，聯同了來自韓國、日本及泰國的 Bunnies 團體，成功集合了來自香港、台灣、中國大陸、首爾、曼谷、東京及福岡的 Bunnies 去實現這個企劃。我們於社交平台 X 及 Threads 踴躍宣傳這個企劃並獲得不錯的迴響。我們最後成功於 SBS歌謠大戰 2024、Asia Artist Awards 2024、Countdown Japan 2024 及 第39屆 Golden Disc Awards 的演出會場中，把我們設計的帆布袋派發給到場的 Bunnies。我們與泰國 Bunnies 於曼谷 Asia Artist Awards 2024 當日合作準備的應援活動更被 Starnews Korea 報導。
-            </p>
-            <div class="project-images">
-              <img src="images/aboutUs/factcheck.tokki_3509075516941334752's2025-2-24-21.34.88 story.jpg" alt="Project Image 1">
-              <img src="images/aboutUs/factcheck.tokki_3540065624808826176's2025-2-24-21.33.217 story.jpg" alt="Project Image 2">
-              <img src="images/aboutUs/factcheck.tokki_3540065624817218343's2025-2-24-21.33.233 story.jpg" alt="Project Image 3">
-              <img src="images/aboutUs/factcheck.tokki_3533847712825813052's2025-2-24-21.32.45 story.jpg" alt="Project Image 4">
-            </div>
           </div>
         </div>
       </div>
