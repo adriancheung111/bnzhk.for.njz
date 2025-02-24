@@ -1,147 +1,473 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- Basic -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- Mobile Metas -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <!-- Site Metas -->
-    <link rel="icon" href="images/favicon.png" type="image/gif" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
 
-    <title>BNZHK</title>
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="images/favicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
 
-    <!-- bootstrap core css -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-    <!-- font awesome style -->
-    <link href="css/font-awesome.min.css" rel="stylesheet" />
-    <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet" />
-    <!-- responsive style -->
-    <link href="css/responsive.css" rel="stylesheet" />
+  <title>BNZHK</title>
 
-    <link href="css/carousel.css" rel="stylesheet" />
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
 
-    <style>
-      .about_section .row {
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
+  <link href="css/carousel.css" rel="stylesheet" />
+
+  <style>
+    .about_section .row {
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+
+    .about_section .img-box {
+      position: relative;
+      padding: 25px 0 0 25px;
+    }
+
+    .about_section .img-box img {
+      width: 100%;
+      position: relative;
+    }
+
+    .about_section .img-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 250px;
+      /* background-color: #1a488f; */
+    }
+
+    .about_section .detail-box p {
+      margin-top: 10px;
+      margin-bottom: 35px;
+    }
+
+    .about_section .detail-box a {
+      display: inline-block;
+      padding: 10px 45px;
+      background-color: #1a488f;
+      color: #ffffff;
+      border-radius: 0;
+      border: 1px solid #1a488f;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s;
+    }
+
+    .about_section .detail-box a:hover {
+      background-color: transparent;
+      color: #1a488f;
+    }
+
+
+    .about_section .row {
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+
+    .about_section .img-box {
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .about_section .img-box img {
+      max-width: 100%;
+      position: relative;
+      z-index: 2;
+      border-radius: 10px;
+    }
+
+    .about_section .img-box::before,
+    .about_section .img-box::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 45px;
+      height: 70%;
+      /* background-color: #1a488f; */
+      z-index: 3;
+    }
+
+    .about_section .img-box::before {
+      left: 0;
+      z-index: 3;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    .about_section .img-box::after {
+      right: 0;
+      z-index: 1;
+      -webkit-transform: translate(50%, -50%);
+      transform: translate(50%, -50%);
+    }
+
+    .about_section .detail-box p {
+      color: #1f1f1f;
+      margin-top: 15px;
+      line-height: 1.8;
+    }
+
+    .section-title {
+      color: #1a488f;
+      margin-bottom: 30px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background-color: #1a488f;
+    }
+
+    .mission-vision {
+      background-color: #f8f9fa;
+      padding: 40px 0;
+      margin: 30px 0;
+    }
+
+    .mission-vision .card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .mission-vision .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .mission-vision .card-body {
+      padding: 30px;
+    }
+
+    .stats-section {
+      background-color: #1a488f;
+      color: white;
+      padding: 60px 0;
+      margin: 30px 0;
+    }
+
+    .stats-item {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .stats-item .number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .timeline-section {
+      padding: 50px 0;
+      background-color: #f8f9fa;
+    }
+
+    .timeline-container {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 30px;
+      border-radius: 15px;
+      background: white;
+      margin-bottom: 40px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 25px;
+      width: 20px;
+      height: 20px;
+      background-color: #1a488f;
+      border-radius: 50%;
+    }
+
+    .timeline-item .date {
+      color: #1a488f;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .timeline-item .content {
+      margin-top: 20px;
+    }
+
+    .timeline-item .project-images {
+      margin-top: 20px;
+    }
+
+    .timeline-item .project-images img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .timeline-item .project-description {
+      margin-top: 15px;
+      line-height: 1.8;
+    }
+
+    @media (min-width: 768px) {
+      .timeline-item .project-images {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
       }
+    }
 
-      .about_section .img-box {
-        position: relative;
-      }
+    .projects_section {
+      padding: 50px 0;
+      background-color: #f8f9fa;
+    }
 
-      .about_section .img-box img {
-        max-width: 100%;
-        position: relative;
-        z-index: 2;
-      }
+    .carousel-item img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
 
-      .about_section .img-box::before,
-      .about_section .img-box::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        width: 45px;
-        height: 70%;
-        background-color: #1a488f;
-        z-index: 3;
-      }
+    .carousel-caption {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 5px;
+    }
 
-      .about_section .img-box::before {
-        left: 0;
-        z-index: 3;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-      }
+    .team-section {
+      padding: 50px 0;
+    }
 
-      .about_section .img-box::after {
-        right: 0;
-        z-index: 1;
-        -webkit-transform: translate(50%, -50%);
-        transform: translate(50%, -50%);
-      }
+    .team-member {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-      .about_section .detail-box p {
-        color: #1f1f1f;
-        margin-top: 15px;
-      }
+    .team-member img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+  </style>
+</head>
 
-      .about_section .detail-box a {
-        display: inline-block;
-        padding: 10px 45px;
-        background-color: #1a488f;
-        color: #ffffff;
-        border-radius: 0px;
-        -webkit-transition: all 0.3s;
-        transition: all 0.3s;
-        border: none;
-        margin-top: 15px;
-      }
+<body>
+  <!-- header section strats -->
+  <div id="nav-container"></div>
+  <!-- end header section -->
 
-      .about_section .detail-box a:hover {
-        background-color: #1a488f;
-      }
-    </style>
-  </head>
+  <div class="container">
+    <section class="about_section layout_padding">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <h1 class="section-title translate" data-key="about_title">關於我們</h1>
+            <p class="translate" data-key="about_description">
+              BNZHK是香港一個由粉絲發起的團隊，全力應援 K-pop
+              女子組合NJZ，包括成員Minji、Hanni、Danielle、Haerin和Hyein。我們的目標是為所有
+              Bunnies
+              創造最好的環境和氛圍，無論您來自哪裡也能與在活動期間認識的新朋友一起享受
+              NJZ 的演出，同時向NJZ表示最大的支持。
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="./images/favicon.png" alt="BNZHK Team" />
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <body>
-    <!-- header section strats -->
-    <div id="nav-container"></div>
-    <!-- end header section -->
-
-    <div class="container">
-      <section class="about_section layout_padding">
+    <section class="mission-vision">
+      <div class="container">
         <div class="row">
-          <div class="col-md-6">
-            <div class="detail-box">
-              <div class="heading_container">
-                <h1 class="translate" data-key="about_title">關於我們</h1>
+          <div class="col-md-6 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="section-title translate" data-key="our_mission">我們的使命</h2>
+                <p class="translate" data-key="mission_description">
+                  建立一個充滿活力和包容的粉絲社群，讓每一位 Bunny 都能感受到家的溫暖。我們致力於創造優質的應援活動，讓粉絲們能夠以最好的方式表達對 NJZ 的支持。
+                </p>
               </div>
-              <p class="translate" data-key="about_description">
-                BNZHK是香港一個由粉絲發起的團隊，全力應援 K-pop
-                女子組合NJZ，包括成員Minji、Hanni、Danielle、Haerin和Hyein。我們的目標是為所有
-                Bunnies
-                創造最好的環境和氛圍，無論您來自哪裡也能與在活動期間認識的新朋友一起享受
-                NJZ 的演出，同時向NJZ表示最大的支持。
-              </p>
-              <!-- <h2 class="translate" data-key="our_mission">我們的使命</h2>
-              <h2 class="translate" data-key="our_vision">我們的願景</h2> -->
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="img-box">
-              <img src="./images/IMG_64533.jpg" alt="website template image" />
+          <div class="col-md-6 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h2 class="section-title translate" data-key="our_vision">我們的願景</h2>
+                <p class="translate" data-key="vision_description">
+                  成為亞洲地區最具影響力的 NJZ 粉絲團體之一，打造一個跨越國界的粉絲文化交流平台，讓 Bunnies 之間的連結更加緊密。
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-    </div>
-    <!-- jQery -->
-    <script src="js/jquery-3.4.1.min.js"></script>
+      </div>
+    </section>
 
-    <!-- bootstrap js -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <section class="stats-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="stats-item">
+              <div class="number">1,000+</div>
+              <div class="text translate" data-key="stats_members">活躍會員</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stats-item">
+              <div class="number">50+</div>
+              <div class="text translate" data-key="stats_events">成功活動</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stats-item">
+              <div class="number">10+</div>
+              <div class="text translate" data-key="stats_countries">合作國家</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stats-item">
+              <div class="number">5,000+</div>
+              <div class="text translate" data-key="stats_followers">社群追蹤</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- custom js -->
-    <script src="js/custom.js"></script>
-    <!-- 添加翻譯相關的 JavaScript -->
-    <script src="js/news-content.js"></script>
-    <script src="js/translations.js"></script>
-    <script src="js/language.js"></script>
+    <section class="timeline-section">
+      <div class="container">
+        <h2 class="section-title text-center mb-5 translate" data-key="our_history">發展歷程與重要企劃</h2>
+        <div class="timeline-container">
+          <div class="timeline-item">
+            <div class="date">2023年7月</div>
+            <div class="content">
+              <h3 class="translate" data-key="history_1">BNZHK 正式成立</h3>
+              <p class="project-description translate" data-key="history_1_desc">
+                在一群充滿熱情的 Bunnies 共同努力下，BNZHK 正式成立，開始了我們支持 NJZ 的旅程。
+              </p>
+            </div>
+          </div>
 
-  </body>
+          <div class="timeline-item">
+            <div class="date">2023年8月</div>
+            <div class="content">
+              <h3 class="translate" data-key="history_2">首次大型應援活動</h3>
+              <p class="project-description translate" data-key="history_2_desc">
+                成功舉辦首次大型應援活動，凝聚了來自不同地區的 Bunnies，共同創造難忘的回憶。
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="date">2023年12月</div>
+            <div class="content">
+              <h3 class="translate" data-key="history_3">跨國合作企劃啟動</h3>
+              <p class="project-description translate" data-key="history_3_desc">
+                開始與韓國、日本及泰國的 Bunnies 團體展開合作，為之後的大型企劃奠定基礎。
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="date">2024年1月</div>
+            <div class="content">
+              <h3 class="translate" data-key="history_4">NewJeans Never Die 帆布袋企劃</h3>
+              <p class="project-description translate" data-key="project_description">
+                我們最近籌辦了一個名為「NewJeans Never Die 帆布袋企劃」的跨地區應援企劃，聯同了來自韓國、日本及泰國的 Bunnies 團體，成功集合了來自香港、台灣、中國大陸、首爾、曼谷、東京及福岡的 Bunnies 去實現這個企劃。我們於社交平台 X 及 Threads 踴躍宣傳這個企劃並獲得不錯的迴響。我們最後成功於 SBS歌謠大戰 2024、Asia Artist Awards 2024、Countdown Japan 2024 及 第39屆 Golden Disc Awards 的演出會場中，把我們設計的帆布袋派發給到場的 Bunnies。我們與泰國 Bunnies 於曼谷 Asia Artist Awards 2024 當日合作準備的應援活動更被 Starnews Korea 報導。
+              </p>
+              <div class="project-images">
+                <img src="images/aboutUs/factcheck.tokki_3509075516941334752's2025-2-24-21.34.88 story.jpg" alt="Project Image 1">
+                <img src="images/aboutUs/factcheck.tokki_3540065624808826176's2025-2-24-21.33.217 story.jpg" alt="Project Image 2">
+                <img src="images/aboutUs/factcheck.tokki_3540065624817218343's2025-2-24-21.33.233 story.jpg" alt="Project Image 3">
+                <img src="images/aboutUs/factcheck.tokki_3533847712825813052's2025-2-24-21.32.45 story.jpg" alt="Project Image 4">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="team-section">
+      <div class="container">
+        <h2 class="section-title text-center mb-5 translate" data-key="core_team">核心團隊</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="team-member">
+              <img src="images/team-placeholder.jpg" alt="Team Member 1">
+              <h3 class="translate" data-key="team_member_1_name">團隊負責人</h3>
+              <p class="translate" data-key="team_member_1_role">總策劃</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="team-member">
+              <img src="images/team-placeholder.jpg" alt="Team Member 2">
+              <h3 class="translate" data-key="team_member_2_name">活動策劃</h3>
+              <p class="translate" data-key="team_member_2_role">企劃總監</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="team-member">
+              <img src="images/team-placeholder.jpg" alt="Team Member 3">
+              <h3 class="translate" data-key="team_member_3_name">設計總監</h3>
+              <p class="translate" data-key="team_member_3_role">創意總監</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+
+  <!-- bootstrap js -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+  <!-- 添加翻譯相關的 JavaScript -->
+  <script src="js/news-content.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/language.js"></script>
+
+</body>
+
 </html>
