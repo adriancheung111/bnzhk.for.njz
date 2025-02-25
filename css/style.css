@@ -1553,3 +1553,90 @@ a:focus {
         font-size: 12px;
     }
 }
+
+/* index about section styles */
+.index_about_section .img-box img {
+  width: 50%;
+  max-width: 50%;
+  height: auto;
+  position: relative;
+  object-fit: contain;
+}
+
+.index_about_section .img-box {
+  position: relative;
+  padding: 25px 0 0 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.index_about_section .img-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background-color: #1a488f;
+  z-index: -1;
+}
+
+/* 添加 btn-box 樣式 */
+.index_about_section .btn-box {
+  margin-top: 25px;
+}
+
+.index_about_section .btn-box a {
+  display: inline-block;
+  padding: 10px 45px;
+  background-color: #1a488f;
+  color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #1a488f;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.index_about_section .btn-box a:hover {
+  background-color: transparent;
+  color: #1a488f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(26, 72, 143, 0.2);
+}
+
+@media (max-width: 768px) {
+  .index_about_section .img-box img {
+    max-width: 90%;
+  }
+  .index_about_section .img-box::before {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .index_about_section .btn-box a {
+    padding: 8px 30px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .index_about_section .img-box img {
+    max-width: 85%;
+  }
+  
+  .index_about_section .img-box {
+    padding: 15px 0 0 15px;
+  }
+  .index_about_section .img-box::before {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .index_about_section .btn-box a {
+    padding: 6px 25px;
+    font-size: 13px;
+  }
+}
