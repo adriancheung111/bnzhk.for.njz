@@ -133,6 +133,11 @@ const translations = {
     'nav_crowdfunding': '應援集資',
     'nav_support_list': '應援物品一覽',
     'nav_pickup_info': '領取詳情',
+    'message_collection_title': '想同 NJZ 講啲咩？',
+    'message_collection_desc': '為了給NJZ 在 2025 年 3 月 23 日 ComplexCon Hong Kong 2025 上的首秀準備一個大驚喜和大力支持，來自香港的 BNZHK 正在與 TokkiMap 合作，收集來自世界各地的 Bunnies 的信息，製作成一本留言簿成員， NJZ 送給成員！\n\n留言收集將於 2025 年 3 月 9 日結束。請盡量使用英文或韓文留言，否則成員未必能看懂喔！',
+    'message_collection_overseas': '海外用戶提交',
+    'message_collection_mainland': '內地用戶提交',
+    'message_collection_nav': '留言收集',
   },
   'en': {
     'nav_language': 'Language',
@@ -270,6 +275,11 @@ const translations = {
     'nav_crowdfunding': 'Crowdfunding',
     'nav_support_list': 'Support Items',
     'nav_pickup_info': 'Pickup Details',
+    'message_collection_title': 'Want to Say Something to NJZ?',
+    'message_collection_desc': 'To prepare a big surprise and show strong support for NJZ\'s debut performance at ComplexCon Hong Kong 2025 on March 23, 2025, BNZHK from Hong Kong is collaborating with TokkiMap to collect messages from Bunnies worldwide, creating a message book to give to NJZ!\n\nMessage collection will end on March 9, 2025. Please try to write in English or Korean so the members can understand your message!',
+    'message_collection_overseas': 'Message For NJZ(HK & OverSea)',
+    'message_collection_mainland': '内地Bunnies专用',
+    'message_collection_nav': 'Message Collection',
   },
   'ko': {
     'nav_language': '언어',
@@ -502,5 +512,10 @@ const translations = {
     'nav_crowdfunding': 'Crowdfunding',
     'nav_support_list': 'Support Items',
     'nav_pickup_info': 'Pickup Details',
+    'message_collection_title': '想同 NJZ 講啲咩？',
+    'message_collection_desc': '為了給NJZ 在 2025 年 3 月 23 日 ComplexCon Hong Kong 2025 上的首秀準備一個大驚喜和大力支持，來自香港的 BNZHK 正在與 TokkiMap 合作，收集來自世界各地的 Bunnies 的信息，製作成一本留言簿成員， NJZ 送給成員！\n\n留言收集將於 2025 年 3 月 9 日結束。請盡量使用英文或韓文留言，否則成員未必能看懂喔！',
+    'message_collection_overseas': '海外用戶提交',
+    'message_collection_mainland': '內地用戶提交',
+    'message_collection_nav': '留言收集',
   }
 };
