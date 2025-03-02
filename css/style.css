@@ -2,10 +2,32 @@
 /* fonts import */
 /* 移除字體引入或改用 Web Font */
 body {
-  font-family: "Poppins", sans-serif;
-  color: #0c0c0c;
-  background-color: #ffffff;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
   overflow-x: hidden;
+}
+
+/* 語言特定字體設定 */
+[lang="en"] {
+  font-family: "Univers", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+[lang="zh"] {
+  font-family: "PingFang TC", "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+[lang="ja"] {
+  font-family: "PingFang TC", "Hiragino Kaku Gothic Pro", "Yu Gothic", "Meiryo", sans-serif !important;
+}
+
+[lang="ko"] {
+  font-family: "PingFang TC", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif !important;
 }
 
 .layout_padding {

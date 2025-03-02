@@ -20,8 +20,13 @@ function translatePage() {
             } else {
                 element.textContent = translations[currentLanguage][key];
             }
+            // 設置語言屬性
+            element.setAttribute('lang', currentLanguage);
         }
     });
+
+    // 設置整個文檔的語言
+    document.documentElement.setAttribute('lang', currentLanguage);
 }
 
 // 切換語言選項的顯示
