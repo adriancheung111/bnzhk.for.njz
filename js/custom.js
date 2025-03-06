@@ -62,6 +62,12 @@ function toggleSubmitDropdown(event) {
     dropdown.classList.toggle('active');
 }
 
+function toggleEventDropdown(event) {
+    event.preventDefault();
+    const dropdown = event.target.closest('.nav-dropdown');
+    dropdown.classList.toggle('active');
+}
+
 // 添加更新圖片的函數
 function updateImages() {
     const imgBoxes = document.querySelectorAll('.img-box-test img');
