@@ -28,6 +28,35 @@
   <link href="css/tooplate-little-fashion.css" rel="stylesheet" />
   <!-- Modal Script -->
   <script src="js/modal.js"></script>
+  <style>
+    /* 回到頂部按鈕 */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #0056b3;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 1000;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+    }
+
+    .back-to-top:hover {
+      background: #003d82;
+      color: white;
+    }
+  </style>
 </head>
 
 <body>
@@ -917,6 +946,38 @@
   <!-- footer section -->
   <div id="footer-container"></div>
   <!-- footer section -->
+
+  <!-- 回到頂部按鈕 -->
+  <a href="#top" class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+  </a>
+
+  <script>
+    // 在頁面加載時初始化
+    document.addEventListener("DOMContentLoaded", function () {
+      // 回到頂部按鈕顯示/隱藏
+      const backToTop = document.querySelector('.back-to-top');
+
+      if (backToTop) {
+        window.addEventListener('scroll', () => {
+          if (window.pageYOffset > 100) {
+            backToTop.classList.add('visible');
+          } else {
+            backToTop.classList.remove('visible');
+          }
+        });
+
+        // 回到頂部的點擊事件
+        backToTop.addEventListener('click', function (e) {
+          e.preventDefault();
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      }
+    });
+  </script>
 </body>
 
 </html> 

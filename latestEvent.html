@@ -66,34 +66,6 @@
       color: #0056b3;
     }
 
-    /* 回到頂部按鈕 */
-    .back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #0056b3;
-      color: white;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      opacity: 0;
-      transition: opacity 0.3s;
-      z-index: 1000;
-    }
-
-    .back-to-top.visible {
-      opacity: 1;
-    }
-
-    .back-to-top:hover {
-      background: #003d82;
-      color: white;
-    }
-
     /* 回到目錄按鈕 */
     .back-to-toc {
       position: fixed;
@@ -691,7 +663,7 @@
   </div>
 
   <!-- 回到目錄按鈕 -->
-  <a href="#toc" class="back-to-top">
+  <a href="#toc" class="back-to-toc">
     <i class="fa fa-arrow-up"></i>
   </a>
   </div>
@@ -737,34 +709,8 @@
     document.addEventListener("DOMContentLoaded", function () {
       updateImages();
 
-      // 回到頂部和回到目錄按鈕顯示/隱藏
-      const backToTop = document.querySelector('.back-to-top');
+      // 回到目錄按鈕顯示/隱藏
       const backToToc = document.querySelector('.back-to-toc');
-
-      if (backToTop) {
-        window.addEventListener('scroll', () => {
-          if (window.pageYOffset > 100) {
-            backToTop.classList.add('visible');
-            if (backToToc) {
-              backToToc.classList.add('visible');
-            }
-          } else {
-            backToTop.classList.remove('visible');
-            if (backToToc) {
-              backToToc.classList.remove('visible');
-            }
-          }
-        });
-
-        // 回到頂部的點擊事件
-        backToTop.addEventListener('click', function (e) {
-          e.preventDefault();
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-          });
-        });
-      }
 
       // 平滑滾動（用於目錄導航）
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
