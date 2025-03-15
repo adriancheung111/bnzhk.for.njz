@@ -604,6 +604,20 @@
         margin-bottom: 20px;
       }
     }
+
+    /* 縮略圖樣式 */
+    .thumbnail-gallery .img-thumbnail {
+      height: 80px;
+      object-fit: cover;
+      transition: all 0.3s ease;
+      opacity: 0.7;
+    }
+    
+    .thumbnail-gallery .img-thumbnail.active,
+    .thumbnail-gallery .img-thumbnail:hover {
+      opacity: 1;
+      border-color: #0d6efd;
+    }
   </style>
 </head>
 
@@ -628,13 +642,63 @@
         <div class="heading_container heading_center">
           <h2 class="translate" data-key="title_support">場外應援</h2>
         </div>
-        <div class="row mt-4">
+        
+        <!-- 主題海報 -->
+        <div class="row mt-4 mb-4">
+          <div class="col-12 text-center">
+            <h3 class="mb-4 translate" data-key="support_title">場外應援活動預覽</h3>
+          </div>
+        </div>
+        
+        <!-- 內容圖片輪播 -->
+        <div class="row">
           <div class="col-12">
-            <img src="images/bnzhk.for.njz_3575726817937965983.jpg" alt="場外應援活動" style="width: 100%; height: auto;">
-            <div class="mt-4 text-center">
-              <p class="mb-4 translate" data-key="support_description">
-                為了支持 NJZ 在 COMPLEXCON HONG KONG 2025 的演出，我們將組織場外應援活動。歡迎所有 Bunnies 參與，一起為 NJZ 創造難忘的時刻！
-              </p>          
+            <!-- 主輪播 -->
+            <div id="supportCarousel" class="carousel slide mb-4" data-bs-interval="false">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="images/484362937_17850223914422122_8582118021186260862_n.jpg" class="d-block w-100 img-fluid shadow-sm rounded" alt="場外應援活動主題海報" style="max-height: 600px; object-fit: contain;">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/484388789_17850223923422122_5795859861818849270_n.jpg" class="d-block w-100 img-fluid shadow-sm rounded" alt="場外應援活動內容" style="max-height: 600px; object-fit: contain;">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/484943968_17850223938422122_2496916193217861411_n.jpg" class="d-block w-100 img-fluid shadow-sm rounded" alt="場外應援活動內容" style="max-height: 600px; object-fit: contain;">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/484921055_17850223941422122_555173818182655438_n.jpg" class="d-block w-100 img-fluid shadow-sm rounded" alt="場外應援活動內容" style="max-height: 600px; object-fit: contain;">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/484533955_17850223950422122_7272270845404722342_n.jpg" class="d-block w-100 img-fluid shadow-sm rounded" alt="場外應援活動內容" style="max-height: 600px; object-fit: contain;">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#supportCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">上一張</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#supportCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">下一張</span>
+              </button>
+            </div>
+            
+            <!-- 縮略圖預覽 -->
+            <div class="row thumbnail-gallery justify-content-center text-center">
+              <div class="col-auto">
+                <img src="images/484362937_17850223914422122_8582118021186260862_n.jpg" class="img-thumbnail active" alt="主題海報" data-bs-target="#supportCarousel" data-bs-slide-to="0" style="cursor: pointer; width: 100px;">
+              </div>
+              <div class="col-auto">
+                <img src="images/484388789_17850223923422122_5795859861818849270_n.jpg" class="img-thumbnail" alt="縮略圖1" data-bs-target="#supportCarousel" data-bs-slide-to="1" style="cursor: pointer; width: 100px;">
+              </div>
+              <div class="col-auto">
+                <img src="images/484943968_17850223938422122_2496916193217861411_n.jpg" class="img-thumbnail" alt="縮略圖2" data-bs-target="#supportCarousel" data-bs-slide-to="2" style="cursor: pointer; width: 100px;">
+              </div>
+              <div class="col-auto">
+                <img src="images/484921055_17850223941422122_555173818182655438_n.jpg" class="img-thumbnail" alt="縮略圖3" data-bs-target="#supportCarousel" data-bs-slide-to="3" style="cursor: pointer; width: 100px;">
+              </div>
+              <div class="col-auto">
+                <img src="images/484533955_17850223950422122_7272270845404722342_n.jpg" class="img-thumbnail" alt="縮略圖4" data-bs-target="#supportCarousel" data-bs-slide-to="4" style="cursor: pointer; width: 100px;">
+              </div>
             </div>
           </div>
         </div>
@@ -1043,6 +1107,43 @@
   <!-- footer section -->
   <div id="footer-container"></div>
   <!-- footer section -->
+
+  <!-- 添加縮略圖點擊功能的腳本 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 獲取所有縮略圖
+      const thumbnails = document.querySelectorAll('.thumbnail-gallery .img-thumbnail');
+      
+      // 為每個縮略圖添加點擊事件
+      thumbnails.forEach(function(thumbnail, index) {
+        thumbnail.addEventListener('click', function() {
+          // 移除所有縮略圖的 active 類
+          thumbnails.forEach(function(thumb) {
+            thumb.classList.remove('active');
+          });
+          
+          // 為當前點擊的縮略圖添加 active 類
+          this.classList.add('active');
+          
+          // 切換到對應的輪播項
+          const carousel = new bootstrap.Carousel(document.getElementById('supportCarousel'));
+          carousel.to(index);
+        });
+      });
+      
+      // 監聽輪播切換事件，更新縮略圖的 active 狀態
+      const carouselElement = document.getElementById('supportCarousel');
+      carouselElement.addEventListener('slide.bs.carousel', function(event) {
+        // 移除所有縮略圖的 active 類
+        thumbnails.forEach(function(thumb) {
+          thumb.classList.remove('active');
+        });
+        
+        // 為當前輪播項對應的縮略圖添加 active 類
+        thumbnails[event.to].classList.add('active');
+      });
+    });
+  </script>
 
 </body>
 
