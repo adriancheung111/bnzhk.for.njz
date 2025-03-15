@@ -297,7 +297,7 @@
     }
 
     .team-section {
-      background-color: #f8f9fa;
+      /* background-color: #f8f9fa; */
       padding: 50px 0;
     }
 
@@ -359,7 +359,7 @@
     }
 
     .join-us-section {
-      background-color: white;
+      background-color: #f8f9fa;
       padding: 80px 0;
     }
 
@@ -456,21 +456,221 @@
       padding: 50px 0;
     }
 
-    .team-section {
-      background-color: #f8f9fa;
-      padding: 50px 0;
-    }
-
-    .join-us-section {
-      background-color: white;
-      padding: 80px 0;
-    }
-
     /* 確保內容區域的最大寬度 */
     .timeline-container,
     .partner-region,
     .join-us-content {
       max-width: 100%;
+    }
+
+    /* Team Section 新增樣式 */
+    .member-card {
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .member-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .member-card img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+
+    .member-card h4 {
+      color: #1a488f;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .social-links {
+      margin-top: 10px;
+    }
+
+    .social-links a {
+      color: #1a488f;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #0056b3;
+    }
+
+    /* 進度條樣式 */
+    .region-progress {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto 80px;
+      padding: 0 20px; /* 添加左右內邊距 */
+    }
+
+    .progress-container {
+      position: relative;
+      padding: 20px 0 60px; /* 增加底部內邊距，為標籤留出空間 */
+      height: 24px;
+    }
+
+    .progress-bar {
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      background-color: transparent;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      z-index: 1;
+      border-radius: 2px; /* 添加圓角 */
+      overflow: hidden; /* 確保線段的圓角效果 */
+    }
+
+    /* 進度條線段樣式 */
+    .progress-line {
+      position: absolute;
+      height: 4px;
+      top: 0;
+      transition: all 0.5s ease; /* 添加過渡效果 */
+    }
+
+    .progress-line-1 {
+      left: 0;
+      width: 33.33%;
+      background: linear-gradient(to right, #ff6b6b, #feca57);
+      border-radius: 2px 0 0 2px; /* 左側圓角 */
+    }
+
+    .progress-line-2 {
+      left: 33.33%;
+      width: 33.33%;
+      background: linear-gradient(to right, #feca57, #1dd1a1);
+    }
+
+    .progress-line-3 {
+      left: 66.66%;
+      width: 33.34%;
+      background: linear-gradient(to right, #1dd1a1, #54a0ff);
+      border-radius: 0 2px 2px 0; /* 右側圓角 */
+    }
+
+    .progress-dot-container {
+      position: absolute;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      z-index: 2;
+      pointer-events: none; /* 確保點擊事件可以穿透到下層 */
+    }
+
+    .progress-dot {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      pointer-events: auto; /* 恢復圓點的點擊事件 */
+      border-radius: 0;
+      background-color: white; /* 添加白色背景 */
+    }
+
+    .progress-dot:nth-child(1) {
+      background: white url("data:image/svg+xml;utf8,<svg viewBox='0 0 88 82' xmlns='http://www.w3.org/2000/svg'><path d='M44,79.4h0c-21-.9-34.4-8.2-41-22.3C1,53,0,48.4,0,43.5v-26.4C0,10.6,3.7,4.7,9.4,2.1c7-3.2,16.1-2.6,22.1,1.4,4,2.7,6.5,7.4,6.5,12.6v5.2c0,1.6.6,3.1,1.7,4.1,1.1,1.1,2.6,1.7,4.2,1.6h.1s.2,0,.2,0c1.6,0,3.1-.5,4.2-1.6,1.1-1.1,1.7-2.6,1.7-4.1v-5.2c0-5.1,2.4-9.8,6.5-12.6,5.9-4,15-4.6,22.1-1.4,5.7,2.6,9.4,8.5,9.4,15v26.4c0,4.9-1,9.5-2.9,13.6-6.6,14-20,21.3-41,22.3h0ZM19.3,2.8c-3,0-6,.6-8.7,1.8-4.7,2.1-7.7,7-7.7,12.5v26.4c0,4.5.9,8.6,2.7,12.4,6.2,13.2,18.4,19.7,38.5,20.6,20.1-.9,32.3-7.5,38.5-20.6,1.8-3.7,2.7-7.9,2.7-12.4v-26.4c0-5.4-3-10.3-7.7-12.5-6.2-2.8-14.1-2.3-19.3,1.2-3.3,2.2-5.2,6-5.2,10.2v5.2c0,2.4-.9,4.5-2.6,6.2-1.7,1.6-3.9,2.5-6.2,2.4h-.1s0,0,0,0c-2.4,0-4.6-.8-6.2-2.4-1.7-1.6-2.6-3.8-2.6-6.2v-5.2c0-4.2-1.9-8-5.2-10.2-2.9-2-6.7-3-10.6-3Z' fill='white' stroke='%23ff6b6b' stroke-width='2'/></svg>") no-repeat center / contain;
+    }
+
+    .progress-dot:nth-child(2) {
+      background: white url("data:image/svg+xml;utf8,<svg viewBox='0 0 88 82' xmlns='http://www.w3.org/2000/svg'><path d='M44,79.4h0c-21-.9-34.4-8.2-41-22.3C1,53,0,48.4,0,43.5v-26.4C0,10.6,3.7,4.7,9.4,2.1c7-3.2,16.1-2.6,22.1,1.4,4,2.7,6.5,7.4,6.5,12.6v5.2c0,1.6.6,3.1,1.7,4.1,1.1,1.1,2.6,1.7,4.2,1.6h.1s.2,0,.2,0c1.6,0,3.1-.5,4.2-1.6,1.1-1.1,1.7-2.6,1.7-4.1v-5.2c0-5.1,2.4-9.8,6.5-12.6,5.9-4,15-4.6,22.1-1.4,5.7,2.6,9.4,8.5,9.4,15v26.4c0,4.9-1,9.5-2.9,13.6-6.6,14-20,21.3-41,22.3h0ZM19.3,2.8c-3,0-6,.6-8.7,1.8-4.7,2.1-7.7,7-7.7,12.5v26.4c0,4.5.9,8.6,2.7,12.4,6.2,13.2,18.4,19.7,38.5,20.6,20.1-.9,32.3-7.5,38.5-20.6,1.8-3.7,2.7-7.9,2.7-12.4v-26.4c0-5.4-3-10.3-7.7-12.5-6.2-2.8-14.1-2.3-19.3,1.2-3.3,2.2-5.2,6-5.2,10.2v5.2c0,2.4-.9,4.5-2.6,6.2-1.7,1.6-3.9,2.5-6.2,2.4h-.1s0,0,0,0c-2.4,0-4.6-.8-6.2-2.4-1.7-1.6-2.6-3.8-2.6-6.2v-5.2c0-4.2-1.9-8-5.2-10.2-2.9-2-6.7-3-10.6-3Z' fill='white' stroke='%23feca57' stroke-width='2'/></svg>") no-repeat center / contain;
+    }
+
+    .progress-dot:nth-child(3) {
+      background: white url("data:image/svg+xml;utf8,<svg viewBox='0 0 88 82' xmlns='http://www.w3.org/2000/svg'><path d='M44,79.4h0c-21-.9-34.4-8.2-41-22.3C1,53,0,48.4,0,43.5v-26.4C0,10.6,3.7,4.7,9.4,2.1c7-3.2,16.1-2.6,22.1,1.4,4,2.7,6.5,7.4,6.5,12.6v5.2c0,1.6.6,3.1,1.7,4.1,1.1,1.1,2.6,1.7,4.2,1.6h.1s.2,0,.2,0c1.6,0,3.1-.5,4.2-1.6,1.1-1.1,1.7-2.6,1.7-4.1v-5.2c0-5.1,2.4-9.8,6.5-12.6,5.9-4,15-4.6,22.1-1.4,5.7,2.6,9.4,8.5,9.4,15v26.4c0,4.9-1,9.5-2.9,13.6-6.6,14-20,21.3-41,22.3h0ZM19.3,2.8c-3,0-6,.6-8.7,1.8-4.7,2.1-7.7,7-7.7,12.5v26.4c0,4.5.9,8.6,2.7,12.4,6.2,13.2,18.4,19.7,38.5,20.6,20.1-.9,32.3-7.5,38.5-20.6,1.8-3.7,2.7-7.9,2.7-12.4v-26.4c0-5.4-3-10.3-7.7-12.5-6.2-2.8-14.1-2.3-19.3,1.2-3.3,2.2-5.2,6-5.2,10.2v5.2c0,2.4-.9,4.5-2.6,6.2-1.7,1.6-3.9,2.5-6.2,2.4h-.1s0,0,0,0c-2.4,0-4.6-.8-6.2-2.4-1.7-1.6-2.6-3.8-2.6-6.2v-5.2c0-4.2-1.9-8-5.2-10.2-2.9-2-6.7-3-10.6-3Z' fill='white' stroke='%231dd1a1' stroke-width='2'/></svg>") no-repeat center / contain;
+    }
+
+    .progress-dot:nth-child(4) {
+      background: white url("data:image/svg+xml;utf8,<svg viewBox='0 0 88 82' xmlns='http://www.w3.org/2000/svg'><path d='M44,79.4h0c-21-.9-34.4-8.2-41-22.3C1,53,0,48.4,0,43.5v-26.4C0,10.6,3.7,4.7,9.4,2.1c7-3.2,16.1-2.6,22.1,1.4,4,2.7,6.5,7.4,6.5,12.6v5.2c0,1.6.6,3.1,1.7,4.1,1.1,1.1,2.6,1.7,4.2,1.6h.1s.2,0,.2,0c1.6,0,3.1-.5,4.2-1.6,1.1-1.1,1.7-2.6,1.7-4.1v-5.2c0-5.1,2.4-9.8,6.5-12.6,5.9-4,15-4.6,22.1-1.4,5.7,2.6,9.4,8.5,9.4,15v26.4c0,4.9-1,9.5-2.9,13.6-6.6,14-20,21.3-41,22.3h0ZM19.3,2.8c-3,0-6,.6-8.7,1.8-4.7,2.1-7.7,7-7.7,12.5v26.4c0,4.5.9,8.6,2.7,12.4,6.2,13.2,18.4,19.7,38.5,20.6,20.1-.9,32.3-7.5,38.5-20.6,1.8-3.7,2.7-7.9,2.7-12.4v-26.4c0-5.4-3-10.3-7.7-12.5-6.2-2.8-14.1-2.3-19.3,1.2-3.3,2.2-5.2,6-5.2,10.2v5.2c0,2.4-.9,4.5-2.6,6.2-1.7,1.6-3.9,2.5-6.2,2.4h-.1s0,0,0,0c-2.4,0-4.6-.8-6.2-2.4-1.7-1.6-2.6-3.8-2.6-6.2v-5.2c0-4.2-1.9-8-5.2-10.2-2.9-2-6.7-3-10.6-3Z' fill='white' stroke='%2354a0ff' stroke-width='2'/></svg>") no-repeat center / contain;
+    }
+
+    .progress-dot.active:nth-child(1) {
+      background: white url("data:image/svg+xml;utf8,<svg viewBox='0 0 88 82' xmlns='http://www.w3.org/2000/svg'><path d='M44,79.4h0c-21-.9-34.4-8.2-41-22.3C1,53,0,48.4,0,43.5v-26.4C0,10.6,3.7,4.7,9.4,2.1c7-3.2,16.1-2.6,22.1,1.4,4,2.7,6.5,7.4,6.5,12.6v5.2c0,1.6.6,3.1,1.7,4.1,1.1,1.1,2.6,1.7,4.2,1.6h.1s.2,0,.2,0c1.6,0,3.1-.5,4.2-1.6,1.1-1.1,1.7-2.6,1.7-4.1v-5.2c0-5.1,2.4-9.8,6.5-12.6,5.9-4,15-4.6,22.1-1.4,5.7,2.6,9.4,8.5,9.4,15v26.4c0,4.9-1,9.5-2.9,13.6-6.6,14-20,21.3-41,22.3h0ZM19.3,2.8c-3,0-6,.6-8.7,1.8-4.7,2.1-7.7,7-7.7,12.5v26.4c0,4.5.9,8.6,2.7,12.4,6.2,13.2,18.4,19.7,38.5,20.6,20.1-.9,32.3-7.5,38.5-20.6,1.8-3.7,2.7-7.9,2.7-12.4v-26.4c0-5.4-3-10.3-7.7-12.5-6.2-2.8-14.1-2.3-19.3,1.2-3.3,2.2-5.2,6-5.2,10.2v5.2c0,2.4-.9,4.5-2.6,6.2-1.7,1.6-3.9,2.5-6.2,2.4h-.1s0,0,0,0c-2.4,0-4.6-.8-6.2-2.4-1.7-1.6-2.6-3.8-2.6-6.2v-5.2c0-4.2-1.9-8-5.2-10.2-2.9-2-6.7-3-10.6-3Z' fill='%23ff6b6b'/></svg>") no-repeat center / contain;
+      transform: scale(1.2);
+    }
+
+    .progress-dot.active:nth-child(2) {
+      background: white url("data:image/svg+xml;utf8,<svg viewBox='0 0 88 82' xmlns='http://www.w3.org/2000/svg'><path d='M44,79.4h0c-21-.9-34.4-8.2-41-22.3C1,53,0,48.4,0,43.5v-26.4C0,10.6,3.7,4.7,9.4,2.1c7-3.2,16.1-2.6,22.1,1.4,4,2.7,6.5,7.4,6.5,12.6v5.2c0,1.6.6,3.1,1.7,4.1,1.1,1.1,2.6,1.7,4.2,1.6h.1s.2,0,.2,0c1.6,0,3.1-.5,4.2-1.6,1.1-1.1,1.7-2.6,1.7-4.1v-5.2c0-5.1,2.4-9.8,6.5-12.6,5.9-4,15-4.6,22.1-1.4,5.7,2.6,9.4,8.5,9.4,15v26.4c0,4.9-1,9.5-2.9,13.6-6.6,14-20,21.3-41,22.3h0ZM19.3,2.8c-3,0-6,.6-8.7,1.8-4.7,2.1-7.7,7-7.7,12.5v26.4c0,4.5.9,8.6,2.7,12.4,6.2,13.2,18.4,19.7,38.5,20.6,20.1-.9,32.3-7.5,38.5-20.6,1.8-3.7,2.7-7.9,2.7-12.4v-26.4c0-5.4-3-10.3-7.7-12.5-6.2-2.8-14.1-2.3-19.3,1.2-3.3,2.2-5.2,6-5.2,10.2v5.2c0,2.4-.9,4.5-2.6,6.2-1.7,1.6-3.9,2.5-6.2,2.4h-.1s0,0,0,0c-2.4,0-4.6-.8-6.2-2.4-1.7-1.6-2.6-3.8-2.6-6.2v-5.2c0-4.2-1.9-8-5.2-10.2-2.9-2-6.7-3-10.6-3Z' fill='%23feca57'/></svg>") no-repeat center / contain;
+      transform: scale(1.2);
+    }
+
+    .progress-dot.active:nth-child(3) {
+      background: white url("data:image/svg+xml;utf8,<svg viewBox='0 0 88 82' xmlns='http://www.w3.org/2000/svg'><path d='M44,79.4h0c-21-.9-34.4-8.2-41-22.3C1,53,0,48.4,0,43.5v-26.4C0,10.6,3.7,4.7,9.4,2.1c7-3.2,16.1-2.6,22.1,1.4,4,2.7,6.5,7.4,6.5,12.6v5.2c0,1.6.6,3.1,1.7,4.1,1.1,1.1,2.6,1.7,4.2,1.6h.1s.2,0,.2,0c1.6,0,3.1-.5,4.2-1.6,1.1-1.1,1.7-2.6,1.7-4.1v-5.2c0-5.1,2.4-9.8,6.5-12.6,5.9-4,15-4.6,22.1-1.4,5.7,2.6,9.4,8.5,9.4,15v26.4c0,4.9-1,9.5-2.9,13.6-6.6,14-20,21.3-41,22.3h0ZM19.3,2.8c-3,0-6,.6-8.7,1.8-4.7,2.1-7.7,7-7.7,12.5v26.4c0,4.5.9,8.6,2.7,12.4,6.2,13.2,18.4,19.7,38.5,20.6,20.1-.9,32.3-7.5,38.5-20.6,1.8-3.7,2.7-7.9,2.7-12.4v-26.4c0-5.4-3-10.3-7.7-12.5-6.2-2.8-14.1-2.3-19.3,1.2-3.3,2.2-5.2,6-5.2,10.2v5.2c0,2.4-.9,4.5-2.6,6.2-1.7,1.6-3.9,2.5-6.2,2.4h-.1s0,0,0,0c-2.4,0-4.6-.8-6.2-2.4-1.7-1.6-2.6-3.8-2.6-6.2v-5.2c0-4.2-1.9-8-5.2-10.2-2.9-2-6.7-3-10.6-3Z' fill='%231dd1a1'/></svg>") no-repeat center / contain;
+      transform: scale(1.2);
+    }
+
+    .progress-dot.active:nth-child(4) {
+      background: white url("data:image/svg+xml;utf8,<svg viewBox='0 0 88 82' xmlns='http://www.w3.org/2000/svg'><path d='M44,79.4h0c-21-.9-34.4-8.2-41-22.3C1,53,0,48.4,0,43.5v-26.4C0,10.6,3.7,4.7,9.4,2.1c7-3.2,16.1-2.6,22.1,1.4,4,2.7,6.5,7.4,6.5,12.6v5.2c0,1.6.6,3.1,1.7,4.1,1.1,1.1,2.6,1.7,4.2,1.6h.1s.2,0,.2,0c1.6,0,3.1-.5,4.2-1.6,1.1-1.1,1.7-2.6,1.7-4.1v-5.2c0-5.1,2.4-9.8,6.5-12.6,5.9-4,15-4.6,22.1-1.4,5.7,2.6,9.4,8.5,9.4,15v26.4c0,4.9-1,9.5-2.9,13.6-6.6,14-20,21.3-41,22.3h0ZM19.3,2.8c-3,0-6,.6-8.7,1.8-4.7,2.1-7.7,7-7.7,12.5v26.4c0,4.5.9,8.6,2.7,12.4,6.2,13.2,18.4,19.7,38.5,20.6,20.1-.9,32.3-7.5,38.5-20.6,1.8-3.7,2.7-7.9,2.7-12.4v-26.4c0-5.4-3-10.3-7.7-12.5-6.2-2.8-14.1-2.3-19.3,1.2-3.3,2.2-5.2,6-5.2,10.2v5.2c0,2.4-.9,4.5-2.6,6.2-1.7,1.6-3.9,2.5-6.2,2.4h-.1s0,0,0,0c-2.4,0-4.6-.8-6.2-2.4-1.7-1.6-2.6-3.8-2.6-6.2v-5.2c0-4.2-1.9-8-5.2-10.2-2.9-2-6.7-3-10.6-3Z' fill='%2354a0ff'/></svg>") no-repeat center / contain;
+      transform: scale(1.2);
+    }
+
+    .dot-label {
+      position: absolute;
+      top: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      font-size: 14px;
+      font-weight: 500;
+      color: #666;
+      width: max-content;
+      pointer-events: none; /* 確保標籤不會干擾點擊事件 */
+      transition: all 0.3s ease;
+    }
+
+    .progress-dot:nth-child(1) .dot-label {
+      color: #ff6b6b;
+    }
+
+    .progress-dot:nth-child(2) .dot-label {
+      color: #feca57;
+    }
+
+    .progress-dot:nth-child(3) .dot-label {
+      color: #1dd1a1;
+    }
+
+    .progress-dot:nth-child(4) .dot-label {
+      color: #54a0ff;
+    }
+
+    .progress-dot.active .dot-label {
+      font-weight: bold;
+      transform: translateX(-50%) scale(1.1);
+    }
+
+    /* 成員卡片容器樣式 */
+    .region-members {
+      position: relative;
+      width: 100%;
+    }
+
+    .region-member-container {
+      display: none;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: opacity 0.5s ease;
+      opacity: 0;
+    }
+
+    .region-member-container.active {
+      display: block;
+      opacity: 1;
     }
   </style>
 </head>
@@ -624,156 +824,176 @@
 
   <!-- Team Section -->
   <section class="team-section">
+    <h2 class="section-title text-center mb-5 translate" data-key="team_section_title">不同地區合作伙伴</h2>
     <div class="container">
-      <h2 class="section-title text-center mb-5 translate" data-key="team_section_title">不同地區合作伙伴</h2>
-      <div class="row">
-        <div class="col-12 mb-5">
-          <div class="partner-region">
-            <h3 class="translate text-center mb-4" data-key="region_asia">中港台澳地區</h3>
-            <div class="row">
-              <div class="col-md-3 mb-4">
-                <div class="member-card">
-                  <img src="images/event4.jpg">
-                  <h4>njz_macau</h4>
-                  <div class="social-links">
-                    <a href="https://www.instagram.com/njz_macau/" target="_blank"><i class="fa fa-instagram"></i></a>
-                  </div>
+      <!-- 進度條部分 -->
+      <div class="region-progress mb-5">
+        <div class="progress-container">
+          <div class="progress-bar">
+            <!-- 進度條線段 -->
+            <div class="progress-line progress-line-1"></div>
+            <div class="progress-line progress-line-2"></div>
+            <div class="progress-line progress-line-3"></div>
+          </div>
+          
+          <div class="progress-dot-container">
+            <div class="progress-dot active" data-region="asia">
+              <span class="dot-label">中港台澳地區</span>
+            </div>
+            <div class="progress-dot" data-region="korea">
+              <span class="dot-label">韓國地區</span>
+            </div>
+            <div class="progress-dot" data-region="japan">
+              <span class="dot-label">日本地區</span>
+            </div>
+            <div class="progress-dot" data-region="other">
+              <span class="dot-label">其他地區</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 成員卡片部分 -->
+      <div class="region-members">
+        <!-- 中港台澳地區成員 -->
+        <div class="region-member-container active" id="asia-members">
+          <h3 class="translate text-center mb-4" data-key="region_asia">中港台澳地區</h3>
+          <div class="row">
+            <div class="col-md-3 mb-4">
+              <div class="member-card">
+                <img src="images/event4.jpg">
+                <h4>njz_macau</h4>
+                <div class="social-links">
+                  <a href="https://www.instagram.com/njz_macau/" target="_blank"><i class="fa fa-instagram"></i></a>
                 </div>
               </div>
-              <div class="col-md-3 mb-4">
-                <div class="member-card">
-                  <img src="images/event3.jpg">
-                  <h4>Attention_NewJeans</h4>
-                  <div class="social-links">
-                    <a href="https://weibo.com/u/7775091905" target="_blank"><i class="fa fa-weibo"></i></a>
-                  </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="member-card">
+                <img src="images/event3.jpg">
+                <h4>Attention_NewJeans</h4>
+                <div class="social-links">
+                  <a href="https://weibo.com/u/7775091905" target="_blank"><i class="fa fa-weibo"></i></a>
                 </div>
               </div>
-              <div class="col-md-3 mb-4">
-                <div class="member-card">
-                  <img src="images/event1.jpg">
-                  <h4>KIWISAN</h4>
-                  <div class="social-links">
-                    <a href="https://www.instagram.com/kiwisantw/" target="_blank"><i class="fa fa-instagram"></i></a>
-                  </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="member-card">
+                <img src="images/event1.jpg">
+                <h4>KIWISAN</h4>
+                <div class="social-links">
+                  <a href="https://www.instagram.com/kiwisantw/" target="_blank"><i class="fa fa-instagram"></i></a>
                 </div>
               </div>
-              <div class="col-md-3 mb-4">
-                <div class="member-card">
-                  <img src="images/aboutUs/461383095_417662181376132_5419841108756949121_n.jpg">
-                  <h4>factcheck.tokki</h4>
-                  <div class="social-links">
-                    <a href="https://www.instagram.com/factcheck.tokki/" target="_blank"><i class="fa fa-instagram"></i></a>
-                  </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="member-card">
+                <img src="images/aboutUs/461383095_417662181376132_5419841108756949121_n.jpg">
+                <h4>factcheck.tokki</h4>
+                <div class="social-links">
+                  <a href="https://www.instagram.com/factcheck.tokki/" target="_blank"><i class="fa fa-instagram"></i></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-
-        <!-- 韓國地區 -->
-        <div class="col-12 mb-5">
-          <div class="partner-region">
-            <h3 class="translate text-center mb-4" data-key="region_korea">韓國地區</h3>
-            <div class="row">
-              <div class="col-md-3 mb-4">
-                <div class="member-card">
-                  <img src="images/event2.jpg">
-                  <h4>TEAM GLOBAL TOKKIS</h4>
-                  <div class="social-links">
-                    <a href=https://www.instagram.com/hi_junnn_22/" target="_blank"><i class="fa fa-instagram"></i></a>
-                  </div>
+        
+        <!-- 韓國地區成員 -->
+        <div class="region-member-container" id="korea-members">
+          <h3 class="translate text-center mb-4" data-key="region_korea">韓國地區</h3>
+          <div class="row">
+            <div class="col-md-3 mb-4">
+              <div class="member-card">
+                <img src="images/event2.jpg">
+                <h4>TEAM GLOBAL TOKKIS</h4>
+                <div class="social-links">
+                  <a href="https://www.instagram.com/hi_junnn_22/" target="_blank"><i class="fa fa-instagram"></i></a>
                 </div>
               </div>
-              <div class="col-md-3 mb-4">
-                <div class="member-card">
-                  <img src="images/aboutUs/bnzhk.for.njz_3575014827250511865's2025-3-13-23.42.854 story.jpg">
-                  <h4>으잉냥</h4>
-                  <div class="social-links">
-                    <a href="https://www.instagram.com/_in0u4/" target="_blank"><i class="fa fa-instagram"></i></a>
-                  </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="member-card">
+                <img src="images/aboutUs/bnzhk.for.njz_3575014827250511865's2025-3-13-23.42.854 story.jpg">
+                <h4>으잉냥</h4>
+                <div class="social-links">
+                  <a href="https://www.instagram.com/_in0u4/" target="_blank"><i class="fa fa-instagram"></i></a>
                 </div>
               </div>
-              <div class="col-md-3 mb-4">
-                <div class="member-card">
-                  <img src="images/aboutUs/bnzhk.for.njz_3576491030318776327's2025-3-13-23.42.970 story.jpg">
-                  <h4>ZONES from TOKKI MAP</h4>
-                  <div class="social-links">
-                    <a href="https://www.instagram.com/tokkizones/" target="_blank"><i class="fa fa-instagram"></i></a>
-                  </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="member-card">
+                <img src="images/aboutUs/bnzhk.for.njz_3576491030318776327's2025-3-13-23.42.970 story.jpg">
+                <h4>ZONES from TOKKI MAP</h4>
+                <div class="social-links">
+                  <a href="https://www.instagram.com/tokkizones/" target="_blank"><i class="fa fa-instagram"></i></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- 日本地區 -->
-        <div class="col-12 mb-5">
-          <div class="partner-region">
-            <h3 class="translate text-center mb-4" data-key="region_japan">日本地區</h3>
-            <div class="row">
-              <div class="col-md-3 mb-4">
-                <div class="member-card">
-                  <img src="images/event5.jpg">
-                  <h4>BANI PAMU</h4>
-                  <div class="social-links">
-                    <a href="https://www.instagram.com/bani_pamu/" target="_blank"><i class="fa fa-instagram"></i></a>
-                  </div>
+        
+        <!-- 日本地區成員 -->
+        <div class="region-member-container" id="japan-members">
+          <h3 class="translate text-center mb-4" data-key="region_japan">日本地區</h3>
+          <div class="row">
+            <div class="col-md-3 mb-4">
+              <div class="member-card">
+                <img src="images/event5.jpg">
+                <h4>BANI PAMU</h4>
+                <div class="social-links">
+                  <a href="https://www.instagram.com/bani_pamu/" target="_blank"><i class="fa fa-instagram"></i></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="col-12 mb-5">
-          <div class="partner-region">
-            <h3 class="translate text-center mb-4" data-key="region_others">其他地區</h3>
-            <div class="row">
-              <div class="col-md-3 mb-4">
-                <div class="member-card">
-                  <img src="images/event6.jpg">
-                  <h4>BUNNIEZ BASE THAILAND</h4>
-                  <div class="social-links">
-                    <a href="https://www.instagram.com/njz.thailand/" target="_blank"><i class="fa fa-instagram"></i></a>
-                  </div>
+        
+        <!-- 其他地區成員 -->
+        <div class="region-member-container" id="other-members">
+          <h3 class="translate text-center mb-4" data-key="region_other">其他地區</h3>
+          <div class="row">
+            <div class="col-md-3 mb-4">
+              <div class="member-card">
+                <img src="images/event6.jpg">
+                <h4>BUNNIEZ BASE THAILAND</h4>
+                <div class="social-links">
+                  <a href="https://www.instagram.com/njz.thailand/" target="_blank"><i class="fa fa-instagram"></i></a>
                 </div>
               </div>
-              <div class="col-md-3 mb-4">
-                <div class="member-card">
-                  <img src="images/aboutUs/bnzhk.for.njz_3574878997945238418's2025-3-13-23.42.98 story.jpg">
-                  <h4>NJZ CHILE</h4>
-                  <div class="social-links">
-                    <a href="https://www.instagram.com/njz_chile/" target="_blank"><i class="fa fa-instagram"></i></a>
-                  </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="member-card">
+                <img src="images/aboutUs/bnzhk.for.njz_3574878997945238418's2025-3-13-23.42.98 story.jpg">
+                <h4>NJZ CHILE</h4>
+                <div class="social-links">
+                  <a href="https://www.instagram.com/njz_chile/" target="_blank"><i class="fa fa-instagram"></i></a>
                 </div>
               </div>
-              <div class="col-md-3 mb-4">
-                <div class="member-card">
-                  <img src="images/aboutUs/bnzhk.for.njz_3574937372271680416's2025-3-13-23.42.138 story.jpg">
-                  <h4>BUNNIES INDONESIA</h4>
-                  <div class="social-links">
-                    <a href="https://www.instagram.com/bunnies.indonesia/" target="_blank"><i class="fa fa-instagram"></i></a>
-                  </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="member-card">
+                <img src="images/aboutUs/bnzhk.for.njz_3574937372271680416's2025-3-13-23.42.138 story.jpg">
+                <h4>BUNNIES INDONESIA</h4>
+                <div class="social-links">
+                  <a href="https://www.instagram.com/bunnies.indonesia/" target="_blank"><i class="fa fa-instagram"></i></a>
                 </div>
               </div>
-              <div class="col-md-3 mb-4">
-                <div class="member-card">
-                  <img src="images/aboutUs/bnzhk.for.njz_3576353529146975179's2025-3-13-23.42.927 story.jpg">
-                  <h4>NJZ PROJECT INDONESIA</h4>
-                  <div class="social-links">
-                    <a href="https://www.instagram.com/njz.project_ina/" target="_blank"><i class="fa fa-instagram"></i></a>
-                  </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="member-card">
+                <img src="images/aboutUs/bnzhk.for.njz_3576353529146975179's2025-3-13-23.42.927 story.jpg">
+                <h4>NJZ PROJECT INDONESIA</h4>
+                <div class="social-links">
+                  <a href="https://www.instagram.com/njz.project_ina/" target="_blank"><i class="fa fa-instagram"></i></a>
                 </div>
               </div>
-              <div class="col-md-3 mb-4">
-                <div class="member-card">
-                  <img src="images/aboutUs/bnzhk.for.njz_3576414026554857546's2025-3-13-23.42.464 story.jpg">
-                  <h4>Nel</h4>
-                  <div class="social-links">
-                    <a href="https://www.instagram.com/njz.project_ina/" target="_blank"><i class="fa fa-instagram"></i></a>
-                    <a href="https://www.instagram.com/njz.project_ina/" target="_blank"><i class="fa fa-instagram"></i></a>
-                  </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="member-card">
+                <img src="images/aboutUs/bnzhk.for.njz_3576414026554857546's2025-3-13-23.42.464 story.jpg">
+                <h4>Nel</h4>
+                <div class="social-links">
+                  <a href="https://www.instagram.com/njz.project_ina/" target="_blank"><i class="fa fa-instagram"></i></a>
                 </div>
               </div>
             </div>
@@ -834,6 +1054,52 @@
   <script src="js/news-content.js"></script>
   <script src="js/translations.js"></script>
   <script src="js/language.js"></script>
+
+  <!-- 添加 team-section 相關的 JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // 初始化進度條互動功能
+      initProgressInteraction();
+    });
+    
+    // 初始化進度條互動功能
+    function initProgressInteraction() {
+      const progressDots = document.querySelectorAll('.progress-dot');
+      const memberContainers = document.querySelectorAll('.region-member-container');
+      
+      // 設置初始活動地區
+      setActiveRegion('asia');
+      
+      // 為每個進度點添加點擊事件
+      progressDots.forEach(dot => {
+        dot.addEventListener('click', function() {
+          const regionId = this.getAttribute('data-region');
+          setActiveRegion(regionId);
+        });
+      });
+      
+      // 設置活動地區的函數
+      function setActiveRegion(regionId) {
+        // 更新進度條
+        progressDots.forEach(dot => {
+          if (dot.getAttribute('data-region') === regionId) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+        
+        // 更新成員卡片顯示
+        memberContainers.forEach(container => {
+          if (container.id === `${regionId}-members`) {
+            container.classList.add('active');
+          } else {
+            container.classList.remove('active');
+          }
+        });
+      }
+    }
+  </script>
 
 </body>
 
