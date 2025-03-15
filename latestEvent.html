@@ -459,6 +459,36 @@
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
     }
     
+    /* 在平板和手機上禁用旋轉效果 */
+    @media (max-width: 992px) {
+      .grid-item-1 .transform-card,
+      .grid-item-2 .transform-card,
+      .grid-item-3 .transform-card,
+      .grid-item-4 .transform-card,
+      .grid-item-5 .transform-card,
+      .grid-item-6 .transform-card,
+      .grid-item-7 .transform-card,
+      .grid-item-8 .transform-card,
+      .grid-item-9 .transform-card,
+      .grid-item-10 .transform-card {
+        transform: none !important;
+      }
+      
+      .grid-item-1 .transform-card:hover,
+      .grid-item-2 .transform-card:hover,
+      .grid-item-3 .transform-card:hover,
+      .grid-item-4 .transform-card:hover,
+      .grid-item-5 .transform-card:hover,
+      .grid-item-6 .transform-card:hover,
+      .grid-item-7 .transform-card:hover,
+      .grid-item-8 .transform-card:hover,
+      .grid-item-9 .transform-card:hover,
+      .grid-item-10 .transform-card:hover {
+        transform: translateY(-8px) !important;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+      }
+    }
+    
     /* 網格佈局 */
     .staggered-grid {
       display: grid;
@@ -642,14 +672,7 @@
         <div class="heading_container heading_center">
           <h2 class="translate" data-key="title_support">場外應援</h2>
         </div>
-        
-        <!-- 主題海報 -->
-        <div class="row mt-4 mb-4">
-          <div class="col-12 text-center">
-            <h3 class="mb-4 translate" data-key="support_title">場外應援活動預覽</h3>
-          </div>
-        </div>
-        
+        <br>
         <!-- 內容圖片輪播 -->
         <div class="row">
           <div class="col-12">
@@ -1012,11 +1035,7 @@
           </div>
         </div>
       </div>
-      
-      <div class="text-center mt-5">
-        <a href="#" class="btn btn-primary btn-lg translate text-sharp" data-key="support_now">立即支持</a>
-        <p class="mt-3 text-muted translate text-sharp" data-key="limited_quantity">數量有限，先到先得</p>
-      </div>
+
     </div>
   </section>
 
